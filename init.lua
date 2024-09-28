@@ -6,7 +6,7 @@
 ---  ██║ ╚████║███████╗╚██████╔╝   ██║   ███████╗╚██████╔╝███████║███████╗
 ---  ╚═╝  ╚═══╝╚══════╝ ╚═════╝    ╚═╝   ╚══════╝ ╚═════╝ ╚══════╝╚══════╝
 ---
---- Version : v1.0.0
+--- Version : v1.1.0
 --- NOTE    : Comments have been extended by the use of `folke/todo-comments.nvim`. Tagged comments are enriched with color highlighting, distinct icons and are searchable via commands and key-bindings, throughout open buffers and
 ---           the entire project workspace.
 ---
@@ -83,11 +83,11 @@ require("packer").startup(function(use)
 
   -- highly extendable fuzzy finder
   use {
-    "nvim-telescope/telescope.nvim", tag = "0.1.3",                                       -- IMPORTANT: telescope was previously hard tagged to `0.1.3`, testing with the latest verison; revert if you encounter issues
+    "nvim-telescope/telescope.nvim", tag = "0.1.3",                                     -- IMPORTANT: telescope was previously hard tagged to `0.1.3`, testing with the latest verison; revert if you encounter issues
     requires = {
-      { "nvim-lua/plenary.nvim", commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" },   -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
-      { "BurntSushi/ripgrep", commit = "7099e174acbcbd940f57e4ab4913fee4040c826e" },      -- Required  -- line-oriented search tool that recursively searches your current directory for a regex pattern
-      { "sharkdp/fd", commit = "a11f8426d4e88ccc3745cc27b700aeb5ede39013" }               -- Optional  -- fast and user-friendly alternative to the traditional find command that comes with Unix and Linux operating systems
+      { "nvim-lua/plenary.nvim", commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" }, -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
+      { "BurntSushi/ripgrep", commit = "7099e174acbcbd940f57e4ab4913fee4040c826e" },    -- Required  -- line-oriented search tool that recursively searches your current directory for a regex pattern
+      { "sharkdp/fd", commit = "a11f8426d4e88ccc3745cc27b700aeb5ede39013" }             -- Optional  -- fast and user-friendly alternative to the traditional find command that comes with Unix and Linux operating systems
     }
   }
 
@@ -96,8 +96,8 @@ require("packer").startup(function(use)
     "nvim-lualine/lualine.nvim",
     commit = "2248ef254d0a1488a72041cfb45ca9caada6d994",
     requires = {
-      {"nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" }   -- Required  -- `lualine` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
-    }                                                                                         -- IMPORTANT: `nvim-web-devicons` requires a patched font to function on most terminals; see plugin config section for details
+      {"nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" } -- Required  -- `lualine` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
+    }                                                                                       -- IMPORTANT: `nvim-web-devicons` requires a patched font to function on most terminals; see plugin config section for details
   }
 
   -- go language integration plugin for vim
@@ -107,9 +107,9 @@ require("packer").startup(function(use)
   use { "rcarriga/nvim-dap-ui",
     commit = "34160a7ce6072ef332f350ae1d4a6a501daf0159",
     requires = {
-      { "mfussenegger/nvim-dap", commit = "92dc531eea2c9a3ef504a5c8ac0decd1fa59a6a3" },  -- Required  -- neovim DAP plugin
-      { "folke/neodev.nvim", commit = "b094a663ccb71733543d8254b988e6bebdbdaca4" },      -- Required  -- setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API
-      { "mortepau/codicons.nvim", commit = "1b06e16e799809d886f9dda8e93f12133e18e392" }  -- Required  -- `nvim-dap-ui` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `codicons.nvim` to map the fonts (default or custom)
+      { "mfussenegger/nvim-dap", commit = "92dc531eea2c9a3ef504a5c8ac0decd1fa59a6a3" }, -- Required  -- neovim DAP plugin
+      { "folke/neodev.nvim", commit = "b094a663ccb71733543d8254b988e6bebdbdaca4" },     -- Required  -- setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API
+      { "mortepau/codicons.nvim", commit = "1b06e16e799809d886f9dda8e93f12133e18e392" } -- Required  -- `nvim-dap-ui` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `codicons.nvim` to map the fonts (default or custom)
                                                      -- IMPORTANT: this font requires to be patched to be properly processed by most terminals; see plugin configuration section
     }
   }
@@ -123,8 +123,7 @@ require("packer").startup(function(use)
   -- a collection of functions that will help you setup Neovim's LSP client, so you can get IDE-like features with minimum effort
   use {
     "VonHeikemen/lsp-zero.nvim",
-    -- branch = "v3.x", -- IMPORTANT: currently testing `v3.x`; may have to revert back to `v2.x` if issues arise 
-    commit = "22d2186bee730d68f6fd3bb2d19a389784c37a96",
+    branch = "v4.x", -- IMPORTANT: currently testing `v4.x`; may have to revert back to `v3.x` if issues arise 
     requires = {
       { "neovim/nvim-lspconfig", commit = "38da5bbe1eaab2394056109e48c7e195bdb8fdfe" },             -- Required  -- a configuration utility for the built-in Language Server Protocol (LSP) client for neovim
       { "williamboman/mason.nvim", commit = "cd7835b15f5a4204fc37e0aa739347472121a54c" },           -- Optional  -- is a neovim plugin that allows you to easily manage external editor tooling such as LSP servers, DAP servers, linters, and formatters through a single interface
@@ -163,7 +162,7 @@ require("packer").startup(function(use)
     "sindrets/diffview.nvim",
     commit = "d38c1b5266850f77f75e006bcc26213684e1e141",
     requires = {
-      { "nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" } -- Required  -- `diffview` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
+      { "nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" }  -- Required  -- `diffview` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
                                                         -- IMPORTANT: `nvim-web-devicons` requires a patched font to function on most terminals; see plugin configuration section for details
     }
   }
