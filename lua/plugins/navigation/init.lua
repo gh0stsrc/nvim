@@ -1,0 +1,2 @@
+require("plugins.navigation.flash")
+

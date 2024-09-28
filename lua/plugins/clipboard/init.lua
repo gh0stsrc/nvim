@@ -1,0 +1,2 @@
+require("plugins.clipboard.neoclip")
+
