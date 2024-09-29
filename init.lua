@@ -6,7 +6,7 @@
 ---  ██║ ╚████║███████╗╚██████╔╝   ██║   ███████╗╚██████╔╝███████║███████╗
 ---  ╚═╝  ╚═══╝╚══════╝ ╚═════╝    ╚═╝   ╚══════╝ ╚═════╝ ╚══════╝╚══════╝
 ---
---- Version : v1.1.0
+--- Version : v1.1.1
 --- NOTE    : Comments have been extended by the use of `folke/todo-comments.nvim`. Tagged comments are enriched with color highlighting, distinct icons and are searchable via commands and key-bindings, throughout open buffers and
 ---           the entire project workspace.
 ---
@@ -83,7 +83,7 @@ require("packer").startup(function(use)
 
   -- highly extendable fuzzy finder
   use {
-    "nvim-telescope/telescope.nvim", tag = "0.1.3",                                     -- IMPORTANT: telescope was previously hard tagged to `0.1.3`, testing with the latest verison; revert if you encounter issues
+    "nvim-telescope/telescope.nvim", tag = "nvim-0.6",                                     -- IMPORTANT: telescope was previously hard tagged to `nvim-0.6`, testing with the latest verison; revert if you encounter issues
     requires = {
       { "nvim-lua/plenary.nvim", commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" }, -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
       { "BurntSushi/ripgrep", commit = "7099e174acbcbd940f57e4ab4913fee4040c826e" },    -- Required  -- line-oriented search tool that recursively searches your current directory for a regex pattern
@@ -173,9 +173,9 @@ require("packer").startup(function(use)
       "jackMort/ChatGPT.nvim",
       commit = "9f8062c7c40ec082c49f10e20818333a972b8063",
       requires = {
-        { "MunifTanjim/nui.nvim", commit="c0c8e347ceac53030f5c1ece1c5a5b6a17a25b32" },          -- Required  -- a plugin with a highly customizable UI component framework based on Lua
-        { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },        -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
-        { "nvim-telescope/telescope.nvim", commit="d88094fbfd84b297178252230f6faf0e7d2f7650" }  -- Required  -- `ChatGPT` levarages Telescope's fuzzy finder windows and previews
+        { "MunifTanjim/nui.nvim", commit="c0c8e347ceac53030f5c1ece1c5a5b6a17a25b32" },    -- Required  -- a plugin with a highly customizable UI component framework based on Lua
+        { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },  -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
+        { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" }                             -- Required  -- `ChatGPT` levarages Telescope's fuzzy finder windows and previews - IMPORTANT: already installed explicitly
       },
     }
   end
@@ -185,9 +185,9 @@ require("packer").startup(function(use)
     "folke/todo-comments.nvim",
     commit = "3094ead8edfa9040de2421deddec55d3762f64d1",
     requires = {
-      { "nvim-lua/plenary.nvim", commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" },       -- Optional  -- required along with ripgrep for searching
-      { "folke/trouble.nvim", commit = "f1168feada93c0154ede4d1fe9183bf69bac54ea" },          -- Optional  -- required for the displaying of todo tags via telescope and nvims quickfix and location lists
-      { "nvim-telescope/telescope.nvim", commit="d88094fbfd84b297178252230f6faf0e7d2f7650" }, -- Optional  -- required for this neovim config, as I configured `todo-comments` to be used with Telescope's fuzzy finder windows and previews
+      { "nvim-lua/plenary.nvim", commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" }, -- Optional  -- required along with ripgrep for searching
+      { "folke/trouble.nvim", commit = "f1168feada93c0154ede4d1fe9183bf69bac54ea" },    -- Optional  -- required for the displaying of todo tags via telescope and nvims quickfix and location lists
+      { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" },                            -- Optional  -- required for this neovim config, as I configured `todo-comments` to be used with Telescope's fuzzy finder windows and previews - IMPORTANT: already installed explicitly
     }
   }
 
@@ -206,8 +206,8 @@ require("packer").startup(function(use)
     "AckslD/nvim-neoclip.lua",
     commit = "4e406ae0f759262518731538f2585abb9d269bac",
     requires = {
-      { "kkharji/sqlite.lua", commit = "b7e28c8463254c46a8e61c52d27d6a2040492fc3", module = "sqlite" }, -- Required  -- SQLite/LuaJIT binding and a highly opinionated wrapper for storing, retrieving, caching, and persisting SQLite databases.
-      { "nvim-telescope/telescope.nvim", commit="d88094fbfd84b297178252230f6faf0e7d2f7650" },           -- Required  -- required for this neovim config, as I configured `neoclip` to be used with Telescope's fuzzy finder windows and previews
+      { "kkharji/sqlite.lua", commit = "b7e28c8463254c46a8e61c52d27d6a2040492fc3", module = "sqlite" }, -- Required  -- SQLite/LuaJIT binding and a highly opinionated wrapper for storing, retrieving, caching, and persisting SQLite databases
+      { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" },                                            -- Required  -- required for this neovim config, as I configured `neoclip` to be used with Telescope's fuzzy finder windows and previews - IMPORTANT: already installed explicitly
       { "ibhagwan/fzf-lua", commit = "293e9086f9c546ba50f48a5966b95d450bffa94f" },                      -- Optional  -- fuzzy finder, which is NOT required of you are using `Telescope`
     },
   }
@@ -228,8 +228,8 @@ require("packer").startup(function(use)
     "ThePrimeagen/harpoon",
     commit = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a",
     requires = {
-      { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },        -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
-      { "nvim-telescope/telescope.nvim", commit="d88094fbfd84b297178252230f6faf0e7d2f7650" }  -- Required  -- considered required for this neovim config, as I configured `harpoon` to be used with Telescope's fuzzy finder windows and previews
+      { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },  -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
+      { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" }                             -- Required  -- considered required for this neovim config, as I configured `harpoon` to be used with Telescope's fuzzy finder windows and previews - IMPORTANT: already installed explicitly
     }
   }
 
