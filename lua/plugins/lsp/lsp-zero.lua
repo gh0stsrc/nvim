@@ -2,6 +2,8 @@
 --?            Language Server Protocol & interface Setup           ?--
 --* --------------------------------------------------------------- *--
 
+-- IMPORTANT: lsp-zero config no longer abstract mason.nvim, and requires mason.nvim to be configured explicitly
+
 local lsp_zero = require("lsp-zero")
 
 -- integration and keybindings for telescope functionality (on attach - before setup)
@@ -31,6 +33,7 @@ lsp_zero.extend_lspconfig({
   sign_text = true,
 })
 
+-- NOTE: mason config - required as of lsp-zero v3.x
 require('mason').setup({})
 require('mason-lspconfig').setup({
 -- list of language servers, debugger adapters, linters and formatters to be installed by mason and leveraged by lsp-zero
