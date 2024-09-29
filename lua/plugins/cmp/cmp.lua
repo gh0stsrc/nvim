@@ -3,6 +3,8 @@
 --* --------------------------------------------------------------- *--
 
 -- NOTE: cmp is a completion engine plugin for neovim written in Lua. Completion sources are installed from external repositories and "sourced".
+--       functionality for cmp is heavily dependent on lsp-zero and mason, see the lsp-zero module for more details.
+
 local cmp = require("cmp")
 local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
 
