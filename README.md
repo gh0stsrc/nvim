@@ -9,7 +9,7 @@
 
 # NeoVim Config 
 
-This is a simple but useful setup for neovim, it will continue to grow overtime.
+This is a simple but useful setup for neovim, it will continue to grow overtime. Version 1.x.x leveraged `packer.nvim` as the package manager; however  
 
 **Disclaimer:** This configuration and the instructions outlined, were implemented on a `Ubuntu 23.04 (Lunar Lobster)` system using a `v0.9.2` neovim app image; instructions may need to be tailored for other linux distributions or neovim versions.
 
@@ -18,15 +18,15 @@ This is a simple but useful setup for neovim, it will continue to grow overtime.
 ---
 ### Plugin Inventory
 
-- [packer.nvim](https://github.com/wbthomason/packer.nvim):
-  - `packer` is plugin/package manager for neovim
+- [lazy.nvim](https://github.com/folke/lazy.nvim):
+    - `lazy.nvim` is a modern plugin manager for Neovim.
 
 - [gruvbox](https://github.com/morhetz/gruvbox)
   - `gruvbox`, the color scheme is known for its warm and retro-inspired color palette, which many developers find visually pleasing and comfortable for coding. It often includes variations for different languages and file types to make syntax highlighting more readable and aesthetically pleasing.
 
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
   - `alpha` a fast and fully programmable dashbboard plugin for neovim
-
+ 
 - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
   - `bufferline` is a popular Neovim plugin that provides a customizable and feature-rich buffer/tabline for managing open buffers in Neovim. It enhances the visual representation of buffers in Neovim, making it easier to navigate and manage multiple open files.
   - <code style="color : blue"><b>Features</b></code>
@@ -91,7 +91,7 @@ This is a simple but useful setup for neovim, it will continue to grow overtime.
     - **_Colorized Output_**: Provides colorized terminal output for better readability of results.
     - **_customization_**: Offers numerous flags to customize your searches.
   - <code style="color : red"><b>IMPORTANT</b></code> 
-    - <code style="color : red">`ripgrep` is a telescope.nvim dependency. Depending on results from the `:checkhealth (nvim)` command, you may need to create a symbolic link for `rg`, where packer has installed it in a directory accessible via `$PATH`</code>
+    - <code style="color : red">`ripgrep` is a telescope.nvim dependency. Depending on results from the `:checkhealth (nvim)` command, you may need to create a symbolic link for `rg`, where lazy has installed it in a directory accessible via `$PATH`</code>
 
 - [sharkdp/fd](https://github.com/sharkdp/fd)
   - `fd` is a fast and user-friendly alternative to the traditional find command that comes with Unix and Linux operating systems. Developed by David Peter (sharkdp), it's written in Rust, making it highly efficient and fast.
@@ -384,7 +384,7 @@ by setting this environment variable to `true`, Neovim will open with debugging 
    - <code style="color : green"><b>Note</b></code>**:** To see more information about clipboard configurations, please see the `Nvim Clipboard Provider Related` subsection of [Nvim Config Installation Prerequisites](#nvim-config-installation-prerequisites).
 </br>
  
- - `NVIM_ENABLE_GPT`: by setting this environment variable to `true`, the `jackMort/ChatGPT.nvim` plugin will be able to be installed via the `PackerInstall` command upon Neovim restart. In addition, the respective key bindings outlined in the [Noteworthy Key Bindings](#noteworthy-key-bindings) section of this document will be bound.
+ - `NVIM_ENABLE_GPT`: by setting this environment variable to `true`, the `jackMort/ChatGPT.nvim` plugin will be able to be installed via `Lazy` upon Neovim restart. In addition, the respective key bindings outlined in the [Noteworthy Key Bindings](#noteworthy-key-bindings) section of this document will be bound.
 
     - <code style="color : green"><b>Note</b></code>**:** For more information regarding the `ChatGPT` plugin and its installation requirements, please see the respective subsection within [Nvim Config Installation Prerequisites](nvim-config-installation-prerequisites).
     </br>
@@ -456,7 +456,7 @@ by setting this environment variable to `true`, Neovim will open with debugging 
   - `telescope` depends on [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) for grep-like operations.
     -  the easiest way to deal with this is to install `ripgrep` system wide
       - `sudo apt-get install ripgrep`
-    - **_OTHERWISE_**, when you run the `PackerInstall` command, `ripgrep` will automatically be installed via `packer`; as it is included in the `packer` setup config. HOWEVER, you will need to make the binary accessible to `$PATH`.
+    - **_OTHERWISE_**, when you run the `lazy install` command, `ripgrep` will automatically be installed via `lazy`; as it is included in the `lazy` setup config. HOWEVER, you will need to make the binary accessible to `$PATH`.
       - <code style="color : red"><b>IMPORTANT</b></code> 
         - <code style="color : red"> you will need to include the full path of where the `ripgrep` binary was installed in `$PATH`</code> 
     
