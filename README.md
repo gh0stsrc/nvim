@@ -7,13 +7,14 @@
     ╚═╝  ╚═══╝╚══════╝ ╚═════╝    ╚═╝   ╚══════╝ ╚═════╝ ╚══════╝╚══════╝
 ```
 
-# NeoVim Config 
+A simple and powerful setup for neovim.
 
-This is a simple but useful setup for neovim, it will continue to grow overtime. Version 1.x.x leveraged `packer.nvim` as the package manager; however  
+>[!NOTE]
+>Version `1.x.x` leveraged [packer.nvim](https://github.com/wbthomason/packer.nvim) as the package manager; however, packer is no longer actively maintained. `v2.x.x` and beyond will leverage [lazy.nvim](https://github.com/folke/lazy.nvim/tree/stable) as the defacto package manager (unless stated otherwise).
+>
+> In addition, it should be noted that this configuration and the instructions outlined, were implemented on a `Ubuntu 23.04 (Lunar Lobster)` system using a `v0.9.2` neovim app image; instructions may need to be tailored for other linux distributions or neovim versions.
 
-**Disclaimer:** This configuration and the instructions outlined, were implemented on a `Ubuntu 23.04 (Lunar Lobster)` system using a `v0.9.2` neovim app image; instructions may need to be tailored for other linux distributions or neovim versions.
-
-#### Have Fun!
+Thank you for stopping and have fun!
 
 ---
 ### Plugin Inventory
