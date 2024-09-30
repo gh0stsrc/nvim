@@ -62,7 +62,7 @@ dashboard.section.buttons.val = {
 }
 
 
-dashboard.section.footer.val = "[ let's get s#@%% done! ]"
+dashboard.section.footer.val = "[ let's get s#@% done! ]"
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
