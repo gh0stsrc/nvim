@@ -6,6 +6,13 @@ return {
   {
     "folke/flash.nvim",
     lazy = false,
+    opts = {
+      modes = {
+        search ={
+          enabled = true -- NOTE: enable flash on regular search (i.e. `/`, `?`)
+        }
+      }
+    },
     keys = {
       {
         "<leader>s",
