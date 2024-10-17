@@ -277,11 +277,11 @@ vim.keymap.set("n", "nh", "<cmd>Telescope notify<cr>")
 --* --------------------------------------------------------------- *--
 
 -- open flash search
-vim.keymap.set({"n", "x", "o"}, "<leader>s", function() require("flash").jump() end )
+-- vim.keymap.set({"n", "x", "o"}, "<leader>s", function() require("flash").jump() end )
 -- open flash search in treesitter mode
-vim.keymap.set({"n", "x", "o"}, "<leader>t", function() require("flash").treesitter_search() end )
+-- vim.keymap.set({"n", "x", "o"}, "<leader>t", function() require("flash").treesitter_search() end )
 -- open flash in remote mode
-vim.keymap.set("o", "<leader>r", function() require("flash").remote() end )
+-- vim.keymap.set("o", "<leader>r", function() require("flash").remote() end )
 
 
 --* --------------------------------------------------------------- *--
