@@ -176,7 +176,7 @@ require("lazy").setup({
       commit = "d38c1b5266850f77f75e006bcc26213684e1e141",
       dependencies = {
         { "nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" }  -- Required  -- `diffview` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
-                                                          -- IMPORTANT: `nvim-web-devicons` dependencies a patched font to function on most terminals; see plugin configuration section for details
+                                                                                                -- IMPORTANT: `nvim-web-devicons` dependencies a patched font to function on most terminals; see plugin configuration section for details
       }
     },
 

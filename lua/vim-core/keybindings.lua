@@ -124,13 +124,13 @@ vim.keymap.set("n","tt", "<cmd>TodoTelescop<cr>")
 --* --------------------------------------------------------------- *--
 
 --* generic horizontal terminal window creation key binding
-vim.keymap.set("n", "<M-j>", "<cmd>ToggleTerm direction=horizontal<cr>")
+-- vim.keymap.set("n", "<M-j>", "<cmd>ToggleTerm direction=horizontal<cr>")
 --* generic floating terminal window creation key  key binding
-vim.keymap.set("n", "<M-k>", "<cmd>ToggleTerm direction=float<cr>")
+-- vim.keymap.set("n", "<M-k>", "<cmd>ToggleTerm direction=float<cr>")
 
 --* key mapping to exit terminal mode while a toggleterm window is open; hit `jj` then either `alt-j` or `alt-k` to exit a generic toggleterm window.
 --* `lazygit` is mapped differently, as it maintains its own key bindings, refer to the README for respective key bindings.
-vim.keymap.set("t", "jj", [[<C-\><C-n>]])
+-- vim.keymap.set("t", "jj", [[<C-\><C-n>]])
 
 
 --* --------------------------------------------------------------- *--

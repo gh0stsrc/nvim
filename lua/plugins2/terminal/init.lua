@@ -1,2 +1,2 @@
-require("plugins2.terminal.toggleterm")
+-- require("plugins2.terminal.toggleterm")
 

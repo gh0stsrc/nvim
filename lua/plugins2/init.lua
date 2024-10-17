@@ -2,7 +2,7 @@
 require("plugins2.icons")
 require("plugins2.ui")
 require("plugins2.parsers")
-require("plugins2.terminal")
+-- require("plugins2.terminal")
 require("plugins2.comments")
 require("plugins2.git")
 require("plugins2.dap")
