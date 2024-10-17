@@ -190,11 +190,11 @@ vim.keymap.set("n", "<leader>dr", function() require("dap").repl.toggle() end)
 --* --------------------------------------------------------------- *--
 --* Note: Only functions exposed by the ChatGPT plugin have been mapped to keys explictly and can be seen below. Refer to the README for more details pertaining to
 
-vim.keymap.set("n", "gpt",  "<cmd>ChatGPT<cr>")                       -- open general interactive window
-vim.keymap.set("n", "gpta", "<cmd>ChatGPTActAs<cr>")                 -- open a prompt prepared window (adopting a persona)
-vim.keymap.set("n", "gpte", "<cmd>ChatGPTEditWithInstructions<cr>")  -- open an interactive window where ChatGPT will edit a copy of the current buffer
-vim.keymap.set("n", "gptr", "<cmd>ChatGPTRun<cr>")                   -- execute ChatGPT commands
-vim.keymap.set("n", "gptc", "<cmd>ChatGPTCompleteCode<cr>")          -- comeplete code recommendations
+-- vim.keymap.set("n", "gpt",  "<cmd>ChatGPT<cr>")                       -- open general interactive window
+-- vim.keymap.set("n", "gpta", "<cmd>ChatGPTActAs<cr>")                 -- open a prompt prepared window (adopting a persona)
+-- vim.keymap.set("n", "gpte", "<cmd>ChatGPTEditWithInstructions<cr>")  -- open an interactive window where ChatGPT will edit a copy of the current buffer
+-- vim.keymap.set("n", "gptr", "<cmd>ChatGPTRun<cr>")                   -- execute ChatGPT commands
+-- vim.keymap.set("n", "gptc", "<cmd>ChatGPTCompleteCode<cr>")          -- comeplete code recommendations
 
 
 --* --------------------------------------------------------------- *--

@@ -78,7 +78,7 @@ require("lazy").setup({
 
     -- import plugins and desired configurations
     -- IMPORTANT: currently the directory structure and references of plugins is not inline with lazy.nvim requirements, importing plugins via the lazy setup function is not possible until plugins are structure as depicted here -> https://www.lazyvim.org/configuration/plugins
-    -- { import = "plugins" },
+    { import = "plugins" },
 
     -- The Gruvbox color scheme is known for its warm and retro-inspired color palette, which many developers find visually pleasing and comfortable for coding. It often includes variations for different languages and file types to make syntax highlighting more readable and aesthetically pleasing
     {
@@ -182,7 +182,7 @@ require("lazy").setup({
 
     {
       "jackMort/ChatGPT.nvim",
-      commit = "9f8062c7c40ec082c49f10e20818333a972b8063",
+      branch = "main",
       dependencies = {
         { "MunifTanjim/nui.nvim", commit="c0c8e347ceac53030f5c1ece1c5a5b6a17a25b32" },    -- Required  -- a plugin with a highly customizable UI component framework based on Lua
         { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },  -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
@@ -286,7 +286,7 @@ local async = require("plenary.async")
 require("core")
 
 -- IMPORTANT: load plugins first before vim-core and extensions
-require("plugins")
+require("plugins2")
 
 -- welcome the user 
 async.run(
