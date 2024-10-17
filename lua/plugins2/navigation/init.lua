@@ -1,2 +1,2 @@
-require("plugins2.navigation.flash")
+-- require("plugins2.navigation.flash")
 

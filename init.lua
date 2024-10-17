@@ -298,6 +298,7 @@ async.run(
 
 -- NOTE: import remaining modules
 require("vim-core")
+-- load extesions such a terminal ui tools such as lazygit and k9s
 require("extensions")
 
 
