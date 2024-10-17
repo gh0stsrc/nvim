@@ -261,15 +261,15 @@ vim.keymap.set("n", "nh", "<cmd>Telescope notify<cr>")
 --* --------------------------------------------------------------- *--
 
 -- mark the file within the current buffer 
-vim.keymap.set("n", "hx", require('harpoon.mark').add_file)
+-- vim.keymap.set("n", "hx", require('harpoon.mark').add_file)
 -- remove the mark for the file within the current buffer
-vim.keymap.set("n", "hr", require('harpoon.mark').rm_file)
+-- vim.keymap.set("n", "hr", require('harpoon.mark').rm_file)
 -- navigate to the next maked (harpooned) buffer
-vim.keymap.set("n", "hn", require('harpoon.ui').nav_next)
+-- vim.keymap.set("n", "hn", require('harpoon.ui').nav_next)
 -- navigate to the previous marked (harpooned) buffer
-vim.keymap.set("n", "hp", require('harpoon.ui').nav_prev)
+-- vim.keymap.set("n", "hp", require('harpoon.ui').nav_prev)
 -- open window with all marked (harpooned) buffers using telescope
-vim.keymap.set("n", "hm", "<cmd>Telescope harpoon marks<cr>")
+-- vim.keymap.set("n", "hm", "<cmd>Telescope harpoon marks<cr>")
 
 
 --* --------------------------------------------------------------- *--

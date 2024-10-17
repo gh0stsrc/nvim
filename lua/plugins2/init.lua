@@ -9,6 +9,5 @@ require("plugins2.dap")
 require("plugins2.clipboard")
 require("plugins2.lsp")
 require("plugins2.cmp")
-require("plugins2.marking")
 require("plugins2.navigation")
 

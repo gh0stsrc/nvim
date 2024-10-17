@@ -238,6 +238,7 @@ require("lazy").setup({
     -- marking buffers and blazingly fast navigation of buffers
     {
       "ThePrimeagen/harpoon",
+      branch = "master",
       commit = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a",
       dependencies = {
         { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },  -- Required  -- neovim library that provides lua functions required for the development and use of various neovim plugins
