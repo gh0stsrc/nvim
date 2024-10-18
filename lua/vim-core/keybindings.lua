@@ -36,76 +36,76 @@ vim.keymap.set("n", "<M-l>", ":wincmd l<CR>", { noremap = true })
 --* --------------------------------------------------------------- *--
 
 -- TODO
-vim.keymap.set("n", "]t", function()
-  require("todo-comments").jump_next({keywords = { "TODO"}})
-end, { desc = "Next TODO comment" })
+-- vim.keymap.set("n", "]t", function()
+--   require("todo-comments").jump_next({keywords = { "TODO"}})
+-- end, { desc = "Next TODO comment" })
 
-vim.keymap.set("n", "[t", function()
-  require("todo-comments").jump_prev({keywords = { "TODO"}})
-end, { desc = "Previous TODO comment" })
+-- vim.keymap.set("n", "[t", function()
+--   require("todo-comments").jump_prev({keywords = { "TODO"}})
+-- end, { desc = "Previous TODO comment" })
 
 -- HACK
-vim.keymap.set("n", "]h", function()
-  require("todo-comments").jump_next({keywords = { "HACK"}})
-end, { desc = "Next HACK comment" })
+-- vim.keymap.set("n", "]h", function()
+--   require("todo-comments").jump_next({keywords = { "HACK"}})
+-- end, { desc = "Next HACK comment" })
 
-vim.keymap.set("n", "[h", function()
-  require("todo-comments").jump_prev({keywords = { "HACK" }})
-end, { desc = "Previous HACK comment" })
+-- vim.keymap.set("n", "[h", function()
+--   require("todo-comments").jump_prev({keywords = { "HACK" }})
+-- end, { desc = "Previous HACK comment" })
 
 -- BUG/FIX
-vim.keymap.set("n", "]b", function()
-  require("todo-comments").jump_next({keywords = { "BUG", "FIX" }})
-end, { desc = "Next FIX comment" })
+-- vim.keymap.set("n", "]b", function()
+--   require("todo-comments").jump_next({keywords = { "BUG", "FIX" }})
+-- end, { desc = "Next FIX comment" })
 
-vim.keymap.set("n", "[b", function()
-  require("todo-comments").jump_prev({keywords = { "BUG", "FIX" }})
-end, { desc = "Previous FIX comment" })
+-- vim.keymap.set("n", "[b", function()
+--   require("todo-comments").jump_prev({keywords = { "BUG", "FIX" }})
+-- end, { desc = "Previous FIX comment" })
 
 -- IMPORTANT
-vim.keymap.set("n", "]i", function()
-  require("todo-comments").jump_next({keywords = { "IMPORTANT", "IMP" }})
-end, { desc = "Next IMPORTANT comment" })
+-- vim.keymap.set("n", "]i", function()
+--   require("todo-comments").jump_next({keywords = { "IMPORTANT", "IMP" }})
+-- end, { desc = "Next IMPORTANT comment" })
 
-vim.keymap.set("n", "[i", function()
-  require("todo-comments").jump_prev({keywords = { "IMPORTANT", "IMP" }})
-end, { desc = "Previous IMPORTANT comment" })
+-- vim.keymap.set("n", "[i", function()
+--   require("todo-comments").jump_prev({keywords = { "IMPORTANT", "IMP" }})
+-- end, { desc = "Previous IMPORTANT comment" })
 
 -- WARN
-vim.keymap.set("n", "]w", function()
-  require("todo-comments").jump_next({keywords = { "WARN", "WARNING" }})
-end, { desc = "Next WARN comment" })
+-- vim.keymap.set("n", "]w", function()
+--   require("todo-comments").jump_next({keywords = { "WARN", "WARNING" }})
+-- end, { desc = "Next WARN comment" })
 
-vim.keymap.set("n", "[w", function()
-  require("todo-comments").jump_prev({keywords = { "WARN", "WARNING"}})
-end, { desc = "Previous WARN comment" })
+-- vim.keymap.set("n", "[w", function()
+--   require("todo-comments").jump_prev({keywords = { "WARN", "WARNING"}})
+-- end, { desc = "Previous WARN comment" })
 
 -- PERF
-vim.keymap.set("n", "]p", function()
-  require("todo-comments").jump_next({keywords = { "PERF" }})
-end, { desc = "Next PERF comment" })
+-- vim.keymap.set("n", "]p", function()
+--   require("todo-comments").jump_next({keywords = { "PERF" }})
+-- end, { desc = "Next PERF comment" })
 
-vim.keymap.set("n", "[p", function()
-  require("todo-comments").jump_prev({keywords = { "PERF" }})
-end, { desc = "Previous PERF comment" })
+-- vim.keymap.set("n", "[p", function()
+--   require("todo-comments").jump_prev({keywords = { "PERF" }})
+-- end, { desc = "Previous PERF comment" })
 
 -- NOTE
-vim.keymap.set("n", "]n", function()
-  require("todo-comments").jump_next({keywords = { "NOTE" }})
-end, { desc = "Next NOTE comment" })
+-- vim.keymap.set("n", "]n", function()
+--   require("todo-comments").jump_next({keywords = { "NOTE" }})
+-- end, { desc = "Next NOTE comment" })
 
-vim.keymap.set("n", "[n", function()
-  require("todo-comments").jump_prev({keywords = { "NOTE" }})
-end, { desc = "Previous NOTE comment" })
+-- vim.keymap.set("n", "[n", function()
+--   require("todo-comments").jump_prev({keywords = { "NOTE" }})
+-- end, { desc = "Previous NOTE comment" })
 
--- TEST
-vim.keymap.set("n", "]T", function()
-  require("todo-comments").jump_next({keywords = { "TEST" }})
-end, { desc = "Next TEST comment" })
+-- -- TEST
+-- vim.keymap.set("n", "]T", function()
+--   require("todo-comments").jump_next({keywords = { "TEST" }})
+-- end, { desc = "Next TEST comment" })
 
-vim.keymap.set("n", "[T", function()
-  require("todo-comments").jump_prev({keywords = { "TEST" }})
-end, { desc = "Previous TEST comment" })
+-- vim.keymap.set("n", "[T", function()
+--   require("todo-comments").jump_prev({keywords = { "TEST" }})
+-- end, { desc = "Previous TEST comment" })
 
 -- COMMANDS
 
@@ -116,7 +116,7 @@ end, { desc = "Previous TEST comment" })
 --vim.keymap.set("n","tl", "<cmd>TodoLocList<cr>")
 
 -- Search through all project todos with Telescope
-vim.keymap.set("n","tt", "<cmd>TodoTelescop<cr>")
+-- vim.keymap.set("n","tt", "<cmd>TodoTelescop<cr>")
 
 
 --* --------------------------------------------------------------- *--
