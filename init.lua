@@ -7,7 +7,7 @@
 ---  ╚═╝  ╚═══╝╚══════╝ ╚═════╝    ╚═╝   ╚══════╝ ╚═════╝ ╚══════╝╚══════╝
 ---
 --- version : v2.0.0-rc0
---- NOTE    : Comments have been extended by the use of `folke/todo-comments.nvim`. commitged comments are enriched with color highlighting, distinct icons and are searchable via commands and key-bindings, throughout open buffers and
+--- NOTE    : Comments have been extended by the use of `folke/todo-comments.nvim`. comments are enriched with color highlighting, distinct icons and are searchable via commands and key-bindings, throughout open buffers and
 ---           the entire project workspace.
 ---
 ---           [LEGEND]:
@@ -170,16 +170,6 @@ require("lazy").setup({
       commit = "5a9a6ac29a7805c4783cda21b80a1e361964b3f2"
     },
 
-    -- plugin that provides a side-by-side diff viewer for Git differences right inside Neovim. Offering a convenient way to visualize and navigate through changes in your Git repository without leaving your editor
-    {
-      "sindrets/diffview.nvim",
-      commit = "d38c1b5266850f77f75e006bcc26213684e1e141",
-      dependencies = {
-        { "nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" }  -- Required  -- `diffview` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
-                                                                                                -- IMPORTANT: `nvim-web-devicons` dependencies a patched font to function on most terminals; see plugin configuration section for details
-      }
-    },
-
     {
       "jackMort/ChatGPT.nvim",
       branch = "main",
@@ -255,8 +245,8 @@ require("lazy").setup({
     -- toggable navigation pane plugin to explore project file structures 
     {
       "nvim-tree/nvim-tree.lua",
-      commit = "7e3c0bee7b246ca835d5f7453db6fa19de359bab",
-      dependencies = { "nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" }  -- Required  -- `nvim-tree` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
+      tag = "v1.7.1",
+      dependencies = { "nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" },  -- Required  -- `nvim-tree` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
       -- IMPORTANT: `nvim-web-devicons` dependencies a patched font to function on most terminals; see plugin configuration section for details
     },
 

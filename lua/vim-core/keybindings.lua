@@ -289,7 +289,7 @@ vim.keymap.set("n", "nh", "<cmd>Telescope notify<cr>")
 --* --------------------------------------------------------------- *--
 
 -- toggle the nvim-tree file explorer pane
-vim.keymap.set("n", "<M-n>", "<cmd>NvimTreeToggle<cr>")
--- open nvim-tree file explorer pane, if not opened and set focus
-vim.keymap.set("n", "``", "<cmd>NvimTreeFocus<cr>")
+-- vim.keymap.set("n", "<M-n>", "<cmd>NvimTreeToggle<cr>")
+-- -- open nvim-tree file explorer pane, if not opened and set focus
+-- vim.keymap.set("n", "``", "<cmd>NvimTreeFocus<cr>")
 

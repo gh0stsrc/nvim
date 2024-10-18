@@ -1,3 +1,3 @@
-require("plugins2.comments.comment")
-require("plugins2.comments.todo-comments")
+-- require("plugins2.comments.comment")
+-- require("plugins2.comments.todo-comments")
 
