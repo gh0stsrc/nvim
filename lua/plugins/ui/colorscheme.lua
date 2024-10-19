@@ -1,5 +1,5 @@
 --* --------------------------------------------------------------- *--
---?                   Neoteusz Colorscheme Setup                    ?--
+--?                      Neoteusz Colorscheme                       ?--
 --* --------------------------------------------------------------- *--
 
 local Helpers = require("utils.helpers")
@@ -53,10 +53,12 @@ end
 --?     lazy.nvim config for gruvbox     ?--
 --* ------------------------------------ *--
 return {
-  -- add gruvbox
   {
     "ellisonleao/gruvbox.nvim",
+    tag = "2.0.0",
     lazy = false,
+    priority = 998,
+    setup = true,
     config = function ()
       --* ------------------------------------ *--
       --?             gruvbox setup            ?--

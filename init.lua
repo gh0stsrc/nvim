@@ -59,7 +59,7 @@ vim.opt.rtp:prepend(lazypath)
 -- set the default leader for key mappings
 vim.g.mapleader = " " -- IMPORTANT: leader is the <space> key
 vim.g.maplocalleader = " "
-
+vim.opt.termguicolors = true
 
 --! --------------------------------------------------------------------- !--
 --?   Lazy Startup Configuration - Including Bootstrapping of Plugins     ?--
@@ -67,30 +67,34 @@ vim.g.maplocalleader = " "
 require("lazy").setup({
   spec = {
     --* -------------------------------------------------------------- --*
-    --   NOTE: place plugins which you desire packer to install below
+    --   NOTE:  place plugins which you desire lazy to install below
     --* -------------------------------------------------------------- --*
-
 
     { "folke/lazy.nvim",
         opts = {rocks = {enabled = false, hererocks = false }
         }
     },
 
-    -- import plugins and desired configurations
-    -- IMPORTANT: currently the directory structure and references of plugins is not inline with lazy.nvim requirements, importing plugins via the lazy setup function is not possible until plugins are structure as depicted here -> https://www.lazyvim.org/configuration/plugins
-    { import = "plugins" },
+    -- import plugin
+    { import = "plugins.ui" }, -- IMPORTANT: load ui components first, otherwise logging using nvim-notify can be buggy 
+    -- TODO: move plugins to dedicated folders based on type and priority
+    { import = "plugins.general" },
 
     -- The Gruvbox color scheme is known for its warm and retro-inspired color palette, which many developers find visually pleasing and comfortable for coding. It often includes variations for different languages and file types to make syntax highlighting more readable and aesthetically pleasing
-    {
-      "ellisonleao/gruvbox.nvim",
-      commit = "477c62493c82684ed510c4f70eaf83802e398898"
-    },
+    -- {
+    --   "ellisonleao/gruvbox.nvim",
+    --   commit = "477c62493c82684ed510c4f70eaf83802e398898"
+    -- },
 
     -- plugin to integrate the treesitter parsing lib into neovim
     {
       "nvim-treesitter/nvim-treesitter",
       commit = "6f2ef910c2c320f27cf988cf4e688746f16f4f75",
-      build = ":TSUpdate"
+      build = ":TSUpdate",
+      dependencies = {
+        { "nvim-treesitter/nvim-treesitter-textobjects", commit = "0d79d169fcd45a8da464727ac893044728f121d4" }
+      }
+
     },
 
     -- highly extendable fuzzy finder
@@ -179,7 +183,9 @@ require("lazy").setup({
         { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" }                             -- Required  -- `ChatGPT` levarages Telescope's fuzzy finder windows and previews - IMPORTANT: already installed explicitly
       },
       -- check if the env var `NVIM_ENABLE_GPT` is set to true; if so include the chatgpt plugin as part of the packer setup
-      cond = "Helpers.to_boolean(os.getenv('NVIM_ENABLE_GPT')) == true"
+      cond = function()
+        return Helpers.to_boolean(os.getenv('NVIM_ENABLE_GPT')) == true
+      end
     },
 
     -- todo-comments provide enriched comments experience with color highlighting, distinct icons and are searchable via commands and key-bindings, throughout open buffers and the entire project workspace
@@ -193,6 +199,12 @@ require("lazy").setup({
       }
     },
 
+    {
+      "folke/which-key.nvim",
+      tag = "v3.13.3",
+      dependencies = { "nvim-tree/nvim-web-devicons", commit = "f0267921c845c42685968401bc49aa65e18d3e09" } -- Required  -- `whichkey` uses patched fonts, if want to see icons you must have a set of patched fonts installed and use `nvim-web-devicons` to map the fonts (default or custom)
+    },
+
     -- programmable splash screen/dashboard for neovim
     {
         "goolord/alpha-nvim",  -- Required -- required to display spalsh screen
@@ -200,18 +212,6 @@ require("lazy").setup({
         config = function ()
             require'alpha'.setup(require'alpha.themes.dashboard'.config)
         end
-    },
-
-    -- a clipboard manager for neovim inspired by clipmenu. It records everything that gets yanked in your vim session (up to a condifgurable limit), 
-    -- you can then select an entry in the history using telescope or fzf-lua which then gets populated in a register of your choice.
-    {
-      "AckslD/nvim-neoclip.lua",
-      commit = "4e406ae0f759262518731538f2585abb9d269bac",
-      dependencies = {
-        { "kkharji/sqlite.lua", commit = "b7e28c8463254c46a8e61c52d27d6a2040492fc3", module = "sqlite" }, -- Required  -- SQLite/LuaJIT binding and a highly opinionated wrapper for storing, retrieving, caching, and persisting SQLite databases
-        { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" },                                            -- Required  -- required for this neovim config, as I configured `neoclip` to be used with Telescope's fuzzy finder windows and previews - IMPORTANT: already installed explicitly
-        { "ibhagwan/fzf-lua", commit = "293e9086f9c546ba50f48a5966b95d450bffa94f" },                      -- Optional  -- fuzzy finder, which is NOT required of you are using `Telescope`
-      }
     },
 
     -- plugin that provides a configurable and feature-rich buffer/tabline for managing open buffers.

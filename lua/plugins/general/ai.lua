@@ -9,7 +9,6 @@ local Helpers = require("utils.helpers")
 return {
   "jackMort/ChatGPT.nvim",
   enabled = Helpers.to_boolean(os.getenv("NVIM_ENABLE_GPT")) == true,
-  lazy = false,
   keys = {
     { "gpt", "<cmd>ChatGPT<cr>", mode = "n", desc = "Open ChatGPT window" },
     { "gpta", "<cmd>ChatGPTActAs<cr>", mode = "n", desc = "Open prompt prepared ChatGPT window (adopting a persona)" },

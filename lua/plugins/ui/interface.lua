@@ -2,9 +2,6 @@
 --?                             UI Setup                            ?--
 --* --------------------------------------------------------------- *--
 
--- IMPORTANT: all fonts are required to be patched to be able to be rendered by the terminal, already patched fonts are available at https://github.com/gh0stsrc/.fonts
--- TODO: move UI components to other files to reduce the overall size of this file
-
 -- NOTE: inform neovim to treat the `Netrw` plugin as if it was already loaded, preventing it from actually being loaded when launching neovim; required to load nvim-tree instead
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -23,91 +20,6 @@ local log_lvl_map = {
 }
 
 return {
-  --* ------------------------------------ *--
-  --?           nvim-web-devicons          ?--
-  --* ------------------------------------ *--
-  {
-    "nvim-tree/nvim-web-devicons",
-    lazy = false,
-    -- NOTE: override icons based on patched Ubuntu Nerd Fonts
-    opts = {
-      override = {
-        go = {
-            icon = "󰟓"
-          },
-          md = {
-          icon = "󰽛"
-        },
-        python = {
-            icon = "󰌠"
-        },
-          rs = {
-            icon = ""
-        },
-        tf = {
-          icon = "󱁢"
-        },
-        tfvars = {
-          icon = "󱁢"
-        },
-        ts = {
-            icon = "󰛦"
-        },
-        lua = {
-            icon = "󰢱"
-        },
-        yaml = {
-            icon = ""
-        },
-        license = {
-            icon = "󰿃"
-        },
-        makefile = {
-            icon = "󰛕"
-        },
-      },
-
-      override_by_filename = {
-        [".gitignore"] = {
-          icon = "󰊢"
-        },
-        [".gitconfig"] = {
-          icon = "󰊢"
-        },
-        [".gitcommit"] = {
-          icon = "󰊢"
-        },
-        [".gitattributes"] = {
-          icon = "󰊢"
-        },
-        [".bashrc"] = {
-          icon = ""
-        },
-        [".bash_profile"] = {
-          icon = ""
-        },
-      },
-
-      override_by_extension = {
-        ["sh"] = {
-          icon = ""
-        },
-        ["git"] = {
-            icon = "󰊢"
-          },
-        ["Dockerfile"] = {
-            icon = ""
-          },
-      };
-    }
-  },
-  --* ------------------------------------ *--
-  --?               codicons               ?--
-  --* ------------------------------------ *--
-  {
-    "mortepau/codicons.nvim", -- NOTE: codicons is a dependency of dapui, which leverages codicons as part of the UI's debugger pane
-    lazy = false,
-  },
   --* ------------------------------------ *--
   --?               nvim-tree              ?--
   --* ------------------------------------ *--
@@ -145,6 +57,7 @@ return {
   --* ------------------------------------ *--
   {
     "rcarriga/nvim-notify", -- WARN: nvim-notify is set as the default noftication mechanism for all plugins that use the vim.notify function (see core.lua for the override)
+    -- priority = 1000,
     config = function ()
       -- load notify as a telescope extension
       require("telescope").load_extension("notify")
@@ -160,6 +73,9 @@ return {
             TRACE   = "󰛤 ",
         }
       })
+    -- NOTE: other plugins can use notification windows by setting the nvim-notify plugin as your default notify function
+    vim.notify = require("notify")
+    Logger = require("utils.logger")
     end
   },
   --* ------------------------------------ *--

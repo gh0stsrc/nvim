@@ -1,2 +1,2 @@
-require("plugins2.clipboard.neoclip")
+-- require("plugins2.clipboard.neoclip")
 

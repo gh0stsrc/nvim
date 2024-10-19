@@ -173,16 +173,16 @@ vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { de
 --* --------------------------------------------------------------- *--
 
 --* dap-ui toggle keybindings
-vim.keymap.set("n", "<leader>du", require("dapui").toggle)
+-- vim.keymap.set("n", "<leader>du", require("dapui").toggle)
 
 --* general debugger functioanlity key bindings
-vim.keymap.set("n", "<leader>db", require("dap").toggle_breakpoint)
-vim.keymap.set("n", "<leader>dc", require("dap").continue)
-vim.keymap.set("n", "<leader>do", require("dap").step_over)
-vim.keymap.set("n", "<leader>di", require("dap").step_into)
-vim.keymap.set("n", "<leader>d0", require("dap").step_out)
-vim.keymap.set("n", "<leader>dl", require("dap").run_last)
-vim.keymap.set("n", "<leader>dr", function() require("dap").repl.toggle() end)
+-- vim.keymap.set("n", "<leader>db", require("dap").toggle_breakpoint)
+-- vim.keymap.set("n", "<leader>dc", require("dap").continue)
+-- vim.keymap.set("n", "<leader>do", require("dap").step_over)
+-- vim.keymap.set("n", "<leader>di", require("dap").step_into)
+-- vim.keymap.set("n", "<leader>d0", require("dap").step_out)
+-- vim.keymap.set("n", "<leader>dl", require("dap").run_last)
+-- vim.keymap.set("n", "<leader>dr", function() require("dap").repl.toggle() end)
 
 
 --* --------------------------------------------------------------- *--

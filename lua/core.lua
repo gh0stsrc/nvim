@@ -9,7 +9,7 @@
 -- vim.g.loaded_netrwPlugin = 1
 
 -- NOTE: set nvim-notify as the default noftication mechanism for all plugins that use vim.notify function (e.g. telescope)
-vim.notify = require("notify")
+-- vim.notify = require("notify")
 
 --* --------------------------------------------------------------- *--
 --?                        Vim Customizations                       ?--
