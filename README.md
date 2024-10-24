@@ -174,32 +174,25 @@ To view the currently installed language servers, simply enter the `:Mason` comm
 >If LSP functionality is not working for a newly added language server, add an explicity setup call for the particular language server (e.g. ```lua lspconfig.<server>.setup({})``` ) within the `nvim-lspconfig` config function.
 
 
-## 💻 Terminal UI (TUI) Extensions
+## 💻 Terminal UI (TUI) Integration - Extensions
+
+Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI apps. The respective TUI key bindings will only function if the underlying apps are installed. Once installed, simply use [which-key](#🔎-key-bindings-which-key) to discover the appropriate key bindings and have fun with TUIs.
+
+>[!TIP]
+> The pattern used for the integration of TUIs with Neovim can be followed to add additional TUIs as desired. You may need to tweak things a little bit depending on how the TUI behaves; however, it shouldn't be too tricky.
 
 - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
   - `lazygit` is a **_NOT_** a Neovim plugin, but rather a simple terminal UI for Git commands, built with Go. It offers a more visual and interactive way to manage and visualize Git repositories directly from the terminal, without needing to remember or type out individual Git commands.
-  - **Features:**
-    - **_Interactive UI_**: lazygit provides a visual interface in the terminal, where you can see the status of your repository, such as changed files, branches, commits, and stashes.
-    - **_Key Bindings_**: It offers various key bindings for common Git tasks. For example, you can stage files, commit changes, switch branches, and more, all with a few key presses.
-    - **_Commit Visualization_**: lazygit allows you to view a detailed log of commits, where you can navigate through your commit history interactively.
-    - **_File Diff_**: It shows a side-by-side diff of the changes in your files, making it easier to understand what has been modified.
-    - **_Stashing_**: You can quickly stash your changes and apply or pop stashes directly from the interface.
-    - **_Merge Conflict Resolution_**: lazygit provides tools for resolving merge conflicts, showing the conflicting changes and allowing you to choose which changes to accept.
-    - **_Customization_**: lazygit offers a range of configuration options, including custom key bindings, themes, and other preferences.
 
 - [derailed/k9s](https://github.com/derailed/k9s)
   - `k9s` is a popular open-source terminal-based console (TUI) for managing and interacting with Kubernetes clusters. It provides a powerful and convenient way to view, navigate, and manipulate Kubernetes resources and clusters directly from your terminal. K9s is designed to simplify Kubernetes administration tasks and provide real-time insights into your cluster.
-  - **Features:**
-    - **_Interactive User Interface_**: K9s offers an interactive, ncurses-based user interface that displays your cluster's resources in a tabular format, making it easy to browse and manage them.
-    - **_Resource Navigation_**: You can navigate through various Kubernetes resources, including pods, services, deployments, configmaps, and more, using keyboard shortcuts.
-    - **_Resource Details_**: K9s provides detailed information about selected resources, including logs, events, and YAML manifests.
-    - **_Resource Operations_**: You can perform actions on resources, such as deleting, scaling, and editing, directly from the K9s interface.
-    - **_Context and Namespace Switching_**: K9s allows you to switch between different Kubernetes contexts and namespaces, making it convenient for managing multiple clusters or namespaces.
-    - **_Search and Filter_**: You can search for specific resources and filter them based on different criteria.
-    - **_Customization_**: K9s is highly customizable and supports configuration files, allowing you to tailor it to your needs.
 
 
 ## 📦 Nvim Config Environment Variables
+ 
+ WHY do we have them???
+
+
  - `NVIM_LOG_LVL`: by setting this environment variable to either ["TRACE" | "DEBUG" | "INFO" | "WARN" | "ERROR" | "OFF" ], the [`rcarriga/nvim-notify`](https://github.com/rcarriga/nvim-notify) plugin will be configured to display notifications upto the desired log level. If the env var `NVIM_LOG_LVL` is not set, the log level is deafult to `INFO`.
 
  Neovim will open with debugging info, such as the compatible clipboard providers that have been detected, etc.
