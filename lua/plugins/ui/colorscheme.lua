@@ -57,7 +57,7 @@ return {
     "ellisonleao/gruvbox.nvim",
     tag = "2.0.0",
     lazy = false,
-    priority = 998,
+    priority = 999,
     setup = true,
     config = function ()
       --* ------------------------------------ *--

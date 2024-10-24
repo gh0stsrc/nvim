@@ -1,8 +1,8 @@
 --* --------------------------------------------------------------- *--
---?                          Debugger Setup                         ?--
+--?                            Debugging                            ?--
 --* --------------------------------------------------------------- *--
 
--- NOTE: 
+-- NOTE:
 --           - dap (nvim-dap) is a generic protocol for neovim that will interface with various debuggers
 --           - simply integrate the debugger of your choice for the language of use and configure their respective setup configurations, reference dap-go below
 
@@ -18,7 +18,7 @@ local enableNvimDapGo = false
 -- TODO: fix above mentioned bug
 vim.notify = require("notify") -- NOTE: related to the above bug, need to set default vim notifications to use nvim-notify
 
--- if the dlv debugger is not present on the system, inform the user via a notification 
+-- if the dlv debugger is not present on the system, inform the user via a notification
 if not command_exists("dlv") then
   async.run(function ()
     vim.notify("The delve debugger aka `dlv`, was NOT found on your system. `dlv` is required by `nvim-dap-go`. The `nvim-dap-go` plugin will not be loaded until `dlv` is present on your system", vim.log.levels.WARN, {title = "neotuesz"})
@@ -27,7 +27,7 @@ if not command_exists("dlv") then
 else
   enableNvimDapGo = true
   async.run(function ()
-    vim.notify("The delve debugger `dlv`, was found on your system. `nvim-dap-go` will be loaded once a respective keybinding is invoked", vim.log.levels.INFO, {title = "neoteusz"})
+    vim.notify("The delve debugger `dlv`, was found on your system. `nvim-dap-go` will be loaded once a respective keybinding is invoked", vim.log.levels.DEBUG, {title = "neoteusz"})
   end)
 end
 
@@ -38,7 +38,14 @@ return {
   --* ------------------------------------ *--
   {
     "leoluz/nvim-dap-go",
+    commit = "a5cc8dcad43f0732585d4793deb02a25c4afb766",
     enabled = enableNvimDapGo, -- NOTE: nvim-dap-go will only be installed if dlv installed on the system
+    dependencies = {
+      {
+        { "mfussenegger/nvim-dap", commit = "92dc531eea2c9a3ef504a5c8ac0decd1fa59a6a3" },
+        { "nvim-treesitter/nvim-treesitter", commit = "6f2ef910c2c320f27cf988cf4e688746f16f4f75" },
+      },
+    },
     opts = {
       -- Additional dap configurations can be added.
       -- dap_configurations accepts a list of tables where each entry
@@ -108,16 +115,16 @@ return {
         desc = "Debugger step out"
       },
       {
-        "<leader>dl",
+        "<leader>dr",
         function () require("dap").run_last() end,
         mode = "n",
         desc = "Debugger run last"
       },
       {
-        "<leader>dl",
+        "<leader>d-",
         function () require("dap").repl.toggle() end,
         mode = "n",
-        desc = "Debugger toggle repl"
+        desc = "Toggle debugger repl"
       },
     }
   },
@@ -126,15 +133,25 @@ return {
   --* ------------------------------------ *--
   {
     "folke/neodev.nvim",
-    opts = {
-      library = { plugins = { "nvim-dap-ui" }, types = true },
-    }
+    commit = "b094a663ccb71733543d8254b988e6bebdbdaca4",
+    config = function ()
+      require("neodev").setup({
+        library = { plugins = { "nvim-dap-ui" }, types = true },
+      })
+    end,
   },
   --* ------------------------------------ *--
   --?                 dapui                ?--
   --* ------------------------------------ *--
   {
     "rcarriga/nvim-dap-ui",
+    commit = "34160a7ce6072ef332f350ae1d4a6a501daf0159",
+    dependencies = {
+      { "mfussenegger/nvim-dap", commit = "92dc531eea2c9a3ef504a5c8ac0decd1fa59a6a3" },
+      { "folke/neodev.nvim", commit = "b094a663ccb71733543d8254b988e6bebdbdaca4" },
+      { "nvim-neotest/nvim-nio" },
+      { "mortepau/codicons.nvim", commit = "1b06e16e799809d886f9dda8e93f12133e18e392" }
+    },
     config = function ()
       require("dapui").setup()
     end,

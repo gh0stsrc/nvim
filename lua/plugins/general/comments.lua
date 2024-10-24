@@ -1,5 +1,5 @@
 --* --------------------------------------------------------------- *--
---?                     Comment Related Plugins                     ?--
+--?                           Commenting                            ?--
 --* --------------------------------------------------------------- *--
 
 return {
@@ -8,6 +8,12 @@ return {
   --* ------------------------------------ *--
   {
     "numToStr/Comment.nvim",
+    commit = "0236521ea582747b58869cb72f70ccfa967d2e89",
+    dependencies = {
+      { "MunifTanjim/nui.nvim", commit="c0c8e347ceac53030f5c1ece1c5a5b6a17a25b32" },
+      { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+      { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" }
+    },
     opts = {
       ignore = "^$"
     }
@@ -17,6 +23,7 @@ return {
   --* ------------------------------------ *--
   {
     "folke/todo-comments.nvim",
+    commit = "3094ead8edfa9040de2421deddec55d3762f64d1",
     lazy = false,
     opts = {
       --override icons and colours associated to comment keywords

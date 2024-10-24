@@ -5,7 +5,11 @@
 return {
   {
     "goolord/alpha-nvim",
+    commit = "234822140b265ec4ba3203e3e0be0e0bb826dff5",
     lazy = false,
+    config = function ()
+        require("alpha").setup(require("alpha.themes.dashboard").config)
+    end,
     opts = function ()
       local dashboard = require("alpha.themes.dashboard")
       dashboard.section.header.val = {
@@ -59,7 +63,7 @@ return {
          dashboard.button("q", "󰚌  Quit Neovim",         ":qa<CR>"),
       }
 
-      dashboard.section.footer.val = "[ let's get s#@% done! ]"
+      dashboard.section.footer.val = "[ Time to get s#@% done! ]"
       dashboard.section.footer.opts.hl = "Type"
       dashboard.section.header.opts.hl = "Include"
       dashboard.section.buttons.opts.hl = "Keyword"

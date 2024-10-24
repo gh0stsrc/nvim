@@ -33,7 +33,7 @@ end
 --             Neovim has no direct connection to the system clipboard. Instead it depends on a `provider` which transparently uses shell commands to communicate with the system 
 --             clipboard or any other clipboard backend 
 --
---             The presence of a working clipboard tool implicitly enables the '+' and '*' registers. neovim looks for these clipboard tools in order priority of :
+--             The presence of a working clipboard tool implicitly enables the `+` and `*` registers. neovim looks for these clipboard tools in order priority of :
 --               - g:clipboard
 --               - pbcop, pbpaste (macOS)
 --               - wl-copy, wl-paste (if $WAYLAND_DISPLAY is set)
@@ -46,12 +46,12 @@ end
 --               - tmux (if $TMUX is set)
 --
 --             This means that if xclip or xsel are installed and their dependent environment variable (i.e. $DISPLAY) defining which xserver display to attach to are present, 
---             neovim will implicitly create the necessary hooks and enable the required registers ('+', '*'). Ultimately resulting in a turn-key clipboard solution for GUI versions 
+--             neovim will implicitly create the necessary hooks and enable the required registers (`+`, `*`). Ultimately resulting in a turn-key clipboard solution for GUI versions 
 --             of GUI-based linux distributions (e.g. ubuntu + xserver)
 
 -- NOTE: 
 --        - if tmux is the only provider, neovim will implicitly enable hooks and registers for the clipboard; however the key bindings below will not be enabled; to do so
---          you will need to set the `NVIM_CLIP` environment variable to any permutation of upper and lower case characters of 'tmux'.
+--          you will need to set the `NVIM_CLIP` environment variable to any permutation of upper and lower case characters of `tmux`.
 --        - this impacts terminal only/headless users (no use of xserver - headless server - No GUI)
 
 -- check if the user explitily would like to leverage tmux as the clipboard provider OR if the only provider available is tmux AND ensure that a tmux session is attached

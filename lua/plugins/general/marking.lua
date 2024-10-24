@@ -6,10 +6,15 @@ return {
     -- Harpoon plugin configuration
   {
     "ThePrimeagen/harpoon",
-    lazy = false,
+    branch = "master",
+    commit = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+      { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" }
+    },
     config = function()
       -- HACK: loading harpoon as a telescope extension - this will only work for harpoon v1
-      require("telescope").load_extension('harpoon')
+      require("telescope").load_extension("harpoon")
       require("harpoon").setup({
         global_settings = {
           -- set marks specific to each git branch inside git repository
@@ -19,15 +24,15 @@ return {
     end,
     keys = {
       {
-        "hx",
+        "<leader>hx",
         function()
           require("harpoon.mark").add_file()
         end,
         mode = "n",
-        desc = "Harpoon file",
+        desc = "Harpoon file (mark)",
       },
       {
-        "hr",
+        "<leader>hr",
         function()
           require("harpoon.mark").rm_file()
         end,
@@ -35,7 +40,7 @@ return {
         desc = "Remove harpoon from file",
       },
       {
-        "hn",
+        "<leader>hn",
         function()
           require("harpoon.ui").nav_next()
         end,
@@ -43,7 +48,7 @@ return {
         desc = "Navigate to the next harpooned file",
       },
       {
-        "hp",
+        "<leader>hp",
         function()
           require("harpoon.ui").nav_prev()
         end,
@@ -51,10 +56,10 @@ return {
         desc = "Navigate to the previous harpooned file",
       },
       {
-        "hm",
-        "<cmd>Telescope harpoon marks<cr>",
+        "<leader>sm",
+        function () vim.cmd("Telescope harpoon marks") end,
         mode = "n",
-        desc = "Show harpoons",
+        desc = "[S]earch harpoons [M]arks",
       }
     },
   },

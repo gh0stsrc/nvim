@@ -1,5 +1,5 @@
 --* --------------------------------------------------------------- *--
---?                          Icons Setup                            ?--
+--?                              Icons                              ?--
 --* --------------------------------------------------------------- *--
 
 -- IMPORTANT: all fonts are required to be patched to be able to be rendered by the terminal, already patched fonts are available at https://github.com/gh0stsrc/.fonts
@@ -10,6 +10,7 @@ return {
   --* ------------------------------------ *--
   {
     "nvim-tree/nvim-web-devicons",
+    commit = "f0267921c845c42685968401bc49aa65e18d3e09",
     priority = 1000,
     lazy = false,
     -- NOTE: override icons based on patched Ubuntu Nerd Fonts
@@ -88,8 +89,22 @@ return {
   --?               codicons               ?--
   --* ------------------------------------ *--
   {
-    "mortepau/codicons.nvim", -- NOTE: codicons is a dependency of dapui, which leverages codicons as part of the UI's debugger pane
-    priority = 999,
+    "mortepau/codicons.nvim", -- NOTE: codicons is a dependency of dapui, which leverages codicons as part of the UI"s debugger pane
+    priority = 1000,
     lazy = false,
+    config = function ()
+      require("codicons").setup()
+    end
+  },
+  --* ------------------------------------ *--
+  --?              mini.icons              ?--
+  --* ------------------------------------ *--
+  {
+    "echasnovski/mini.icons", -- NOTE: mini.icons is an optional dependency of whichkey
+    priority = 1000,
+    lazy = false,
+    config = function ()
+      require("mini.icons").setup()
+    end,
   },
 }
