@@ -194,10 +194,6 @@ Thank you for stopping and have fun!
   - `cmp-buffer` is another source for the hrsh7th/nvim-cmp completion framework. While hrsh7th/cmp-nvim-lsp provides completion suggestions from Neovim’s built-in Language Server Protocol (LSP) client, cmp-buffer provides completion suggestions from the content of the currently open buffers.
   - This means that cmp-buffer will suggest words and phrases that exist in your currently open buffers, regardless of whether they are recognized as symbols or identifiers by a language server. This can be useful when working with any kind of text, not just code, as it can suggest completions based on what you have already typed or have open in another buffer.
 
-- [hrsh7th/cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
-  - `cmp-nvim-lua` is another source plugin for the `hrsh7th/nvim-cmp` auto-completion framework for Neovim. As the name suggests, cmp-nvim-lua provides Lua-specific completions, likely based on the Lua runtime and libraries available within the Neovim environment.
-  - This means that when you're writing Lua code, particularly when you're working with your Neovim configuration (which is commonly written in Lua), this source will provide autocompletion suggestions relevant to the Lua language and Neovim’s Lua API.
-
 - [L3MON4D3/Luasnip](https://github.com/L3MON4D3/LuaSnip)
   - `Luasnip` is a snippet engine plugin for Neovim. It's a Lua-based, fast, and extensible snippet solution for Neovim that allows you to define and insert snippets of text quickly, enhancing coding efficiency. Snippets are small pieces of reusable code or text that you can insert into your files, and they often have placeholders that you can jump between and fill out.
 
@@ -274,38 +270,18 @@ Thank you for stopping and have fun!
 ---
 ### Language Severs, LSPs, Linters & Formatters
 
-- [bash-language-server (bashls)](https://github.com/bash-lsp/bash-language-server)
-  - `bash-language-server` is a language server for Bash, implemented by the bash-lsp project.
+The base setup comes with a small number language servers enabled; however, you can easily extend the number of language servers with minimal effort. Simply update the `ensure_installed` lua table within the `mason-lspconfig` setup function to include the names of your desired language servers.
 
-- [dockerfile-language-server (dockerls)](https://github.com/rcjsuen/dockerfile-language-server-nodejs)
-  -  `dockerfile-language-server` is a language server implementation for Dockerfiles, written in TypeScript.
-  
-- eslint-lsp (eslint)
-  - `eslint-lsp` refers to the integration of ESLint with Language Server Protocol (LSP). ESLint is a widely-used tool in the JavaScript (and TypeScript) community for identifying and fixing problems in your code, and it’s commonly integrated into development workflows to improve code quality and maintain coding standards
+To view the currently installed language servers, simply enter the `:Mason` command within neovim.
+![mason](assets/mason-lsp.png)
 
-- [gopls](https://github.com/golang/tools/tree/master/gopls)
-  - `gopls` (pronounced "go please") is the official language server for the Go programming language. It's developed by the Go team, and it provides IDE-like features to text editors and integrated development environments (IDEs) that support the Language Server Protocol (LSP).
+>[!NOTE] 
+>The list of available language servers can be observed within [mason-lspconfig documentation](https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers)
 
-- [helm-ls (helm_ls)](https://github.com/mrjosh/helm-ls)
-  - `helm-ls` is an implementation of a Language Server Protocol (LSP) for the Helm templating language.
-    
-- [pyright](https://github.com/microsoft/pyright)
-  - `pyright` is a static type checker and LSP for Python, developed by Microsoft. It is designed to address Python’s dynamic typing by using static type annotations, allowing developers to catch type errors before runtime, improve code quality, and enhance developer productivity. It is written in TypeScript and runs on Node.js.
-
-- [terraform-ls (terraformls)](https://github.com/hashicorp/terraform-ls)
-  - `terraform-ls` is the official Language Server Protocol (LSP) implementation for Terraform, developed by HashiCorp.
-
-- [typescript-language-server (tsserver)](https://github.com/typescript-language-server/typescript-language-server)
-  - `typescript-language-server` is an implementation of the Language Server Protocol (LSP) for TypeScript. It's built on top of the TypeScript compiler to provide rich language features, like auto-completions and diagnostics, to editors and Integrated Development Environments (IDEs) that support the LSP.
-
-- [rust-analyzer (rust_analyzer)](https://github.com/rust-lang/rust-analyzer)
-  - `rust-analyzer` is an implementation of a Language Server Protocol (LSP) for the Rust programming language. It is developed by the Rust community with the intention of making it the official Rust language server, eventually replacing the Rust Language Server (RLS).
-
-- [lua-language-server](https://github.com/LuaLS/lua-language-server)
-  - `lua-language-server` (lua_ls) is a language server for the Lua programming language. Using the LSP protocol it provides completion, goto definition, find references, rename refactoring, diagnostics, and more.
-
-- [marksman](https://github.com/artempyanykh/marksman)
-  - `marksman` is a program that integrates with your editor to assist you in writing and maintaining your Markdown documents. Using the LSP protocol it provides completion, goto definition, find references, rename refactoring, diagnostics, and more.
+>[!TIP]
+> The default configuration of language server should be automatically handled by `mason-lspconfig`; however, some language servers may also require an explicit `setup({})` call to properly initialize. 
+>
+>If LSP functionality is not working for a newly added language server, add an explicity setup call for the particular language server (e.g. ```lua lspconfig.<server>.setup({})``` ) within the `nvim-lspconfig` config function.
 
 ---
 ### Terminal UI (TUI) Extensions

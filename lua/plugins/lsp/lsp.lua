@@ -113,11 +113,13 @@ return {
         })
 
         -- NOTE: default capabilties have already been configured globally for all LSP servers by setting `lspconfig_defaults.capabilities` earlier, ONLY custom setting should be added to particular LSP server setup configs
+
         lspconfig.gopls.setup({})
         lspconfig.lua_ls.setup({})
         lspconfig.bashls.setup({})
         lspconfig.marksman.setup({})
         lspconfig.terraformls.setup({})
+        
         -- Auto format on save for tf files
         vim.api.nvim_create_autocmd({"BufWritePre"}, {
           pattern = {"*.tf", "*.tfvars"},
