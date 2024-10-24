@@ -64,8 +64,6 @@ In addition, it should be noted that this configuration and the instructions out
 
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
   - `lualine` is a blazing fast and easy to configure neovim statusline written in Lua.
-  - <code style="color : red"><b>Dependencies</b></code> 
-    - `nvim-web-devicons`
 
 - [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
   - `nvim-web-devicons` is a lua fork of vim-devicons. This plugin provides the same icons as well as colors for each icon.
@@ -169,6 +167,7 @@ Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI 
 
 
 ## 📦 Nvim Config Environment Variables
+
  
  WHY do we have them???
 
@@ -202,25 +201,48 @@ by setting this environment variable to `true`, Neovim will open with debugging 
   - To manually override the `gruvbox` colorscheme to render comments in green text, when either treesitter or LSPs are **_NON_**-FUNCTIONAL, set the environment variable to `true`.
 
 
+## 🛠️ Requirements
 
-## 🛠️ Nvim Config Installation Prerequisites
+### Required
 
-**Terminal Font Related**
-  The configuration file `init.lua` explictly references a number of Patched fonts and plugins like `nvim-dap-ui`, `diffview` and `ChatGPT.nvim` leverage implictly do aswell. 
-  
-  If you do not either patch or get the required patched fonts, `Nerd Fonts` (e.g. Ubuntu Nerd Font) and `Codicons`, you will see _unknown symbols_ and/or warnings from the aforementioned plugins.
+- Neovim >= 0.9.4
+- Git >= 2.19.0 (for partial clones support)
+- A patched Nerd Font - To see how to patch fonts, refer to the [References Section](#references)
 
-  To see how to patch fonts, refer to the [References Section](#references)  
+### Optional ###
 
-**Lazy Git**
-  See the `lazygit` extension subsection in [Terminal UI (TUI) Extensions](#terminal-ui-tui-extensions), to learn more about this git worklfow tool and how it works **_amazingly well_** with `toggleterm`.
+- [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
 
-  If you decide to join the dark side, all you need to do is simply install `lazygit` on your system ([follow their installation guide](https://github.com/jesseduffield/lazygit/tree/master#installation)) and the neovim config will automatically bootstrap `toggleterm` with `lazygit` for you. A dedicated floating terminal window will be available to toggle using the keybindings outlined in the [Noteworthy Key Bindings](#noteworthy-key-bindings) section of this document.
+- [derailed/k9s](https://github.com/derailed/k9s)
 
-**k9s**
-  See the `k9s` extension subsection in [Terminal UI (TUI) Extensions](#terminal-ui-tui-extensions), to learn more about this amazing TUI for interacting with k8s clusters. Its time to leave the plain jane `kubectl` cli in the dust!
+- **ChatGPT Nvim Plugin Related**
+  - If you would like use the `jackMort/ChatGPT.nvim` plugin to integrate neovim with the OpenAI's ChatGPT, there are a couple of prerequisites
+    - you will need a valid OpenAI API Key
+    - you will have to securely store said key - this will dictate how you configure the `chatgpt` setup config
+      - if you would like to leverage an enviornment variable (env var), create an env var named `OPENAI_API_KEY` in your respective shell's _rc_ (i.e. Run Commands) file.
+        - e.g.) `export OPENAI_API_KEY={SECRET_KEY}`
+      - **_OTHERWISE_**, you can leverage password manager or keystore to store the API key and have the `chatgpt` plugin retrieve it a system command.
+        - if you decide to go down this route, you will need to update the `chatgpt` setup config to invoke a command under the `api_key_cmd` config field. Examples below: <br /><br />
 
-  Simply install `k9s` on your system ([follow their installation guide](https://github.com/derailed/k9s#installation)) and the neovim config will automatically bootstrap `toggleterm` with `k9s` for you. A dedicated floating terminal window will be available to toggle using the keybindings outlined in the [Noteworthy Key Bindings](#noteworthy-key-bindings) section of this document.
+          The following configuration would use 1Passwords CLI, `op`, to fetch the API key from the `credential` field of the `OpenAI` entry.
+
+          ```lua
+          require("chatgpt").setup({
+            -- example using the 1Password Secret Store CLI
+            api_key_cmd = "op read op://private/OpenAI/credential --no-newline"
+          })
+          ```
+          The following configuration would use `GPG` to decrypt a local file containing the
+          API key.
+
+          ```lua
+          local home = vim.fn.expand("$HOME")
+          require("chatgpt").setup({
+              -- example using GPG
+              api_key_cmd = "gpg --decrypt " .. home .. "/secret.txt.gpg"
+          })
+          ```
+
 
 **Nvim Clipboard Provider Related**
 
@@ -251,47 +273,15 @@ by setting this environment variable to `true`, Neovim will open with debugging 
 
   - to see more details regarding how neovim clipboard providers integrate with neovim and their respective functions, issue the `:help g:clipboard` command 
 
-**Python Related**
-  - If you will be using the Python LSP, you may notice a number of warnings related to Python when you execute the `:checkhealth` command in neovim. These warnings should be recommend optional resolutions; however, if the issues no longer are optional or if you encounter issues with the Python env or LSP, Install the follow modules globally and address any other issues raised:
-    - **`pythonX-pip`:**
-      ```bash
-      # install pip module for python3 at the system level
-      sudo apt install python3_pip
-      ```
 
-**ChatGPT Nvim Plugin Related**
-  - If you would like use the `jackMort/ChatGPT.nvim` plugin to integrate neovim with the OpenAI's ChatGPT, there are a couple of prerequisites
-    - you will need a valid OpenAI API Key
-    - you will have to securely store said key - this will dictate how you configure the `chatgpt` setup config
-      - if you would like to leverage an enviornment variable (env var), create an env var named `OPENAI_API_KEY` in your respective shell's _rc_ (i.e. Run Commands) file.
-        - e.g.) `export OPENAI_API_KEY={SECRET_KEY}`
-      - **_OTHERWISE_**, you can leverage password manager or keystore to store the API key and have the `chatgpt` plugin retrieve it a system command.
-        - if you decide to go down this route, you will need to update the `chatgpt` setup config to invoke a command under the `api_key_cmd` config field. Examples below: <br /><br />
-
-          The following configuration would use 1Passwords CLI, `op`, to fetch the API key from the `credential` field of the `OpenAI` entry.
-
-          ```lua
-          require("chatgpt").setup({
-            -- example using the 1Password Secret Store CLI
-            api_key_cmd = "op read op://private/OpenAI/credential --no-newline"
-          })
-          ```
-          The following configuration would use `GPG` to decrypt a local file containing the
-          API key.
-
-          ```lua
-          local home = vim.fn.expand("$HOME")
-          require("chatgpt").setup({
-              -- example using GPG
-              api_key_cmd = "gpg --decrypt " .. home .. "/secret.txt.gpg"
-          })
-          ```
 
 
 ## 📋 Nvim Config Validation
+
 After addressing [Nvim Config Installation Prerequisites](#nvim-config-installation-prerequisites), you should check the overall status of your neovim setup by excuting the `:checkhealth` command
+
 The `:checkhealth` command runs a series of diagnostic tests to check the health of your Neovim installation. If it uncovers any problems, it usually offers suggestions on how to fix them, or where to go to learn more.
-If you find and relvant `Warnings` which may impact your nvim setup or experience, OR any `Errors`, follow the guidance provide and address their resolution accordingly.
+If you find and relvant *Warnings* which may impact your nvim setup or experience, OR any *Errors*, follow the guidance provide and address their resolution accordingly.
 
 
 ## 🔎 Key Bindings - Which Key
