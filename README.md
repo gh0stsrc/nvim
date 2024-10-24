@@ -9,14 +9,14 @@ Whether you're working on large projects or quick scripts, this setup helps your
 Thank you for stopping by and have fun!
 
 
-## Note
+## 📋 Note
 
 Version `1.x.x` of Neoteusz leveraged [packer.nvim](https://github.com/wbthomason/packer.nvim) as the package manager; however, packer is no longer actively maintained. `v2.x.x` and beyond will leverage [lazy.nvim](https://github.com/folke/lazy.nvim/tree/stable) as the defacto package manager (unless stated otherwise).
 
 In addition, it should be noted that this configuration and the instructions outlined, were implemented on a `Ubuntu 24.04 LTS (Noble Numbat)` system using a `v0.9.4` neovim app image; instructions may need to be tailored for other linux distributions or neovim versions.
 
 
-## Plugin Inventory
+## 🔌 Plugin Inventory
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim):
     - `lazy.nvim` is a modern plugin manager for Neovim.
@@ -158,7 +158,7 @@ In addition, it should be noted that this configuration and the instructions out
   - `nvim-tree` is a popular file explorer plugin for Neovim, written in Lua. It provides a visual tree-like structure to navigate your file system, making it easier to browse, open, and manage files and directories directly from Neovim. This plugin is designed to be highly customizable and extendable, fitting seamlessly into a modern Neovim setup that utilizes Lua for configuration and plugins.
 
 ---
-## Language Severs, LSPs, Linters & Formatters
+## 🚀 Language Severs, LSPs, Linters & Formatters
 
 The base setup comes with a small number language servers enabled; however, you can easily extend the number of language servers with minimal effort. Simply update the `ensure_installed` lua table within the `mason-lspconfig` setup function to include the names of your desired language servers.
 
@@ -174,7 +174,7 @@ To view the currently installed language servers, simply enter the `:Mason` comm
 >If LSP functionality is not working for a newly added language server, add an explicity setup call for the particular language server (e.g. ```lua lspconfig.<server>.setup({})``` ) within the `nvim-lspconfig` config function.
 
 ---
-## Terminal UI (TUI) Extensions
+## 💻 Terminal UI (TUI) Extensions
 
 - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
   - `lazygit` is a **_NOT_** a Neovim plugin, but rather a simple terminal UI for Git commands, built with Go. It offers a more visual and interactive way to manage and visualize Git repositories directly from the terminal, without needing to remember or type out individual Git commands.
@@ -199,7 +199,7 @@ To view the currently installed language servers, simply enter the `:Mason` comm
     - **_Customization_**: K9s is highly customizable and supports configuration files, allowing you to tailor it to your needs.
 
 ---
-### Nvim Config Environment Variables
+## 📦 Nvim Config Environment Variables
  - `NVIM_LOG_LVL`: by setting this environment variable to either ["TRACE" | "DEBUG" | "INFO" | "WARN" | "ERROR" | "OFF" ], the [`rcarriga/nvim-notify`](https://github.com/rcarriga/nvim-notify) plugin will be configured to display notifications upto the desired log level. If the env var `NVIM_LOG_LVL` is not set, the log level is deafult to `INFO`.
 
  Neovim will open with debugging info, such as the compatible clipboard providers that have been detected, etc.
@@ -230,7 +230,7 @@ by setting this environment variable to `true`, Neovim will open with debugging 
 
 
 ---
-## Nvim Config Installation Prerequisites
+## 🛠️ Nvim Config Installation Prerequisites
 
 **Terminal Font Related**
   The configuration file `init.lua` explictly references a number of Patched fonts and plugins like `nvim-dap-ui`, `diffview` and `ChatGPT.nvim` leverage implictly do aswell. 
@@ -315,7 +315,7 @@ by setting this environment variable to `true`, Neovim will open with debugging 
           ```
 
 ---
-## Nvim Config Validation
+## 📋 Nvim Config Validation
 
 After addressing [Nvim Config Installation Prerequisites](#nvim-config-installation-prerequisites), you should check the overall status of your neovim setup by excuting the `:checkhealth` command
 The `:checkhealth` command runs a series of diagnostic tests to check the health of your Neovim installation. If it uncovers any problems, it usually offers suggestions on how to fix them, or where to go to learn more.
@@ -323,12 +323,10 @@ If you find and relvant `Warnings` which may impact your nvim setup or experienc
 
 
 ---
-## Noteworthy Key Bindings
+## 🔎 Key Bindings - Which Key
 
 >[!NOTE]
 > by default the leader key binding is set to the `<space>` key, feel free to change it ;)
-
-## Which Key
 
 which-key is used to ... 
 
@@ -348,7 +346,7 @@ To allow for a seamless experience with auto-completion, related keys were not r
 LIST HERE!
 
 ---
-## References
+## 📚 References
 
 - [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol)
 
