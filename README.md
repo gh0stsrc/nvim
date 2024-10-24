@@ -157,7 +157,7 @@ In addition, it should be noted that this configuration and the instructions out
 - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
   - `nvim-tree` is a popular file explorer plugin for Neovim, written in Lua. It provides a visual tree-like structure to navigate your file system, making it easier to browse, open, and manage files and directories directly from Neovim. This plugin is designed to be highly customizable and extendable, fitting seamlessly into a modern Neovim setup that utilizes Lua for configuration and plugins.
 
----
+
 ## 🚀 Language Severs, LSPs, Linters & Formatters
 
 The base setup comes with a small number language servers enabled; however, you can easily extend the number of language servers with minimal effort. Simply update the `ensure_installed` lua table within the `mason-lspconfig` setup function to include the names of your desired language servers.
@@ -173,7 +173,7 @@ To view the currently installed language servers, simply enter the `:Mason` comm
 >
 >If LSP functionality is not working for a newly added language server, add an explicity setup call for the particular language server (e.g. ```lua lspconfig.<server>.setup({})``` ) within the `nvim-lspconfig` config function.
 
----
+
 ## 💻 Terminal UI (TUI) Extensions
 
 - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
@@ -198,7 +198,7 @@ To view the currently installed language servers, simply enter the `:Mason` comm
     - **_Search and Filter_**: You can search for specific resources and filter them based on different criteria.
     - **_Customization_**: K9s is highly customizable and supports configuration files, allowing you to tailor it to your needs.
 
----
+
 ## 📦 Nvim Config Environment Variables
  - `NVIM_LOG_LVL`: by setting this environment variable to either ["TRACE" | "DEBUG" | "INFO" | "WARN" | "ERROR" | "OFF" ], the [`rcarriga/nvim-notify`](https://github.com/rcarriga/nvim-notify) plugin will be configured to display notifications upto the desired log level. If the env var `NVIM_LOG_LVL` is not set, the log level is deafult to `INFO`.
 
@@ -229,7 +229,7 @@ by setting this environment variable to `true`, Neovim will open with debugging 
   - To manually override the `gruvbox` colorscheme to render comments in green text, when either treesitter or LSPs are **_NON_**-FUNCTIONAL, set the environment variable to `true`.
 
 
----
+
 ## 🛠️ Nvim Config Installation Prerequisites
 
 **Terminal Font Related**
@@ -314,17 +314,14 @@ by setting this environment variable to `true`, Neovim will open with debugging 
           })
           ```
 
----
-## 📋 Nvim Config Validation
 
+## 📋 Nvim Config Validation
 After addressing [Nvim Config Installation Prerequisites](#nvim-config-installation-prerequisites), you should check the overall status of your neovim setup by excuting the `:checkhealth` command
 The `:checkhealth` command runs a series of diagnostic tests to check the health of your Neovim installation. If it uncovers any problems, it usually offers suggestions on how to fix them, or where to go to learn more.
 If you find and relvant `Warnings` which may impact your nvim setup or experience, OR any `Errors`, follow the guidance provide and address their resolution accordingly.
 
 
----
 ## 🔎 Key Bindings - Which Key
-
 >[!NOTE]
 > by default the leader key binding is set to the `<space>` key, feel free to change it ;)
 
@@ -345,7 +342,7 @@ To allow for a seamless experience with auto-completion, related keys were not r
 
 LIST HERE!
 
----
+
 ## 📚 References
 
 - [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol)
