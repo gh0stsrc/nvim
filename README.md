@@ -26,67 +26,18 @@ In addition, it should be noted that this configuration and the instructions out
 
 ### Optional ###
 
-- [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
+- Terminal UIs (TUIs):
+    - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
+    - [derailed/k9s](https://github.com/derailed/k9s)
 
-- [derailed/k9s](https://github.com/derailed/k9s)
+    - for more information on Neoteusz and the integration of TUIs, please see the [TUI section](#-terminal-ui-tui-integration---extensions)
 
-- **ChatGPT Nvim Plugin Related**
-  - If you would like use the `jackMort/ChatGPT.nvim` plugin to integrate neovim with the OpenAI's ChatGPT, there are a couple of prerequisites
-    - you will need a valid OpenAI API Key
-    - you will have to securely store said key - this will dictate how you configure the `chatgpt` setup config
-      - if you would like to leverage an enviornment variable (env var), create an env var named `OPENAI_API_KEY` in your respective shell's _rc_ (i.e. Run Commands) file.
-        - e.g.) `export OPENAI_API_KEY={SECRET_KEY}`
-      - **_OTHERWISE_**, you can leverage password manager or keystore to store the API key and have the `chatgpt` plugin retrieve it a system command.
-        - if you decide to go down this route, you will need to update the `chatgpt` setup config to invoke a command under the `api_key_cmd` config field. Examples below: <br /><br />
+- AI Assistant:
+    - In the interest of attempting to maintain minimalism for the readme, the AI Asstant configuration details are within their own [dedicated document](/docs/ai-assistant.md)
 
-          The following configuration would use 1Passwords CLI, `op`, to fetch the API key from the `credential` field of the `OpenAI` entry.
-
-          ```lua
-          require("chatgpt").setup({
-            -- example using the 1Password Secret Store CLI
-            api_key_cmd = "op read op://private/OpenAI/credential --no-newline"
-          })
-          ```
-          The following configuration would use `GPG` to decrypt a local file containing the
-          API key.
-
-          ```lua
-          local home = vim.fn.expand("$HOME")
-          require("chatgpt").setup({
-              -- example using GPG
-              api_key_cmd = "gpg --decrypt " .. home .. "/secret.txt.gpg"
-          })
-          ```
-
-
-**Nvim Clipboard Provider Related**
-
-  Neovim has no direct connection to the system clipboard. Instead it depends on a _provider_ which transparently uses shell commands to communicate with the system clipboard or any other clipboard backend 
-
-  - The clipboard experience varies depending on if you are using a headless version of a linux distribution or one that supports a GUI.
-    - **`XServer/GUI`:**
-      - if you are using a linux distro that has a GUI compoment, you can leverage a more robust and user friendly clipboard provider like `xclip` or `xsel`.
-      - The presence of a working clipboard tool such as  `xclip` or `xsel` will implictly enable the `+` and `*` registers. Basically just install xclip and neovim will automatically boostrap the clipboard provider allowing for automatiic integration.
-      
-    - **`Headless Linux Server`:**
-      -  ATM the current config really only supports `tmux` as a clipboard provider for headless linux distros. Clipboard providers such as `xclip` and `xsel` will not function as there is no 'display' to hook into (XServer is not present), thus are not viable options.
-      - if you are feeling savy, feel free into into other supported clipboard providers, which can support SSH forwarding and other functionality for headless
-      linux servers.
-
-  - It should be noted that the default behavior for `neovim` when it is invoked within a tmux session is to use the `tmux` _clipboard proivder_, unless a more suitable _provider_ is already installed (e.g. `xclip`, `xsel`).
-    - If you want to use `tmux` as the clipboard provider regardless if you already have another clipboard provider installed, you can set the `NVIM_CLIP` environment variable to `tmux` in your respective rc file.
-      ```bash
-      # entry in your repsective rc file (e.g. ~/.bashrc)
-      export NVIM_CLIP="tmux"
-      ```
-
-  - If you want nothing to do with the clipboard setup, ignore related config errors and allow neovim to implicitly handle things (which also could mean doing nothing), simply set the `NVIM_SKIP_CLIP` env var to `true` in your respective rc file.
-    ```bash
-    # entry in your repsective rc file (e.g. ~/.bashrc)
-    export NVIM_SKIP_CLIP=true
-    ```
-
-  - to see more details regarding how neovim clipboard providers integrate with neovim and their respective functions, issue the `:help g:clipboard` command 
+- Neovim Clipboard
+    - Neovim has no direct connection to the system clipboard. Instead it depends on a *provider* which transparently uses shell commands to communicate with the system clipboard or any other clipboard backend. This means that a clipboard is not functional off the bat and you have to inform Neovim of which clipboard provider you would like it to leverage
+    - In the interest of attempting to maintain minimalism for the readme, the Neovim clipboard configuration details are within their own [dedicated document](/docs/clipboard.md), please review it when you have a chance (or need clipboard)
 
 
 ## 🚀 Installation

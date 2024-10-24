@@ -1,4 +1,4 @@
-## 🚀 Language Severs, LSPs, Linters & Formatters
+# 🚀 Language Severs, LSPs, Linters & Formatters
 
 The base setup comes with a small number language servers enabled; however, you can easily extend the number of language servers with minimal effort. Simply update the `ensure_installed` lua table within the `mason-lspconfig` setup function to include the names of your desired language servers.
 
