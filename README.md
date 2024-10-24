@@ -30,21 +30,9 @@ Thank you for stopping and have fun!
  
 - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
   - `bufferline` is a popular Neovim plugin that provides a customizable and feature-rich buffer/tabline for managing open buffers in Neovim. It enhances the visual representation of buffers in Neovim, making it easier to navigate and manage multiple open files.
-  - **Features:**
-    - **_Tabline Replacement_**: It replaces Neovim's default tabline with a more informative and visually appealing bufferline. This bufferline can display icons, buffer names, and other metadata for each open buffer.
-    - **_Buffer Sorting_**: You can configure how buffers are sorted within the bufferline, whether it's based on the order of creation, file name, or other criteria.
-    - **_Buffer Icons_**: bufferline.nvim supports displaying file icons next to buffer names, making it easier to identify file types.
-    - **_Close Buttons_**: It allows you to add close buttons to individual buffers in the bufferline for easy buffer closing.
-    - **_Customization_**: The plugin is highly customizable, allowing you to tailor the appearance and behavior of the bufferline to your preferences.
-    - **_Integration with Other Plugins_**: It can integrate with other Neovim plugins, such as nvim-web-devicons for file icons and nvim-bufferline.lua for enhanced functionality.
 
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
   - `indent-blankline.nvim` is a plugin is designed to enhance the visibility of indentation levels within your code or text documents.
-  - **Features:**
-    - Displaying vertical lines at each indentation level for improved readability.
-    - Customizable appearance: You can adjust the color, style, and behavior of the indentation lines according to your preferences.
-    - Support for various types of indentation, including spaces and tabs.
-    - Compatibility with other Neovim features and plugins.
 
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
   - `treesitter` is a parser generator tool and an incremental parsing library
@@ -62,61 +50,18 @@ Thank you for stopping and have fun!
 
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
   - `harpoon` is a productivity plugin for Neovim that aims to help developers quickly navigate between files, terminals, and marks within their development environment. It provides a way to create shortcuts to frequently accessed resources, making it faster and more convenient to switch between different parts of a project.
-  - **Features:**
-    - **_File Navigation_**: Quickly jump between a predefined set of files.
-    - **_Terminal Integration_**: Access and manage multiple terminals within Neovim.
-    - **_Marks_**: Set marks in files for rapid navigation.
-    - **_Ease of Use_**: Intuitive commands and shortcuts to improve workflow.
 
 - [folke/flash.nvim](https://github.com/folke/flash.nvim)
   - `flash` lets you navigate your code with search labels, enhanced character motions, and Treesitter integration.
-  - **Features:**
-    - Search Integration: integrate flash.nvim with your regular search using / or ?. Labels appear next to the matches, allowing you to quickly jump to any location. Labels are guaranteed not to exist as a continuation of the search pattern.
-    - type as many characters as you want before using a jump label.
-    - Enhanced `f`, `t`, `F`, `T` motions
-    - Treesitter Integration: all parents of the Treesitter node under your cursor are highlighted with a label for quick selection of a specific Treesitter node.
-    - Jump Mode: a standalone jumping mode similar to search
-    - Search Modes: `exact`, `search` (regex), and `fuzzy` search modes
-    - Multi Window jumping
-    - Remote Actions: perform motions in remote locations
-    - dot-repeatable jumps
-    - highly extensible: check the [examples](https://github.com/folke/flash.nvim#-examples)
 
 - [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
   - `ripgrep`, also known as rg, is a line-oriented search tool that recursively searches your current directory for a regex pattern. It is developed by Andrew Gallant (also known by his GitHub handle BurntSushi) and is written in Rust. `ripgrep` is similar to other search tools like ack and ag (The Silver Searcher), but it is typically faster.
-  - **Features:**
-    - **_Speed_**: It is incredibly fast, owing to the efficient use of Rust's performance and safe regex library.
-    - **_Respects your ignore type files_**: By default, `ripgrep` will respect your `.gitignore` and `.ignore` files, which means it won't search through the files and directories listed in those files.
-    - **_Unicode Aware_**: It can handle Unicode characters and searches UTF-8 encoded files.
-    - **_Supports a variety of file types_**: It can search through specific file types and exclude others.
-    - **_Colorized Output_**: Provides colorized terminal output for better readability of results.
-    - **_customization_**: Offers numerous flags to customize your searches.
-  - <code style="color : red"><b>IMPORTANT</b></code> 
-    - <code style="color : red">`ripgrep` is a telescope.nvim dependency. Depending on results from the `:checkhealth (nvim)` command, you may need to create a symbolic link for `rg`, where lazy has installed it in a directory accessible via `$PATH`</code>
 
 - [sharkdp/fd](https://github.com/sharkdp/fd)
   - `fd` is a fast and user-friendly alternative to the traditional find command that comes with Unix and Linux operating systems. Developed by David Peter (sharkdp), it's written in Rust, making it highly efficient and fast.
-  - **Features:**
-    - **_Simplicity_**: The syntax is simple and doesn’t require unnecessary flags by default.
-    - **_Speed_**: Typically faster than the traditional find command, especially for larger searches.
-    - **_User-friendly_**: Results are colorized by default, and it uses smart case search.
-    - **_Respects your ignore type files_**: Just like `ripgrep`, `fd` respects `.gitignore` files, which helps in excluding unwanted files and directories from the search.
-    - **_Regex Support_**: Supports regular expression searches.
-    - **_Unicode Support_**: It handles Unicode characters well.
-    - **_Customizable_**: Provides various options and flags for customization.
-  - <code style="color : red"><b>IMPORTANT</b></code> 
-    - <code style="color : red">`fd` is a telescope.nvim dependency.</code>
-      - <code style="color : red">Depending on results from the `:checkhealth` command (nvim), you may need to install `fd-find` globally. This can be done via `sudo apt install fd-find` and creation of a symbolic link to shadow existing implementations of `fd`, via `ln -s $(which fdfind) ~/.local/bin/fd`.</code>
-      - <code style="color : red">Ensure that `$HOME/.local/bin` is in your `$PATH`.</code>
 
 - [jackMort/ChatGPT.nvim](https://github.com/jackMort/ChatGPT.nvim)
   - `ChatGPT` is a Neovim plugin that allows you to effortlessly utilize the OpenAI ChatGPT API, empowering you to generate natural language responses from OpenAI's ChatGPT directly within the editor in response to your inquiries.
-  - **Features:**
-    - **_Interactive Q&A_**: Engage in interactive question-and-answer sessions with the powerful gpt model (ChatGPT) using an intuitive interface.
-    - **_Persona-based Conversations_**: Explore various perspectives and have conversations with different personas by selecting prompts from Awesome ChatGPT Prompts.
-    - Code Editing Assistance: Enhance your coding experience with an interactive editing window powered by the gpt model, offering instructions tailored for coding tasks.
-    - **_Code Completion_**: Enjoy the convenience of code completion similar to GitHub Copilot, leveraging the capabilities of the gpt model to suggest code snippets and completions based on context and programming patterns.
-    - **_Customizable Actions_**: Execute a range of actions utilizing the gpt model, such as grammar correction, translation, keyword generation, docstring creation, test addition, code optimization, summarization, bug fixing, code explanation, Roxygen editing, and code readability analysis. Additionally, you can define your own custom actions using a JSON file.
   - <code style="color : red"><b>Dependencies</b></code> 
       - `plenary`
       - `telescope`
@@ -181,8 +126,6 @@ Thank you for stopping and have fun!
     - allow you to (i) automatically install, and (ii) automatically set up a predefined list of servers
     - translate between lspconfig server names and mason.nvim package names (e.g. lua_ls <-> lua-language-server)
 
-  - <code style="color : red"><b>IMPORTANT</b></code>  <code style="color : red">this plugin uses the lspconfig server names in the APIs it exposes - not mason.nvim package names. [See this table for a complete mapping](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md)</code>
-
 - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
   - `nvim-cmp` is a Neovim plugin developed by hrsh7th that provides a powerful and extensible auto-completion framework for Neovim. it is designed to be a completion engine for Neovim and is part of the Neovim ecosystem that has grown around its native support for the Language Server Protocol (LSP).
 
@@ -199,73 +142,21 @@ Thank you for stopping and have fun!
 
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
   - `autopairs` is designed to automatically close pairs of characters like parentheses, brackets, and quotes as you type, providing a smoother and faster coding experience.
-  - **Features:**
-    - **_Auto Closing_**: Automatically insert the closing character when you type an opening character (e.g., typing ( results in () with the cursor placed between the parentheses).
-    - **_Auto Jumping_**: If the cursor is next to a closing character, typing that closing character will move the cursor to the right of it, instead of inserting another closing character.
-    - **_Fast Wrap_**: Allows you to quickly wrap existing text with pairs of characters.
-    - **_Intelligent Deletion_**: Helps with deleting pairs of characters intelligently to avoid leaving behind orphaned characters.
-    - **_Support for Multiple File Types_**: The plugin can be configured to work with various programming languages and file types, respecting their unique syntax and characteristics.
-    - **_Integration with Other Plugins_**: nvim-autopairs can be integrated with other Neovim plugins like completion plugins, providing a seamless coding experience.
 
 - [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
   - `toggleterm` is a Neovim plugin written in Lua, designed to help manage terminal windows within Neovim. The plugin allows users to toggle Neovim's built-in terminal easily, meaning you can show or hide the terminal window with a single command or key mapping.
-  - **Features:**
-    - **_Toggle Mechanism_**: Allows you to easily toggle between the terminal and your regular Neovim window
-    - **_Multiple Terminals_**: Supports managing multiple terminals and provides commands to navigate between them
-    - **_Persistent Layout_**: Terminals can maintain their size and layout between toggles
-    - **_Customization_**: It can be customized to fit your needs, including custom commands, size, and direction preferences
-    - **_Integration_**: Works well with other Neovim plugins and follows Neovim's conventions for terminal windows
 
 - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
   - `Comment.nvim` is a Neovim plugin written in Lua, which provides an easy and efficient way to comment out lines of code in multiple programming languages. Commenting is a common task in coding, and this plugin helps automate and streamline the process. 
-  - **Features:**
-    - Supports treesitter. [Read more](https://github.com/numToStr/Comment.nvim#treesitter)
-    - Supports `commentstring`. Read `:h comment.commentstring`
-    - Supports line (`//`) and block (`/* */`) comments
-    - Dot (`.`) repeat support for gcc, gbc and friends
-    - Count support for `[count]gcc` and `[count]gbc`
-    - Left-right (`gcw` `gc$`) and Up-Down (`gc2j` `gc4`k) motions
-    - Use with text-objects (`gci{` `gbat`)
-    - Supports pre and post hooks
-    - Ignore certain lines, powered by Lua regex 
 
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
   - `gitsigns` is a Neovim plugin designed to enhance the user's experience when working with Git repositories by providing signs in the 'signcolumn' (the area just left of the line numbers). These signs indicate changes relative to the Git index (staged changes). The plugin is written in Lua and is optimized for performance, making it a popular choice among Neovim users.
-  - **Features:**
-    - **_Change Indicators_**: It shows added, modified, and removed lines using different signs.
-    - **_Inline Blame_**: It can display Git blame information directly within the editor.
-    - **_Staging/Unstaging_**: The plugin allows you to stage or unstage hunks of changes directly from Neovim.
-    - **_Navigation_**: You can navigate between different hunks of changes easily using provided key mappings.
-    - **_Customizable_**: gitsigns.nvim offers a variety of customization options. You can adjust the signs' appearance, choose the colors, or change the key mappings.
-    - **_Integration with Native LSP_**: Some functionalities of the plugin can benefit from the integration with Neovim's built-in LSP (Language Server Protocol), if available.
-    - **_Preview Hunks_**: gitsigns.nvim also provides a way to preview the differences in a hunk without navigating to them, which can be helpful to get a quick glance at the changes.
 
 - [ibhagwan/fzf-lua](https://github.com/ibhagwan/fzf-lua)
   - `fzf` is a Neovim plugin that provides a Lua interface to the popular fzf fuzzy finder. fzf is a command-line tool that allows for interactive searching and filtering of lists, and it has been integrated into many editors and shells to provide enhanced fuzzy searching capabilities.
-  - **Features:**
-    - **_Rich Features_**: fzf-lua provides a range of features to make the most of fzf within Neovim, such as:
-      - Fuzzy finding files, buffers, Git files, and more.
-      - Searching for text with ripgrep (or other tools) and viewing results in fzf.
-      - Browsing Neovim's help system.
-      - Integrations with LSP (Language Server Protocol) for actions like finding references, document symbols, workspace symbols, and more.
-      - Preview window with customizable rendering, including tree-like file browsing and colored syntax highlighting.
-    - **_Customizable_**: The plugin offers a wide range of customization options, from visual appearance to underlying tools and commands. For instance, while it defaults to using ripgrep for text searches, you can configure it to use other tools if you prefer.
-    - **_Performance_**: fzf-lua is designed to be fast and efficient, offering the power of fzf without unnecessary overhead.
-    **_Integrated Experience_**: One of the main goals of the plugin is to offer a seamless and integrated fzf experience within Neovim, making common tasks quicker and more intuitive.
 
 - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
   - `nvim-tree` is a popular file explorer plugin for Neovim, written in Lua. It provides a visual tree-like structure to navigate your file system, making it easier to browse, open, and manage files and directories directly from Neovim. This plugin is designed to be highly customizable and extendable, fitting seamlessly into a modern Neovim setup that utilizes Lua for configuration and plugins.
-  - **Features:**
-    - **_File Browsing_**: Navigate through your file system, open files, and directories.
-    - **_Git Integration_**: Show git status of files (added, modified, untracked, etc.).
-    - **_Customizable_**: Customize its appearance and behavior to suit your workflow.
-    - **_Actions_**: Perform various actions on files/directories like copy, paste, rename, delete, etc.
-    - **_Icons and Colors_**: Supports file icons and color highlighting based on file type or status.
-    - **_Integration with Other Plugins_**: Can be integrated with other popular Neovim plugins and tools.
-    - **_LSP_**: Supports LSP (Language Server Protocol) for various file operations.
-    - **_File Operations_**: Perform operations like create, delete, rename, and move on files and directories.
-    - **_Search_**: Quickly search and jump to files or directories.
-    - **_Keybindings_**: Comes with default keybindings, but allows for full customization.
 
 ---
 ### Language Severs, LSPs, Linters & Formatters
