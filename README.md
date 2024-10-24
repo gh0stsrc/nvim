@@ -40,12 +40,6 @@ In addition, it should be noted that this configuration and the instructions out
 
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
   - `telescope` is a highly extendable fuzzy finder over lists. Built on the latest awesome features from neovim core
-  - <code style="color : red"><b>Dependencies</b></code> 
-    - `plenary`
-    - `codicons`
-    - `nvim-tree/nvim-web-devicons`
-    - `ripgrep`
-    - `fd` _(optionally)_
 
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
   - `harpoon` is a productivity plugin for Neovim that aims to help developers quickly navigate between files, terminals, and marks within their development environment. It provides a way to create shortcuts to frequently accessed resources, making it faster and more convenient to switch between different parts of a project.
@@ -61,11 +55,6 @@ In addition, it should be noted that this configuration and the instructions out
 
 - [jackMort/ChatGPT.nvim](https://github.com/jackMort/ChatGPT.nvim)
   - `ChatGPT` is a Neovim plugin that allows you to effortlessly utilize the OpenAI ChatGPT API, empowering you to generate natural language responses from OpenAI's ChatGPT directly within the editor in response to your inquiries.
-  - <code style="color : red"><b>Dependencies</b></code> 
-      - `plenary`
-      - `telescope`
-      - `nui`
-      - <code style="color : red">Patched Fonts (e.g. Nerd Fonts); PLEASE REFER TO [REFERENCES SECTION](#references) TO SEE HOW TO PATCH A FONT</code>
 
 - [MunifTanjim/nui.nvim"](https://github.com/MunifTanjim/nui.nvim)
   - `nui` is a plugin for Neovim, and it's a highly customizable UI component framework based on Lua. This plugin aims to provide developers with components such as prompts, menus, and dialogs to help build interactive user interfaces within Neovim.
@@ -86,18 +75,10 @@ In addition, it should be noted that this configuration and the instructions out
     the plugin is developed to augment Vim with Go development features and tools, enabling a powerful and integrated workflow for Go development within the Vim environment.
 
 - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
-  - `nvim-dap` is a generic protocol for neovim that will interface with various debuggers. dap allows you to:
-    - launch an application to debug
-    - attach to running applications and debug them
-    - set breakpoints and step through code
-    - inspect the state of the application
+  - `nvim-dap` is a generic protocol for neovim that will interface with various debuggers.
 
 - [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
   - `dapui` is a User Interface (UI) for nvim-dap which provides a good out of the box configuration.
-  - <code style="color : red"><b>Dependencies</b></code> 
-    - `neodev`
-    - `codicons`
-    - <code style="color : red">Patched Codicons Font; PLEASE REFER TO [REFERENCES SECTION](#references)TO SEE HOW TO PATCH THIS FONT</code>
     
 - [leoluz/nvim-dap-go](https://github.com/leoluz/nvim-dap-go)
   - `nvim-dap-go` is an extension for nvim-dap providing configurations for launching go debugger (delve) and debugging individual tests.
@@ -133,8 +114,7 @@ In addition, it should be noted that this configuration and the instructions out
   - `cmp-nvim-lsp` allows nvim-cmp to provide completion suggestions based on the information provided by the LSP, like variable names, methods, functions, and more relevant to the programming language you are working with.
 
 - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-  - `cmp-buffer` is another source for the hrsh7th/nvim-cmp completion framework. While hrsh7th/cmp-nvim-lsp provides completion suggestions from Neovim’s built-in Language Server Protocol (LSP) client, cmp-buffer provides completion suggestions from the content of the currently open buffers.
-  - This means that cmp-buffer will suggest words and phrases that exist in your currently open buffers, regardless of whether they are recognized as symbols or identifiers by a language server. This can be useful when working with any kind of text, not just code, as it can suggest completions based on what you have already typed or have open in another buffer.
+  - `cmp-buffer` is another source for the hrsh7th/nvim-cmp completion framework. While hrsh7th/cmp-nvim-lsp provides completion suggestions from Neovim’s built-in Language Server Protocol (LSP) client, cmp-buffer provides completion suggestions from the content of the currently open buffers. This means that cmp-buffer will suggest words and phrases that exist in your currently open buffers, regardless of whether they are recognized as symbols or identifiers by a language server. This can be useful when working with any kind of text, not just code, as it can suggest completions based on what you have already typed or have open in another buffer.
 
 - [L3MON4D3/Luasnip](https://github.com/L3MON4D3/LuaSnip)
   - `Luasnip` is a snippet engine plugin for Neovim. It's a Lua-based, fast, and extensible snippet solution for Neovim that allows you to define and insert snippets of text quickly, enhancing coding efficiency. Snippets are small pieces of reusable code or text that you can insert into your files, and they often have placeholders that you can jump between and fill out.
