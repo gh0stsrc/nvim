@@ -71,7 +71,7 @@ In addition, it should be noted that this configuration and the instructions out
   - `nvim-web-devicons` is a lua fork of vim-devicons. This plugin provides the same icons as well as colors for each icon.
 
 - [fatih/vim-go](https://github.com/fatih/vim-go)
-  -`vim-go` is a plugin for the Vim text editor, specifically aimed at providing an enhanced environment for developing Go.
+  - `vim-go` is a plugin for the Vim text editor, specifically aimed at providing an enhanced environment for developing Go.
     the plugin is developed to augment Vim with Go development features and tools, enabling a powerful and integrated workflow for Go development within the Vim environment.
 
 - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
@@ -114,7 +114,7 @@ In addition, it should be noted that this configuration and the instructions out
   - `cmp-nvim-lsp` allows nvim-cmp to provide completion suggestions based on the information provided by the LSP, like variable names, methods, functions, and more relevant to the programming language you are working with.
 
 - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-  - `cmp-buffer` is another source for the hrsh7th/nvim-cmp completion framework. While hrsh7th/cmp-nvim-lsp provides completion suggestions from Neovim’s built-in Language Server Protocol (LSP) client, cmp-buffer provides completion suggestions from the content of the currently open buffers. This means that cmp-buffer will suggest words and phrases that exist in your currently open buffers, regardless of whether they are recognized as symbols or identifiers by a language server. This can be useful when working with any kind of text, not just code, as it can suggest completions based on what you have already typed or have open in another buffer.
+  - `cmp-buffer` is another source for the `hrsh7th/nvim-cmp` completion framework. While `hrsh7th/cmp-nvim-lsp` provides completion suggestions from Neovim’s built-in Language Server Protocol (LSP) client, `cmp-buffer` provides completion suggestions from the content of the currently open buffers. This means that `cmp-buffer` will suggest words and phrases that exist in your currently open buffers, regardless of whether they are recognized as symbols or identifiers by a language server. This can be useful when working with any kind of text, not just code, as it can suggest completions based on what you have already typed or have open in another buffer.
 
 - [L3MON4D3/Luasnip](https://github.com/L3MON4D3/LuaSnip)
   - `Luasnip` is a snippet engine plugin for Neovim. It's a Lua-based, fast, and extensible snippet solution for Neovim that allows you to define and insert snippets of text quickly, enhancing coding efficiency. Snippets are small pieces of reusable code or text that you can insert into your files, and they often have placeholders that you can jump between and fill out.
@@ -156,7 +156,7 @@ To view the currently installed language servers, simply enter the `:Mason` comm
 
 ## 💻 Terminal UI (TUI) Integration - Extensions
 
-Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI apps. The respective TUI key bindings will only function if the underlying apps are installed. Once installed, simply use [which-key](#🔎-key-bindings-which-key) to discover the appropriate key bindings and have fun with TUIs.
+Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI apps. The respective TUI key bindings will only function if the underlying apps are installed. Once installed, simply use [which-key](#-key-bindings---which-key) to discover the appropriate key bindings and have fun with TUIs.
 
 >[!TIP]
 > The pattern used for the integration of TUIs with Neovim can be followed to add additional TUIs as desired. You may need to tweak things a little bit depending on how the TUI behaves; however, it shouldn't be too tricky.
