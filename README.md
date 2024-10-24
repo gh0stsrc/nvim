@@ -1,4 +1,4 @@
-<img src="assets/neoteusz.png" alt="neoteusz">
+<img src="/assets/neoteusz.png" alt="neoteusz">
 
 ## Neoteusz - Get S#@% done with Neovim!
 
