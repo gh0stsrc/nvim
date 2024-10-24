@@ -30,13 +30,10 @@ In addition, it should be noted that this configuration and the instructions out
     - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
     - [derailed/k9s](https://github.com/derailed/k9s)
 
-    - for more information on Neoteusz and the integration of TUIs, please see the [TUI section](#-terminal-ui-tui-integration---extensions)
-
 - AI Assistant:
     - In the interest of attempting to maintain minimalism for the readme, the AI Asstant configuration details are within their own [dedicated document](/docs/ai-assistant.md)
 
 - Neovim Clipboard
-    - Neovim has no direct connection to the system clipboard. Instead it depends on a *provider* which transparently uses shell commands to communicate with the system clipboard or any other clipboard backend. This means that a clipboard is not functional off the bat and you have to inform Neovim of which clipboard provider you would like it to leverage
     - In the interest of attempting to maintain minimalism for the readme, the Neovim clipboard configuration details are within their own [dedicated document](/docs/clipboard.md), please review it when you have a chance (or need clipboard)
 
 
@@ -118,7 +115,7 @@ by setting this environment variable to `true`, Neovim will open with debugging 
     - <code style="color : green"><b>Note</b></code>**:** For more information regarding the `ChatGPT` plugin and its installation requirements, please see the respective subsection within [Nvim Config Installation Prerequisites](nvim-config-installation-prerequisites).
     </br>
 
-- `NVIM_DISABLE_MATCHING_HL`: by setting this environment variable to `true`, you will be disabling all symbol match highlighting (e.g. matching open and closing brackets/braces). 
+- `NVIM_DISABLE_MATCHING_HL`: by setting this environment variable to `true`, you will be disabling all symbol match highlighting (e.g. matching open and closing brackets/braces).
 </br>
 
 - `NVIM_ENABLE_BACKUP_COMMENT_COLOR`: This environment variable should **_ONLY_** be used when you are encountering issues with either treesitter or LSPs, where comments are no longer being rendered in green text.
