@@ -8,14 +8,14 @@ Whether you're working on large projects or quick scripts, this setup helps your
 
 Thank you for stopping by and have fun!
 
----
+
 ## Note
 
 Version `1.x.x` of Neoteusz leveraged [packer.nvim](https://github.com/wbthomason/packer.nvim) as the package manager; however, packer is no longer actively maintained. `v2.x.x` and beyond will leverage [lazy.nvim](https://github.com/folke/lazy.nvim/tree/stable) as the defacto package manager (unless stated otherwise).
 
 In addition, it should be noted that this configuration and the instructions outlined, were implemented on a `Ubuntu 24.04 LTS (Noble Numbat)` system using a `v0.9.4` neovim app image; instructions may need to be tailored for other linux distributions or neovim versions.
 
----
+
 ## Plugin Inventory
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim):
