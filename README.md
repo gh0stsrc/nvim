@@ -1,9 +1,12 @@
 <img src="assets/neoteusz.png" alt="neoteusz">
 
-# Neoteusz
----
-A simple but powerful setup for neovim.
+## Neoteusz - Get S#@% done with Neovim!
 
+Neoteusz is a streamlined yet powerful Neovim configuration designed for developers who value speed and efficiency, this configuration offers a blazingly-fast, responsive developer experience. Instantly navigate large codebases, run complex commands, and interact seamlessly with Neovim; all while maintaining a low resource footprint.
+
+Whether you're working on large projects or quick scripts, this setup helps your workflow remain smooth and distraction free, empowering you to focus on building the things that you enjoy.
+
+---
 >[!NOTE]
 >Version `1.x.x` leveraged [packer.nvim](https://github.com/wbthomason/packer.nvim) as the package manager; however, packer is no longer actively maintained. `v2.x.x` and beyond will leverage [lazy.nvim](https://github.com/folke/lazy.nvim/tree/stable) as the defacto package manager (unless stated otherwise).
 >
