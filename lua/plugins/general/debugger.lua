@@ -2,33 +2,24 @@
 --?                            Debugging                            ?--
 --* --------------------------------------------------------------- *--
 
--- NOTE:
---           - dap (nvim-dap) is a generic protocol for neovim that will interface with various debuggers
---           - simply integrate the debugger of your choice for the language of use and configure their respective setup configurations, reference dap-go below
-
 
 local command_exists = require("utils.helpers").command_exists
--- local Logger  = require("utils.logger")
 -- local notify = require("notify").async
 local async = require("plenary.async")
 local enableNvimDapGo = false
-
--- BUG: need to investigate why the logger utility cannot be used here without displaying `overlapping` messages using nvim-notify,
---      this may be related to the order in which plugins are loaded and when the logger utility is loaded.
--- TODO: fix above mentioned bug
 vim.notify = require("notify") -- NOTE: related to the above bug, need to set default vim notifications to use nvim-notify
 
 -- if the dlv debugger is not present on the system, inform the user via a notification
 if not command_exists("dlv") then
   async.run(function ()
-    vim.notify("The delve debugger aka `dlv`, was NOT found on your system. `dlv` is required by `nvim-dap-go`. The `nvim-dap-go` plugin will not be loaded until `dlv` is present on your system", vim.log.levels.WARN, {title = "neotuesz"})
-  end)
+    vim.notify("The delve debugger aka `dlv`, was NOT found on your system. `dlv` is required by `nvim-dap-go`. The `nvim-dap-go` plugin will not be loaded until `dlv` is present on your system", vim.log.levels.WARN, {title = vim.g.neoteusz_name})
+  end, function () end) -- empty callback
 -- otherwise, set the flag to enable nvim-dap-go and allow it to be lazy loaded once the respective keybidings have been invoked
 else
   enableNvimDapGo = true
   async.run(function ()
-    vim.notify("The delve debugger `dlv`, was found on your system. `nvim-dap-go` will be loaded once a respective keybinding is invoked", vim.log.levels.DEBUG, {title = "neoteusz"})
-  end)
+    vim.notify("The delve debugger `dlv`, was found on your system. `nvim-dap-go` will be loaded once a respective keybinding is invoked", vim.log.levels.DEBUG, {title = vim.g.neoteusz_name})
+  end, function () end) -- empty callback
 end
 
 

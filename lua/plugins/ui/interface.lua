@@ -10,7 +10,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- get the desired log level set by the `NVIM_LOG_LVL` environment variable, if not set the log lvl will default to `INFO`
-local log_lvl_nm = string.upper(os.getenv("NVIM_LOG_LVL") or "INFO")
+local log_lvl_nm = string.upper(vim.g.neoteusz_logging_level or "INFO")
 
 -- map of log level names to vim log levels
 local log_lvl_map = {
@@ -82,7 +82,6 @@ return {
       })
       -- NOTE: other plugins can use notification windows by setting the nvim-notify plugin as your default notify function
       vim.notify = require("notify")
-      Logger = require("utils.logger")
     end,
     keys = {
       {

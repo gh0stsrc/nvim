@@ -115,7 +115,24 @@ return {
         -- NOTE: default capabilties have already been configured globally for all LSP servers by setting `lspconfig_defaults.capabilities` earlier, ONLY custom setting should be added to particular LSP server setup configs
 
         lspconfig.gopls.setup({})
-        lspconfig.lua_ls.setup({})
+        lspconfig.lua_ls.setup({
+          settings = {
+            Lua = {
+              diagnostics = {
+                -- Recognize the 'vim' global variable as valid
+                globals = { 'vim' },
+              },
+              workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false, -- Optional: Avoids annoying prompts about third-party libraries
+              },
+              telemetry = {
+                enable = false, -- Disable telemetry to not send data to the LSP server
+              },
+            },
+          },
+        })
         lspconfig.bashls.setup({})
         lspconfig.marksman.setup({})
         lspconfig.terraformls.setup({})

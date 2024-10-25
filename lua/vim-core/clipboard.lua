@@ -3,28 +3,21 @@
 --* ------------------------------------------------------------------------------------------------------------------------ *--
 
 local Helpers = require("utils.helpers")
-local Logger  = require("utils.logger")
 local async = require("plenary.async")
 
 -- call the check_clipboard_providers function and store the result in the clipboard_providers variable
 local clipboard_providers = Helpers.check_clipboard_providers()
 
 -- check if no clipboard provider has been found AND if the user has NOT set the NVIM_SKIP_CLIP environment variable
-if #clipboard_providers == 0 and (Helpers.to_boolean(os.getenv("NVIM_SKIP_CLIP")) ~= true) then
+if #clipboard_providers == 0 and vim.g.neoteusz_clipboard_skip ~= true then
     -- If no providers were found, raise an error
     error(("No clipboard providers found, either install one of the compatible clipboards or enable the `NVIM_SKIP_CLIP` env var to ignore clipboard errors; compatible clipboards -> " .. "[" .. table.concat(clipboard_providers, ", ") .. "]"), 1)
 else
   -- if one or more providers were found, print a message listing the found clipboard providers
-  if (string.upper(os.getenv("NVIM_LOG_LVL") or "nil" ) == "DEBUG") then
-
+  if ((string.upper(vim.g.neoteusz_logging_level) or "nil" ) == "DEBUG") then
     async.run(function()
-      Logger.log(
-        "Started in DEBUG mode",
-        "debug"
-      )
-      Logger.log(("- CLIPBOARD PROVIDERS FOUND: " .. "[" .. table.concat(clipboard_providers, ", ") .. "]"), "debug")
-    end)
-
+      vim.notify("CLIPBOARD PROVIDERS FOUND: " .. "[" .. table.concat(clipboard_providers, ", ") .. "]", vim.log.levels.DEBUG, {title = vim.g.neoteusz_name})
+    end, function () end) -- empty callback
   end
 end
 
@@ -55,7 +48,7 @@ end
 --        - this impacts terminal only/headless users (no use of xserver - headless server - No GUI)
 
 -- check if the user explitily would like to leverage tmux as the clipboard provider OR if the only provider available is tmux AND ensure that a tmux session is attached
-if (string.upper(os.getenv("NVIM_CLIP") or "nil") == "TMUX" or string.upper(clipboard_providers[1]) == "TMUX") and (os.getenv("TMUX") ~= nil) then
+if (string.upper((vim.g.neoteusz_clipboard_provider) or "nil") == "TMUX" or string.upper(clipboard_providers[1]) == "TMUX") and (Helpers.command_exists("TMUX") ~= nil) then
   -- explictly set tmux as the neovim clipboard provider
   vim.g.clipboard = {
     name = "tmux",
@@ -70,7 +63,6 @@ if (string.upper(os.getenv("NVIM_CLIP") or "nil") == "TMUX" or string.upper(clip
     cache_enabled = true
   }
 
-  --TODO: move to keybindings module
   -- visual mode key binding for copying
   vim.api.nvim_set_keymap("v", "<Leader>y", ":w !tmux load-buffer -<CR>", { noremap = true, silent = true })
   -- normal mode key binding for pasting

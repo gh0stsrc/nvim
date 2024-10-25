@@ -2,21 +2,19 @@
 --?                Artificial Intelligence Assistant                ?--
 --* --------------------------------------------------------------- *--
 
-local Helpers = require("utils.helpers")
 
 -- IMPORTANT: to leverage the chatgpt plugin you will need to provide a valid API key; see the README for more details
 -- check if the env var `NVIM_ENABLE_GPT` is set to true; if so invoke the plugin's default setup, with a couple of overrides
 return {
   "jackMort/ChatGPT.nvim",
   commit = "5b6d296eefc75331e2ff9f0adcffbd7d27862dd6",
-  -- enabled = Helpers.to_boolean(os.getenv("NVIM_ENABLE_GPT")) == true,
   dependencies = {
     { "MunifTanjim/nui.nvim", commit="c0c8e347ceac53030f5c1ece1c5a5b6a17a25b32" },
     { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },
     { "nvim-telescope/telescope.nvim" }
   },
   cond = function()
-    return Helpers.to_boolean(os.getenv("NVIM_ENABLE_GPT")) == true
+    return vim.g.neoteusz_gpt_enabled == true
   end,
   opts = {
     chat = {
@@ -33,7 +31,7 @@ return {
       },
     },
     openai_params = {
-      model = "gpt-4-turbo",
+      model =  "gpt-4-turbo",
       max_tokens = 900,
     },
   },
