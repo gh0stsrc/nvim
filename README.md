@@ -72,15 +72,15 @@ For a comprehensive overiew of all included plugins, please see our [plugins doc
 >[!NOTE]
 > by default the leader key binding is set to the `<space>` key, feel free to change it ;)
 
-**Leader Bound Key Bindings**
+### Leader Bound Key Bindings ###
 All keybindings tied to the leader key, are grouped into categories to help provide an intuitive navigation experience. I encourage you to explore the key bindings using `which-key` to get a better understanding of the custom key bindings that have been made available to you.
 ![leader-keybindings](/assets/which-key_leader-keybinding.png)
 
-**Window Manipulation & Navigation**
+### Window Manipulation & Navigation ###
 Key bindings related to windows within nvim can still be observed using `which-key`, simply enter `<C-w>` (i.e. `<ctrl> + b`) and `which-key` will display all window related keybindings that are currently registered.
 ![window-keybindings](/assets/which-key_window-bindings.png)
 
-**Auto-Completion**
+### Auto-Completion ###
 To allow for a seamless experience with auto-completion, related keys were not registered with `which-key`. For auto-completion key bindings, please see the below:
 
 - `<tab>`: The tab key is used for auto-completion of lsp suggestions, as well as the expansion of suggestions and jumping to snippet placeholders.
@@ -92,13 +92,13 @@ To allow for a seamless experience with auto-completion, related keys were not r
 - `<C-p>`: the ctrl + p key combination is used to move to the previous item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
 - `<C-n>`: the ctrl + n key combination is used to move to the next item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
 
-**Treesitter Navgation**
+### Treesitter Navgation ###
 Treesitter navigation is also available through `which-key`; however, it leverages distinct leader keys. For accessing previous and next nodes use the `[` (previous) `]` (next) leader keys respectively.
 
-**Registers**
+### Registers ###
 Values stored within registers are also available through `which-key`; however, it leverages the `""` leader key.
 
-**Flash Enhanced Search**
+### Flash Enhanced Search ###
 `folke/flash.nvim` is leverage to enhance general Neovim search capabilities. Simply use the typically search leader keys of `/` or `?` to leveraged the search benefits of `flash.nvim`.
 
 
