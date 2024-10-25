@@ -4,10 +4,12 @@ return {
     enabled = true,
   },
   clipboard = {
-    provider = "xclip",
+    tmux = {
+      bootstrap = false
+    },
     skip = false
   },
   logging = {
-    level = "DEBUG"
+    level = "INFO"
   }
 }

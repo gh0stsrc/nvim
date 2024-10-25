@@ -27,6 +27,30 @@ function M.to_boolean(str)
   return bool
 end
 
+-- function to see if a table contains a particular value
+function M.contains(list, element)
+  for _, value in ipairs(list) do
+    if type(value) == "string" then
+      if string.upper(value) == string.upper(element) then
+        return true
+      end
+    elseif value == element then
+      return true
+    end
+  end
+  return false
+end
+
+
+-- function to see if a table only contains a particular value
+function M.onlyContains(list, element)
+  if #list > 1 then
+    return false
+  else
+    return M.contains(list, element)
+  end
+end
+
 
 -- helper func to check if neovim compatible clipboard providers are currently installed
 function M.check_clipboard_providers()

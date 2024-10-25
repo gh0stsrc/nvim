@@ -17,7 +17,7 @@ In addition, it should be noted that this configuration and the instructions out
 ## 📋 Requirements
 
 ### Required
-- Neovim >= 0.9.4
+- Neovim >= 0.9.4 (built with LuaJIT)
 - Git >= 2.19.0 (for partial clones support)
 - A patched Nerd Font - To see how to patch fonts, refer to the [references section](#-references).
 
