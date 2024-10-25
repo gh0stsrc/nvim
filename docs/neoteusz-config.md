@@ -9,30 +9,19 @@ Provide and overview here!
 Neoteusz was configured to use the [`rcarriga/nvim-notify`](https://github.com/rcarriga/nvim-notify) plugin as the defacto notification method for Neovim. You are able to configure what level of logging information you would like to recieve notifications for (i.e. `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR`, `OFF`) by updating the value under the `logging.level` field within your `config.lua` file.
 
 
+## Clipboard
 
- Neovim will open with debugging info, such as the compatible clipboard providers that have been detected, etc.
-by setting this environment variable to `true`, Neovim will open with debugging info, such as the compatible clipboard providers that have been detected, etc.
-</br>
- 
- - `NVIM_SKIP_CLIP`: by setting this environment variable to `true`, you are choosing to skip the configuration of prefered clipboard providers (xclip, xsel, tmux, termux, etc...) and dismiss related errors.
-</br>
- 
- - `NVIM_CLIP`: Depending on your preference of clipboard provider for Neovim and your currently installed clipboard providers on your system, Neovim may implicitly select a provider and connect the respective registers. If you prefer not to leverage a clipboard like `xclip` or do not have a display (i.e. headless server), you can explictly select `tmux` as your prefered clipboard provider. 
+Neoteusz attempts to help with the native Neovim clipboard experience by attaching a desired `clipboard provider` or setting a default provider if one is not given. To set your desired clipboard provider, update the value under the `clipboard.provider` field within your `config.lua` file.
 
-   - To do so, set the `NVIM_CLIP` environment variable to `tmux`. This will configure `tmux` to be your preferred clipboard provider, connect the appropriate registers and set the `<leader> + y`, `<leader> + p` key bindings for copying and pasting, respectively.
- 
-   - <code style="color : green"><b>Note</b></code>**:** To see more information about clipboard configurations, please see the `Nvim Clipboard Provider Related` subsection of [Nvim Config Installation Prerequisites](#nvim-config-installation-prerequisites).
-</br>
- 
- - `NVIM_ENABLE_GPT`: by setting this environment variable to `true`, the `jackMort/ChatGPT.nvim` plugin will be able to be installed via `Lazy` upon Neovim restart. In addition, the respective key bindings outlined in the [Noteworthy Key Bindings](#noteworthy-key-bindings) section of this document will be bound.
+If a clipbpard provider is not set, the default provider will be set to `tmux`, if installed on the system; otherwise none will be set. The assumption taken here is that in majority of cases users would most likely be running a headless server (i.e. does not have a display); however, if you are running a linux distro which can present a display, you can leverage a provider like `xclip` to natively bridge the clipboard between terminal emulation and other components (e.g. browser).
 
-    - <code style="color : green"><b>Note</b></code>**:** For more information regarding the `ChatGPT` plugin and its installation requirements, please see the respective subsection within [Nvim Config Installation Prerequisites](nvim-config-installation-prerequisites).
-    </br>
+>[!NOTE]
+> When the `clipboard provider` is default to `tmux`, the appropriate registers will be connected and the `<leader> + y`, `<leader> + p` key bindings will be set for copying and pasting, respectively.
 
-- `NVIM_DISABLE_MATCHING_HL`: by setting this environment variable to `true`, you will be disabling all symbol match highlighting (e.g. matching open and closing brackets/braces).
-</br>
+Additionally, if you rather skip the clipboard bootstrapping entirely, you can set the value under the `clipboard.skip` field within your `config.lua` to `true`.
 
-- `NVIM_ENABLE_BACKUP_COMMENT_COLOR`: This environment variable should **_ONLY_** be used when you are encountering issues with either treesitter or LSPs, where comments are no longer being rendered in green text.
 
-  - To manually override the `gruvbox` colorscheme to render comments in green text, when either treesitter or LSPs are **_NON_**-FUNCTIONAL, set the environment variable to `true`.
+## AI Assistant
+
+If you would like to leverage an AI assistant, particularly [ChatGPT](https://openai.com/chatgpt/overview/), Neoteusz can bootstrap the `jackMort/ChatGPT.nvim` plugin for you. All you have to do is set the value under the `ai.enabled` field within your `config.lua` file to `true` and integrate your OpenAI API key, as outlined in neoteusz [AI assistant documentation](/docs/ai-assistant.md).
 

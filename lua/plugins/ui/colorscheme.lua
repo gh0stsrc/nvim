@@ -2,8 +2,6 @@
 --?                      Neoteusz Colorscheme                       ?--
 --* --------------------------------------------------------------- *--
 
-local Helpers = require("utils.helpers")
-
 
 --* ------------------------------------ *--
 --?   custom colorscheme vim overrides   ?--
@@ -16,37 +14,6 @@ local gruvbox_overrides = {
 
 -- default palette overrides for gruvbox - defaults to nil as palette overrides will only be leveragd if issues with an LSP arise
 local gruvbox_palette_overrides
-
--- NOTE: if you are encountering issues with either treesitter or any LSP client, where comment code is not respecting configuration set by the `overrides` filed for gruvbox's
---       setup, you can manually force the colour change via the use of the `NVIM_ENABLE_BACKUP_COMMENT_COLOR` environment variable  
-if Helpers.to_boolean(os.getenv("NVIM_ENABLE_BACKUP_COMMENT_COLOR")) == true then
-  -- override the gray colour used for comments to green
-  gruvbox_palette_overrides = {
-    gray = "#2ea542", -- comments are overridden to be green
-  }
-
-  -- set the gruvbox_overrides to nil as they will not be leverage since Backup Comment Colour will be used
-  gruvbox_overrides = nil
-
-  -- add the same comment color in each theme via autocmd group
-  vim.cmd([[
-    augroup CustomCommentColor
-      autocmd!
-      autocmd VimEnter * hi Comment guifg=#2ea542
-    augroup END
-  ]])
-end
-
--- NOTE: if you do not like bracket matching highlighting, you can disable it by setting the `NVIM_DISABLE_MATCHING_HL` environment variable to `true`
---  disable matching bracket/brace and other jazz highlighting via autocmd group
-if Helpers.to_boolean(os.getenv("NVIM_DISABLE_MATCHING_HL")) == true then
-	vim.cmd([[
-		augroup NoMatchHL
-		autocmd!
-		autocmd VimEnter * NoMatchParen 
-	  augroup END
-	]])
-end
 
 
 --* ------------------------------------ *--

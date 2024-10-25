@@ -1,6 +1,6 @@
 return {
   name = "Neoteusz",
-  gpt = {
+  ai = {
     enabled = true,
   },
   clipboard = {

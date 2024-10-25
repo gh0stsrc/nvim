@@ -36,7 +36,7 @@ create_global_vars("neoteusz_", config)
   
   [Data Structure] 
     {
-      gpt ={
+      ai ={
         enabled = true
       },
       clipboard = {
@@ -45,7 +45,7 @@ create_global_vars("neoteusz_", config)
     }
   
   [Env Vars Created] 
-    - neoteusz_gpt_enabled = true
+    - neoteusz_ai_enabled = true
     - neoteusz_clipboard_provider = "xclip"
 ]]--
 

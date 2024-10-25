@@ -22,7 +22,10 @@ In addition, it should be noted that this configuration and the instructions out
 
 - Neovim >= 0.9.4
 - Git >= 2.19.0 (for partial clones support)
-- A patched Nerd Font - To see how to patch fonts, refer to the [References Section](#references)
+- A patched Nerd Font - To see how to patch fonts, refer to the [references section](#-references)
+
+>[WARNING]
+> If you do not install a patched Nerd Font, you will see unknown symbols rendered for UI components for a a number of plugins.
 
 ### Optional ###
 

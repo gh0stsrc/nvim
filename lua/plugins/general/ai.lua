@@ -14,7 +14,7 @@ return {
     { "nvim-telescope/telescope.nvim" }
   },
   cond = function()
-    return vim.g.neoteusz_gpt_enabled == true
+    return vim.g.neoteusz_ai_enabled == true
   end,
   opts = {
     chat = {
