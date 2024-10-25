@@ -24,7 +24,7 @@ In addition, it should be noted that this configuration and the instructions out
 - Git >= 2.19.0 (for partial clones support)
 - A patched Nerd Font - To see how to patch fonts, refer to the [references section](#-references)
 
->[WARNING]
+>[WARN]
 > If you do not install a patched Nerd Font, you will see unknown symbols rendered for UI components for a a number of plugins.
 
 ### Optional ###
