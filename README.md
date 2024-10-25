@@ -22,7 +22,7 @@ In addition, it should be noted that this configuration and the instructions out
 
 - Neovim >= 0.9.4
 - Git >= 2.19.0 (for partial clones support)
-- A patched Nerd Font - To see how to patch fonts, refer to the [references section](#-references)
+- A patched Nerd Font - To see how to patch fonts, refer to the [references section](#-references).
 
 >[!WARNING]
 > If you do not install a patched Nerd Font, you will see unknown symbols rendered for UI components for a a number of plugins.
@@ -62,34 +62,49 @@ If you find and relvant *Warnings* which may impact your nvim setup or experienc
 
 ## 🔌 Plugin Inventory
 
-For a comprehensive overiew of all included plugins, please see our [plugins documentation](docs/plugins.md)
+For a comprehensive overiew of all included plugins, please see our [plugins documentation](docs/plugins.md).
 
 
 ## 🔎 Key Bindings - Which Key
+
+[which-key](https://github.com/folke/which-key.nvim) is a brillant plugin that helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type. Please read the below subsections to better understand how to leverage `which-key` for keybindings within Neoteusz.
+
 >[!NOTE]
 > by default the leader key binding is set to the `<space>` key, feel free to change it ;)
-
-which-key is used to ... 
 
 **Leader Bound Key Bindings**
 All keybindings tied to the leader key, are grouped into categories to help provide an intuitive navigation experience. I encourage you to explore the key bindings using `which-key` to get a better understanding of the custom key bindings that have been made available to you.
 ![leader-keybindings](/assets/which-key_leader-keybinding.png)
 
-
 **Window Manipulation & Navigation**
-Key bindings related to windows within nvim can still be observed using `which-key`, simply enter <C-w> (i.e. <ctrl> + b) and `which-key` will display all window related keybindings that are currently registered.
+Key bindings related to windows within nvim can still be observed using `which-key`, simply enter `<C-w>` (i.e. `<ctrl> + b`) and `which-key` will display all window related keybindings that are currently registered.
 ![window-keybindings](/assets/which-key_window-bindings.png)
 
-
 **Auto-Completion**
-To allow for a seamless experience with auto-completion, related keys were not registered with `which-key`.
+To allow for a seamless experience with auto-completion, related keys were not registered with `which-key`. For auto-completion key bindings, please see the below:
 
-LIST HERE!
+- `<tab>`: The tab key is used for auto-completion of lsp suggestions, as well as the expansion of suggestions and jumping to snippet placeholders.
+- `<C-e>`: The ctrl + e key combination is used to the auto-completion
+- `<Up>`: The up key is used to scroll through upward through lsp suggestions
+- `<Down>`: The down key is used to scroll through downward through lsp suggestions
+- `<PageUp>`: The page up key is used to scroll upward through text within the preview window for the currently selected lsp suggestion
+- `<PageDown>`: The page down key is used to scroll downward through text within the preview window for the currently selected lsp suggestion
+- `<C-p>`: the ctrl + p key combination is used to move to the previous item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
+- `<C-n>`: the ctrl + n key combination is used to move to the next item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
+
+**Treesitter Navgation**
+Treesitter navigation is also available through `which-key`; however, it leverages distinct leader keys. For accessing previous and next nodes use the `[` (previous) `]` (next) leader keys respectively.
+
+**Registers**
+Values stored within registers are also available through `which-key`; however, it leverages the `""` leader key.
+
+**Flash Enhanced Search**
+`folke/flash.nvim` is leverage to enhance general Neovim search capabilities. Simply use the typically search leader keys of `/` or `?` to leveraged the search benefits of `flash.nvim`.
 
 
 ## 🚀 Language Severs, LSPs, Linters & Formatters
 
-For an overiew of how language severs, LSPs, linters and formatters are integrated with Neoteusz, please see our [lsp documentation](docs/lsp.md)
+For an overiew of how language severs, LSPs, linters and formatters are integrated with Neoteusz, please see our [lsp documentation](docs/lsp.md).
 
 
 ## 💻 Terminal UI (TUI) Integration - Extensions
@@ -109,14 +124,14 @@ Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI 
 ## 📚 References
 
 - [Nerd Fonts](https://www.nerdfonts.com/)
-  - a number of Neoteusz's plugins are configured to use [Patched Fonts](https://github.com/ryanoasis/nerd-fonts#patched-fonts) for rendering icons within the terminal and ultimately Neovim.
-  - [Github](https://github.com/ryanoasis/nerd-fonts)
+  - A number of Neoteusz's plugins are configured to use [Patched Fonts](https://github.com/ryanoasis/nerd-fonts#patched-fonts) for rendering icons within the terminal and ultimately Neovim
+  - [Nerd Font's Github](https://github.com/ryanoasis/nerd-fonts)
 
 - **_How to Patch Fonts_**:
     - Manually Patching a Font
       - [Font Patching Procedure](https://github.com/ryanoasis/nerd-fonts#option-9-patch-your-own-font)
       - Once a font is patched, move the respective `.ttf` file to the running user's font dir (e.g. `~/.local/share/fonts/FontName.ttf`) or in a well named subdirectory (e.g. `~/.local/share/fonts/Ubuntu/FontName.ttf`
     - Using already Patched Fonts
-      - Dowload a patched font from [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
+      - Download a patched font from [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
       - Move the respective `.ttf` file(s) to the running user's font dir (e.g. `~/.local/share/fonts/FontName.ttf`) or in a well named subdirectory (e.g. `~/.local/share/fonts/Ubuntu/FontName.ttf`)
 

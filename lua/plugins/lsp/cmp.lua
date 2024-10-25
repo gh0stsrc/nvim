@@ -46,10 +46,10 @@ return {
             end
           end, {"i", "s" }),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<PageUp>"] = cmp.mapping.scroll_docs(-4),
-          ["<PageDown>"] = cmp.mapping.scroll_docs(4),
           ["<Up>"] = cmp.mapping.select_prev_item(cmp_select_opts),
           ["<Down>"] = cmp.mapping.select_next_item(cmp_select_opts),
+          ["<PageUp>"] = cmp.mapping.scroll_docs(-4),
+          ["<PageDown>"] = cmp.mapping.scroll_docs(4),
           ["<C-p>"] = cmp.mapping(function()
             -- if the completion window is visible, select the previous item in the suggestion list
             if cmp.visible() then
