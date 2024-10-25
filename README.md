@@ -1,7 +1,6 @@
 <img src="/assets/neoteusz.png" alt="neoteusz">
 
 ## Neoteusz - Get S#@% done with Neovim!
-
 Neoteusz is a streamlined yet powerful Neovim configuration designed for developers who value speed and efficiency, this configuration offers a blazingly-fast, responsive developer experience. Instantly navigate large codebases, run complex commands, and interact seamlessly with Neovim; all while maintaining a low resource footprint.
 
 Whether you're working on large projects or quick scripts, this setup helps your workflow remain smooth and distraction free, empowering you to focus on building the things that you enjoy.
@@ -10,7 +9,6 @@ Thank you for stopping by and have fun!
 
 
 ## 🗒️ Note
-
 Version `1.x.x` of Neoteusz leveraged [packer.nvim](https://github.com/wbthomason/packer.nvim) as the package manager; however, packer is no longer actively maintained. `v2.x.x` and beyond will leverage [lazy.nvim](https://github.com/folke/lazy.nvim/tree/stable) as the defacto package manager (unless stated otherwise).
 
 In addition, it should be noted that this configuration and the instructions outlined, were implemented on a `Ubuntu 24.04 LTS (Noble Numbat)` system using a `v0.9.4` Neovim app image; instructions may need to be tailored for other linux distributions or Neovim versions.
@@ -19,7 +17,6 @@ In addition, it should be noted that this configuration and the instructions out
 ## 📋 Requirements
 
 ### Required
-
 - Neovim >= 0.9.4
 - Git >= 2.19.0 (for partial clones support)
 - A patched Nerd Font - To see how to patch fonts, refer to the [references section](#-references).
@@ -28,7 +25,6 @@ In addition, it should be noted that this configuration and the instructions out
 > If you do not install a patched Nerd Font, you will see unknown symbols rendered for UI components for a a number of plugins.
 
 ### Optional ###
-
 - Terminal UIs (TUIs):
     - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
     - [derailed/k9s](https://github.com/derailed/k9s)
@@ -41,32 +37,27 @@ In addition, it should be noted that this configuration and the instructions out
 
 
 ## 💯 Get Started
-
 Include install steps
 
 
 ## 🧰 Neoteusz Specific Config
-
 Most configurations are focus around the behaviour of pluigns installed and managed by `lazy.nvim`; however, there are additional configurations where you can control behaviours of Neoteusz itself (e.g. set logging level, optionally load an ai assistant).
 
-To understand these configurations and the defaults that Neoteusz will startup with, please see our [config documentation](docs/neoteusz-config.md).
+To understand these configurations and the defaults that Neoteusz will startup with, please see Neoteusz [config documentation](docs/neoteusz-config.md).
 
 
 ## ✅ Neoteusz Setup Validation
-
 After addressing [requirements](#-requirements), you should check the overall status of your Neovim setup by excuting the `:checkhealth` command.
 
 The `:checkhealth` command runs a series of diagnostic tests to check the health of your Neovim installation. If it uncovers any problems, it usually offers suggestions on how to fix them, or where to go to learn more.
-If you find and relvant *Warnings* which may impact your nvim setup or experience, OR any *Errors*, follow the guidance provide and address their resolution accordingly.
+If you find and relvant *Warnings* which may impact your Neovim setup or experience, OR any *Errors*, follow the guidance provide and address their resolution accordingly.
 
 
 ## 🔌 Plugin Inventory
-
-For a comprehensive overiew of all included plugins, please see our [plugins documentation](docs/plugins.md).
+For a comprehensive overiew of all included plugins, please see Neoteusz [plugins documentation](docs/plugins.md).
 
 
 ## 🔎 Key Bindings - Which Key
-
 [which-key](https://github.com/folke/which-key.nvim) is a brillant plugin that helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type. Please read the below subsections to better understand how to leverage `which-key` for keybindings within Neoteusz.
 
 >[!NOTE]
@@ -77,7 +68,7 @@ All keybindings tied to the leader key, are grouped into categories to help prov
 ![leader-keybindings](/assets/which-key_leader-keybinding.png)
 
 ### Window Manipulation & Navigation ###
-Key bindings related to windows within nvim can still be observed using `which-key`, simply enter `<C-w>` (i.e. `<ctrl> + b`) and `which-key` will display all window related keybindings that are currently registered.
+Key bindings related to windows within Neovim can still be observed using `which-key`, simply enter `<C-w>` (i.e. `<ctrl> + w`) and `which-key` will display all window related keybindings that are currently registered.
 ![window-keybindings](/assets/which-key_window-bindings.png)
 
 ### Auto-Completion ###
@@ -93,22 +84,20 @@ To allow for a seamless experience with auto-completion, related keys were not r
 - `<C-n>`: the ctrl + n key combination is used to move to the next item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
 
 ### Treesitter Navgation ###
-Treesitter navigation is also available through `which-key`; however, it leverages distinct leader keys. For accessing previous and next nodes use the `[` (previous) `]` (next) leader keys respectively.
+Treesitter navigation is also available through `which-key`; however, it leverages distinct leader keys. For accessing previous and next nodes use the `[` (i.e. previous) `]` (i.e. next) leader keys respectively.
 
 ### Registers ###
 Values stored within registers are also available through `which-key`; however, it leverages the `""` leader key.
 
 ### Flash Enhanced Search ###
-`folke/flash.nvim` is leverage to enhance general Neovim search capabilities. Simply use the typically search leader keys of `/` or `?` to leveraged the search benefits of `flash.nvim`.
+`folke/flash.nvim` is leveraged to enhance general Neovim search capabilities. Simply use the typically search leader keys of `/` or `?` and you will automatically gain the search benefits of `flash.nvim`.
 
 
 ## 🚀 Language Severs, LSPs, Linters & Formatters
-
-For an overiew of how language severs, LSPs, linters and formatters are integrated with Neoteusz, please see our [lsp documentation](docs/lsp.md).
+For an overiew of how language severs, LSPs, linters and formatters are integrated with Neoteusz, please see Neoteusz [lsp documentation](docs/lsp.md).
 
 
 ## 💻 Terminal UI (TUI) Integration - Extensions
-
 Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI apps. The respective TUI key bindings will only function if the underlying apps are installed. Once installed, simply use [which-key](#-key-bindings---which-key) to discover the appropriate key bindings and have fun with TUIs.
 
 >[!TIP]
@@ -122,7 +111,6 @@ Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI 
 
 
 ## 📚 References
-
 - [Nerd Fonts](https://www.nerdfonts.com/)
   - A number of Neoteusz's plugins are configured to use [Patched Fonts](https://github.com/ryanoasis/nerd-fonts#patched-fonts) for rendering icons within the terminal and ultimately Neovim
   - [Nerd Font's Github](https://github.com/ryanoasis/nerd-fonts)
