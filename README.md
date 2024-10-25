@@ -16,7 +16,7 @@ Version `1.x.x` of Neoteusz leveraged [packer.nvim](https://github.com/wbthomaso
 In addition, it should be noted that this configuration and the instructions outlined, were implemented on a `Ubuntu 24.04 LTS (Noble Numbat)` system using a `v0.9.4` neovim app image; instructions may need to be tailored for other linux distributions or neovim versions.
 
 
-## 🛠️ Requirements
+## 📋 Requirements
 
 ### Required
 
@@ -37,7 +37,7 @@ In addition, it should be noted that this configuration and the instructions out
     - In the interest of attempting to maintain minimalism for the readme, the Neovim clipboard configuration details are within their own [dedicated document](/docs/clipboard.md), please review it when you have a chance (or need clipboard)
 
 
-## 🚀 Installation
+## 💯 Get Started
 
 Include install steps
 
@@ -88,7 +88,7 @@ Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI 
   - `k9s` is a popular open-source terminal-based console (TUI) for managing and interacting with Kubernetes clusters. It provides a powerful and convenient way to view, navigate, and manipulate Kubernetes resources and clusters directly from your terminal. K9s is designed to simplify Kubernetes administration tasks and provide real-time insights into your cluster.
 
 
-## 📦 Nvim Config Environment Variables
+## 🧰 Neoteusz Specific Config
 
  
  WHY do we have them???
@@ -122,7 +122,7 @@ by setting this environment variable to `true`, Neovim will open with debugging 
 
   - To manually override the `gruvbox` colorscheme to render comments in green text, when either treesitter or LSPs are **_NON_**-FUNCTIONAL, set the environment variable to `true`.
 
-## 📋 Nvim Config Validation
+## ✅ Nvim Config Validation
 
 After addressing [Nvim Config Installation Prerequisites](#nvim-config-installation-prerequisites), you should check the overall status of your neovim setup by excuting the `:checkhealth` command
 
