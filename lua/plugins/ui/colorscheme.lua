@@ -2,7 +2,6 @@
 --?                      Neoteusz Colorscheme                       ?--
 --* --------------------------------------------------------------- *--
 
-
 --* ------------------------------------ *--
 --?   custom colorscheme vim overrides   ?--
 --* ------------------------------------ *--
@@ -14,7 +13,6 @@ local gruvbox_overrides = {
 
 -- default palette overrides for gruvbox - defaults to nil as palette overrides will only be leveragd if issues with an LSP arise
 local gruvbox_palette_overrides
-
 
 --* ------------------------------------ *--
 --?     lazy.nvim config for gruvbox     ?--

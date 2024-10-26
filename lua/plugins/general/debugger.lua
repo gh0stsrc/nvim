@@ -4,7 +4,6 @@
 
 
 local command_exists = require("utils.helpers").command_exists
--- local notify = require("notify").async
 local async = require("plenary.async")
 local enableNvimDapGo = false
 vim.notify = require("notify") -- NOTE: related to the above bug, need to set default vim notifications to use nvim-notify

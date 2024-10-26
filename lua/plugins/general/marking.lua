@@ -3,7 +3,6 @@
 --* --------------------------------------------------------------- *--
 
 return {
-    -- Harpoon plugin configuration
   {
     "ThePrimeagen/harpoon",
     branch = "master",
