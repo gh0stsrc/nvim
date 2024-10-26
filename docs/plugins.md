@@ -1,7 +1,13 @@
 # 🔌 Plugins
 
+>[!TIP]
+> For immediate access to an always up todate list of plugins, you can always use the `:Lazy` command for `lazy.nvim` to display all installed plugins.
+
 - [lazy.nvim](https://github.com/folke/lazy.nvim):
     - `lazy.nvim` is a modern plugin manager for Neovim.
+
+- [which-key](https://github.com/folke/which-key.nvim):
+    - `which-key.nvim` helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
 
 - [gruvbox](https://github.com/morhetz/gruvbox)
   - `gruvbox`, the color scheme is known for its warm and retro-inspired color palette, which many developers find visually pleasing and comfortable for coding. It often includes variations for different languages and file types to make syntax highlighting more readable and aesthetically pleasing.
@@ -15,10 +21,13 @@
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
   - `indent-blankline.nvim` is a plugin is designed to enhance the visibility of indentation levels within your code or text documents.
 
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
   - `treesitter` is a parser generator tool and an incremental parsing library
     It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited
   - **_nvim-treesitter is required for IDE functionality such as parsing, syntax highlighting, code analysis and incremental selection_**
+  
+- [nvim-treesitter/nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+  - `nvim-treesitter-textobjects` provides syntax aware text-objects, select, move, swap, and peek support for `nvim-treesitter`.
 
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
   - `telescope` is a highly extendable fuzzy finder over lists. Built on the latest awesome features from Neovim core.
@@ -43,6 +52,9 @@
 
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
   - `plenary` is a Neovim library that provides lua functions required for the development and use of various Neovim plugins.
+
+- [nvim-neotest/nvim-nio](https://github.com/nvim-neotest/nvim-nio)
+  - `nvim-nio` A library for asynchronous IO in Neovim, inspired by the asyncio library in Python. The library focuses on providing both common asynchronous primitives and asynchronous APIs for Neovim's core.
 
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
   - `lualine` is a blazing fast and easy to configure Neovim statusline written in Lua.
@@ -69,6 +81,9 @@
 
 - [mortepau/codicons.nvim](https://github.com/mortepau/codicons.nvim)
   - `codicons` is a small library containing the codicons from VS Code and some functions to simplify the usage of them.
+
+- [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
+  - `mini.icons` is a small library containing the icons that are used by projects like `which-key`.
 
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
   - `nvim-lspconfig` is a configuration utility for the built-in Language Server Protocol (LSP) client for Neovim. 
