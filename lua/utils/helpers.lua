@@ -28,8 +28,8 @@ function M.to_boolean(str)
 end
 
 -- function to see if a table contains a particular value
-function M.contains(list, element)
-  for _, value in ipairs(list) do
+function M.contains(table, element)
+  for _, value in ipairs(table) do
     if type(value) == "string" then
       if string.upper(value) == string.upper(element) then
         return true
@@ -43,11 +43,11 @@ end
 
 
 -- function to see if a table only contains a particular value
-function M.onlyContains(list, element)
-  if #list > 1 then
+function M.onlyContains(table, element)
+  if #table > 1 then
     return false
   else
-    return M.contains(list, element)
+    return M.contains(table, element)
   end
 end
 
@@ -57,12 +57,12 @@ function M.check_clipboard_providers()
   local compatible_providers = {"xclip", "xsel", "tmux", "termux", "lemonade", "doitclient"}
   local found_providers = {}
 
-  -- iterate over each provider in the list of compatible_providers and check if there is a present provider installed for Neovim to leverage
+  -- iterate over each provider in the table of compatible_providers and check if there is a present provider installed for Neovim to leverage
   for _, provider in ipairs(compatible_providers) do
     -- check if the provider is executable using Neovim’s vim.fn.executable function
     if vim.fn.executable(provider) == 1 then
       -- if the provider is executable, add it to the found_providers table
-      table.insert(found_providers, provider) -- Insert the provider to the found_providers list
+      table.insert(found_providers, provider) -- Insert the provider to the found_providers table
     end
   end
   -- return the table of found providers
