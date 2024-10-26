@@ -8,7 +8,7 @@ local async = require("plenary.async")
 -- get a table of compatible clipboard providers that are currently installed on the system
 local clipboard_providers = Helpers.check_clipboard_providers()
 
--- check if no clipboard provider has been found AND if the user has NOT explictly disabled clipboard validation and bootstrapping
+-- check if no clipboard provider has been found AND if the user has NOT explicitly disabled clipboard validation and bootstrapping
 if #clipboard_providers == 0 and vim.g.neoteusz_clipboard_skip ~= true then
     -- If no providers were found, notify the user
     async.run(function ()
