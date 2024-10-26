@@ -17,7 +17,6 @@ function M.command_exists(cmd)
     return result and result ~= ""
 end
 
-
 -- helper func to convert strings to booleans - primarily for env var comparison
 function M.to_boolean(str)
   local bool = false
@@ -41,7 +40,6 @@ function M.contains(table, element)
   return false
 end
 
-
 -- function to see if a table only contains a particular value
 function M.onlyContains(table, element)
   if #table > 1 then
@@ -50,7 +48,6 @@ function M.onlyContains(table, element)
     return M.contains(table, element)
   end
 end
-
 
 -- helper func to check if Neovim compatible clipboard providers are currently installed
 function M.check_clipboard_providers()
