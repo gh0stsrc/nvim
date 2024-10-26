@@ -33,7 +33,7 @@ In addition, it should be noted that this configuration and the instructions out
     - In the interest of attempting to maintain minimalism for the readme, the AI Asstant configuration details are within their own [dedicated document](/docs/ai-assistant.md)
 
 - Neovim Clipboard
-    - In the interest of attempting to maintain minimalism for the readme, the Neovim clipboard configuration details are within their own [dedicated document](/docs/clipboard.md), please review it when you have a chance (or need clipboard)
+    - In the interest of attempting to maintain minimalism for the readme, please see Neoteusz [config documentation](docs/neoteusz-config.md) for information pertaining to clipboard configurations.
 
 
 ## 💯 Get Started
