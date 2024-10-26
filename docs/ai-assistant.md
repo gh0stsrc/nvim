@@ -1,9 +1,9 @@
 # 🤖 AI Assistant
 
 If you would like use the `jackMort/ChatGPT.nvim` plugin to integrate Neovim with the OpenAI's ChatGPT, there are a couple of prerequisites:
-    1) You will need a valid OpenAI API Key
-    2) You will have to securely store the API key
-    3) Enable the plugin, please see [Neoteusz config documentation](/docs/neoteusz-config.md)
+1) You will need a valid OpenAI API Key
+2) You will have to securely store the API key
+3) Enable the plugin, please see [Neoteusz config documentation](/docs/neoteusz-config.md)
 
 >[!NOTE]
 > How you choose to store and access the OpenAI API key will dictate if you will have to update the `chatgpt` setup config.
