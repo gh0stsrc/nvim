@@ -23,9 +23,6 @@ local log_lvl_map = {
 }
 
 return {
-  --* ------------------------------------ *--
-  --?               nvim-tree              ?--
-  --* ------------------------------------ *--
   {
     "nvim-tree/nvim-tree.lua",
     tag = "v1.7.1",
@@ -57,9 +54,6 @@ return {
       }
     }
   },
-  --* ------------------------------------ *--
-  --?               nvim-notify            ?--
-  --* ------------------------------------ *--
   {
     "rcarriga/nvim-notify", -- WARN: nvim-notify is set as the default noftication mechanism for all plugins that use the vim.notify function (see core.lua for the override)
     commit = "e4a2022f4fec2d5ebc79afa612f96d8b11c627b3",
@@ -92,9 +86,6 @@ return {
       },
     }
   },
-  --* ------------------------------------ *--
-  --?               lualine                ?--
-  --* ------------------------------------ *--
   {
     "nvim-lualine/lualine.nvim",
     commit = "2248ef254d0a1488a72041cfb45ca9caada6d994",
@@ -132,9 +123,6 @@ return {
       extensions = {},
     }
   },
-  --* ------------------------------------ *--
-  --?              bufferline              ?--
-  --* ------------------------------------ *--
   {
     "akinsho/bufferline.nvim",
     commit = "357cc8f8eeb64702e6fcf2995e3b9becee99a5d3",
@@ -221,9 +209,6 @@ return {
       },
     },
   },
-  --* ------------------------------------ *--
-  --?            indent-blankline          ?--
-  --* ------------------------------------ *--
   {
     "lukas-reineke/indent-blankline.nvim",
     commit = "29be0919b91fb59eca9e90690d76014233392bef",

@@ -14,9 +14,6 @@ local gruvbox_overrides = {
 -- default palette overrides for gruvbox - defaults to nil as palette overrides will only be leveragd if issues with an LSP arise
 local gruvbox_palette_overrides
 
---* ------------------------------------ *--
---?     lazy.nvim config for gruvbox     ?--
---* ------------------------------------ *--
 return {
   {
     "ellisonleao/gruvbox.nvim",
@@ -25,9 +22,6 @@ return {
     priority = 999,
     setup = true,
     config = function ()
-      --* ------------------------------------ *--
-      --?             gruvbox setup            ?--
-      --* ------------------------------------ *--
       require("gruvbox").setup({
         -- set gruvbox to present a harderd contrast, preferred option when using Dark Mode
         contrast = "hard",
@@ -36,7 +30,7 @@ return {
         palette_overrides = gruvbox_palette_overrides,
       })
       --* ------------------------------------ *--
-      --?       colourscheme final setup       ?--
+      --?      colourscheme finalization       ?--
       --* ------------------------------------ *--
       -- set the vim background to Dark Mode -- IMPORTANT: these colorscheme overrides must occur after the primary gruvbox setup
       vim.o.background = "dark"

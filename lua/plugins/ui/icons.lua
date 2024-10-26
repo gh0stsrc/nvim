@@ -2,12 +2,9 @@
 --?                              Icons                              ?--
 --* --------------------------------------------------------------- *--
 
--- IMPORTANT: all fonts are required to be patched to be able to be rendered by the terminal, already patched fonts are available at https://github.com/gh0stsrc/.fonts
+-- IMPORTANT: all fonts are required to be patched to be able to be rendered by the terminal, already patched fonts are available at https://www.nerdfonts.com/
 
 return {
-  --* ------------------------------------ *--
-  --?           nvim-web-devicons          ?--
-  --* ------------------------------------ *--
   {
     "nvim-tree/nvim-web-devicons",
     commit = "f0267921c845c42685968401bc49aa65e18d3e09",
@@ -85,9 +82,6 @@ return {
       };
     }
   },
-  --* ------------------------------------ *--
-  --?               codicons               ?--
-  --* ------------------------------------ *--
   {
     "mortepau/codicons.nvim", -- NOTE: codicons is a dependency of dapui, which leverages codicons as part of the UI"s debugger pane
     priority = 1000,
@@ -96,9 +90,6 @@ return {
       require("codicons").setup()
     end
   },
-  --* ------------------------------------ *--
-  --?              mini.icons              ?--
-  --* ------------------------------------ *--
   {
     "echasnovski/mini.icons", -- NOTE: mini.icons is an optional dependency of whichkey
     priority = 1000,
