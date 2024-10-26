@@ -4,12 +4,17 @@
 
 -- IMPORTANT: This file is loaded before plugins, so if you need something to be executed before importing modules/libs put it here
 
--- NOTE: inform neovim to treat the `Netrw` plugin as if it was already loaded, preventing it from actually being loaded when launching neovim; required to load nvim-tree instead
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+-- set the default leader for key mappings
+vim.g.mapleader = " " -- IMPORTANT: leader is the <space> key
+vim.g.maplocalleader = " "
+vim.opt.termguicolors = true
+-- Reserve a space in the gutter
+vim.opt.signcolumn = "yes"
 
--- NOTE: set nvim-notify as the default noftication mechanism for all plugins that use vim.notify function (e.g. telescope)
--- vim.notify = require("notify")
+
+-- NOTE: inform neovim to treat the `Netrw` plugin as if it was already loaded, preventing it from actually being loaded when launching neovim; required to load nvim-tree instead
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 --* --------------------------------------------------------------- *--
 --?                        Vim Customizations                       ?--

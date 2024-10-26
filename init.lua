@@ -29,13 +29,10 @@
 ---               - Performance optimization
 ---             - --:
 ---               - Regular Comment           
+---
 
 
---* ------------------------------------------------------------------------------------------------------------------------ *--
---?                                              lazy.nvim Setup & Bootstrapping                                             ?--
---* ------------------------------------------------------------------------------------------------------------------------ *--
-
--- bootstrap lazy.nvim
+-- clone lazy.nvim to the standard data path (e.g. ~/.local/share/nvim) under lazy/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -52,14 +49,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- set the default leader for key mappings
-vim.g.mapleader = " " -- IMPORTANT: leader is the <space> key
-vim.g.maplocalleader = " "
-vim.opt.termguicolors = true
--- Reserve a space in the gutter
-vim.opt.signcolumn = "yes"
+-- IMPORTANT: load core first and foremost
+require("core")
 
--- load neoteusz specific configs
+-- load neoteusz specific configs prior to lazy.nvim loading any plugins
 require("utils.config-loader")
 
 -- lazy.nvim startup configuration, including plugin bootstrapping 
@@ -70,35 +63,14 @@ require("lazy").setup({
         }
     },
     -- import plugin
-    { import = "plugins.ui" }, -- IMPORTANT: load ui components first, otherwise logging using nvim-notify can be buggy 
-    -- TODO: move plugins to dedicated folders based on type and priority
+    { import = "plugins.ui" }, -- IMPORTANT: load ui components first 
     { import = "plugins.lsp" },
     { import = "plugins.general" },
-  }
+  },
 })
 
-
---* ------------------------------------------------------------------------------------------------------------------------ *--
---?                                          Other Neoteusz Specific Configurations                                          ?--
---* ------------------------------------------------------------------------------------------------------------------------ *--
--- import plenary's async lib to avoid using callbacks
-local async = require("plenary.async")
--- set "rcarriga/nvim-notify" as the may notification mechanism for neovim
-local notify = require("notify")
-vim.notify = notify
-
--- IMPORTANT: load core first and foremost
-require("core")
-
--- NOTE: import remaining modules
-require("vim-core")
+-- post initialization
+require("post-init")
 -- load extensions like terminal ui apps (e.g. lazygit and k9s)
 require("extensions")
-
--- welcome the user 
-async.run(
-  function()
-    vim.notify(string.format("welcome %s ", os.getenv("USER")), vim.log.levels.INFO, {title = vim.g.neoteusz_name})
-  end, function () end -- empty callback
-)
 

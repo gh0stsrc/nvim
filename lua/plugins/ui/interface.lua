@@ -41,16 +41,16 @@ return {
     end,
     keys = {
       {
-        "<M-n>",
+        "<leader>x<enter>",
         "<cmd>NvimTreeToggle<cr>",
         mode = "n",
-        desc = "open nvim-tree file explorer pane"
+        desc = "Toggle nvim-tree explorer",
       },
       {
-        "``",
+        "<leader>xx",
         "<cmd>NvimTreeFocus<cr>",
         mode = "n",
-        desc = "open nvim-tree file explorer pane, if not opened and set focus"
+        desc = "Set focus on nvim-tree explorer"
       }
     }
   },
