@@ -31,12 +31,9 @@ return {
       require("gruvbox").setup({
         -- set gruvbox to present a harderd contrast, preferred option when using Dark Mode
         contrast = "hard",
-        --* if the env `NVIM_ENABLE_BACKUP_COMMENT_COLOR` is NOT set, `overrides` will be set the initial value set of the local var `gruvbox_overrides`; otherwise it will be set to nil
         --* use a treesitter group/LSP semantic override to force the colour of comments to green (supported for all installed LSPs)
         overrides = gruvbox_overrides,
-        --* if the env `NVIM_ENABLE_BACKUP_COMMENT_COLOR` IS  set, `palette_overrides` will be set to the value by the respective conditonal control flow; otherwise it will remain as nil
-        --* NOTE: this should only be used when the treesitter group/LSP semantic override to force the colour of comments is NON functional
-        palette_overrides = gruvbox_palette_overrides, -- default value is nil 
+        palette_overrides = gruvbox_palette_overrides,
       })
       --* ------------------------------------ *--
       --?       colourscheme final setup       ?--

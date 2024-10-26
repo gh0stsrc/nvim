@@ -9,7 +9,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- get the desired log level set by the `NVIM_LOG_LVL` environment variable, if not set the log lvl will default to `INFO`
+-- get the desired log level set within the config.lua file, if not set the log lvl will default to `INFO`
 local log_lvl_nm = string.upper(vim.g.neoteusz_logging_level or "INFO")
 
 -- map of log level names to vim log levels
