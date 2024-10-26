@@ -12,7 +12,7 @@ if command_exists("k9s") then
 	local K9s = Terminal:new({
 	  cmd = "k9s",          -- command to execute in the terminal
 	  dir = "./",           -- directory for terminal to be opened within
-	  direction = "float",  -- set terminal to float over the current neovim window
+	  direction = "float",  -- set terminal to float over the current Neovim window
 	  float_opts = {
 		border = "double",    -- set a double boarder around the floating window
 	  },

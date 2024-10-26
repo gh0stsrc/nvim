@@ -52,12 +52,12 @@ function M.onlyContains(list, element)
 end
 
 
--- helper func to check if neovim compatible clipboard providers are currently installed
+-- helper func to check if Neovim compatible clipboard providers are currently installed
 function M.check_clipboard_providers()
   local compatible_providers = {"xclip", "xsel", "tmux", "termux", "lemonade", "doitclient"}
   local found_providers = {}
 
-  -- iterate over each provider in the list of compatible_providers and check if there is a present provider installed for neovim to leverage
+  -- iterate over each provider in the list of compatible_providers and check if there is a present provider installed for Neovim to leverage
   for _, provider in ipairs(compatible_providers) do
     -- check if the provider is executable using Neovim’s vim.fn.executable function
     if vim.fn.executable(provider) == 1 then

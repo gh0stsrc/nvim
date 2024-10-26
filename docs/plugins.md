@@ -7,7 +7,7 @@
   - `gruvbox`, the color scheme is known for its warm and retro-inspired color palette, which many developers find visually pleasing and comfortable for coding. It often includes variations for different languages and file types to make syntax highlighting more readable and aesthetically pleasing.
 
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
-  - `alpha` a fast and fully programmable dashbboard plugin for neovim
+  - `alpha` a fast and fully programmable dashbboard plugin for Neovim.
  
 - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
   - `bufferline` is a popular Neovim plugin that provides a customizable and feature-rich buffer/tabline for managing open buffers in Neovim. It enhances the visual representation of buffers in Neovim, making it easier to navigate and manage multiple open files.
@@ -21,7 +21,7 @@
   - **_nvim-treesitter is required for IDE functionality such as parsing, syntax highlighting, code analysis and incremental selection_**
 
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-  - `telescope` is a highly extendable fuzzy finder over lists. Built on the latest awesome features from neovim core
+  - `telescope` is a highly extendable fuzzy finder over lists. Built on the latest awesome features from Neovim core.
 
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
   - `harpoon` is a productivity plugin for Neovim that aims to help developers quickly navigate between files, terminals, and marks within their development environment. It provides a way to create shortcuts to frequently accessed resources, making it faster and more convenient to switch between different parts of a project.
@@ -42,10 +42,10 @@
   - `nui` is a plugin for Neovim, and it's a highly customizable UI component framework based on Lua. This plugin aims to provide developers with components such as prompts, menus, and dialogs to help build interactive user interfaces within Neovim.
 
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-  - `plenary` is a neovim library that provides lua functions required for the development and use of various neovim plugins.
+  - `plenary` is a Neovim library that provides lua functions required for the development and use of various Neovim plugins.
 
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-  - `lualine` is a blazing fast and easy to configure neovim statusline written in Lua.
+  - `lualine` is a blazing fast and easy to configure Neovim statusline written in Lua.
 
 - [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
   - `nvim-web-devicons` is a lua fork of vim-devicons. This plugin provides the same icons as well as colors for each icon.
@@ -55,7 +55,7 @@
     the plugin is developed to augment Vim with Go development features and tools, enabling a powerful and integrated workflow for Go development within the Vim environment.
 
 - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
-  - `nvim-dap` is a generic protocol for neovim that will interface with various debuggers.
+  - `nvim-dap` is a generic protocol for Neovim that will interface with various debuggers.
 
 - [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
   - `dapui` is a User Interface (UI) for nvim-dap which provides a good out of the box configuration.
@@ -71,11 +71,11 @@
   - `codicons` is a small library containing the codicons from VS Code and some functions to simplify the usage of them.
 
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-  - `nvim-lspconfig` is a configuration utility for the built-in Language Server Protocol (LSP) client for neovim. 
+  - `nvim-lspconfig` is a configuration utility for the built-in Language Server Protocol (LSP) client for Neovim. 
   - the Language Server Protocol is a standard for implementing programming language smart features, such as autocompletion, go to definition, and find references, by using language servers that communicate with development environment editors and IDEs.
 
 - [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
-  - `mason` is a neovim plugin that allows you to easily manage external editor tooling such as LSP servers, DAP servers, linters, and formatters through a single interface.
+  - `mason` is a Neovim plugin that allows you to easily manage external editor tooling such as LSP servers, DAP servers, linters, and formatters through a single interface.
 
 - [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
   - `mason-lspconfig` bridges mason.nvim with the lspconfig plugin - making it easier to use both plugins together.

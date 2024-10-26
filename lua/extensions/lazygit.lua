@@ -12,7 +12,7 @@ if command_exists("lazygit") then
 	LazyGit = Terminal:new({
 	  cmd = "lazygit",       -- command to execute in the terminal
 	  dir = "git_dir",       -- directory for terminal to be opened within
-	  direction = "float",   -- set terminal to float over the current neovim window
+	  direction = "float",   -- set terminal to float over the current Neovim window
 	  float_opts = {
 		border = "double",     -- set a double boarder around the floating window
 	  },
