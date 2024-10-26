@@ -51,7 +51,7 @@ end
 
 -- helper func to check if Neovim compatible clipboard providers are currently installed
 function M.check_clipboard_providers()
-  local compatible_providers = {"xclip", "xsel", "tmux", "termux", "lemonade", "doitclient"}
+  local compatible_providers = {"pbcopy", "pbpaste", "wl-copy", "wl-paste", "waycopy", "xclip", "xsel", "lemonade", "doitclient", "win32yank", "termux", "tmux"}
   local found_providers = {}
 
   -- iterate over each provider in the table of compatible_providers and check if there is a present provider installed for Neovim to leverage
