@@ -38,8 +38,9 @@ In addition, it should be noted that this configuration and the instructions out
 
 ## 💯 Get Started
 1) Get a Neovim app image build with LuaJIT or build it yourself from source
-2) Ensure the Neovim image is executable (chmod +x `<image_name>`)
-3) Clone this repo to your Neovim configuration directory -  To get the correct path for your system, run `:echo stdpath('config')`
+2) Ensure the Neovim image is executable (`chmod +x <image_name>`)
+3) Clone this repo to your Neovim configuration directory 
+    - To get the correct path for your system, run `:echo stdpath('config')`
 4) Follow the steps in the [references section](#-references) to install a patched Nerd Font on your system
 5) Have fun!
 
