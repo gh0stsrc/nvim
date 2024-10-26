@@ -98,7 +98,7 @@ require("extensions")
 -- welcome the user 
 async.run(
   function()
-    vim.notify(string.format("[ welcome %s ]", os.getenv("USER")), vim.log.levels.INFO, {title = vim.g.neoteusz_name})
+    vim.notify(string.format("welcome %s ", os.getenv("USER")), vim.log.levels.INFO, {title = vim.g.neoteusz_name})
   end, function () end -- empty callback
 )
 
