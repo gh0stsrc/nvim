@@ -1,7 +1,7 @@
 # 🔌 Plugins
 
 >[!TIP]
-> For immediate access to an always up todate list of plugins, you can always use the `:Lazy` command for `lazy.nvim` to display all installed plugins.
+> For immediate access to an always up to date list of plugins, you can always use the `:Lazy` command for `lazy.nvim` to display all installed plugins.
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim):
     - `lazy.nvim` is a modern plugin manager for Neovim.
