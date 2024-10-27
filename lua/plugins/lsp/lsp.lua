@@ -138,7 +138,6 @@ return {
       lspconfig.bashls.setup({})
       lspconfig.marksman.setup({})
       lspconfig.terraformls.setup({})
-      
       -- Auto format on save for tf files
       vim.api.nvim_create_autocmd({"BufWritePre"}, {
         pattern = {"*.tf", "*.tfvars"},

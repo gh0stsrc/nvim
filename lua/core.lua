@@ -1,25 +1,19 @@
 --* --------------------------------------------------------------- *--
---?                         Core / Init Setup                       ?--
+--?                           Core / Init                           ?--
 --* --------------------------------------------------------------- *--
 
--- IMPORTANT: This file is loaded before plugins, so if you need something to be executed before importing modules/libs put it here
+-- IMPORTANT: this module  should always be loaded before lazy.nvim loads any plugins
 
 -- set the default leader for key mappings
-vim.g.mapleader = " " -- IMPORTANT: leader is the <space> key
+vim.g.mapleader = " " -- leader is the <space> key
 vim.g.maplocalleader = " "
+-- enables support for 24-bit RGB colors in the terminal.
 vim.opt.termguicolors = true
--- Reserve a space in the gutter
+-- reserve a space in the gutter to signs
 vim.opt.signcolumn = "yes"
-
-
 -- inform Neovim to treat the `Netrw` plugin as if it was already loaded, preventing it from actually being loaded when launching Neovim; required to load nvim-tree instead
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
---* --------------------------------------------------------------- *--
---?                        Vim Customizations                       ?--
---* --------------------------------------------------------------- *--
-
 -- set  the cursor shape to a block (i:block) when you are in insert mode (i). The cursor shape changes visually to indicate the mode you are in
 vim.opt.guicursor = "i:block"
 -- set the number of spaces a tab character should display as. In this case, it's set to 2 spaces
@@ -52,7 +46,6 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 -- enables true color support in the terminal if supported by your terminal emulator. This allows for more colorful syntax highlighting
 vim.o.termguicolors = true
-
 -- configure automatic toggling between relative and absolute number mode dynamically based on events
 vim.cmd([[
  augroup numbertoggle

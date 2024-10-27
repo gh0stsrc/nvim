@@ -2,9 +2,6 @@
 --?                      Neoteusz Colorscheme                       ?--
 --* --------------------------------------------------------------- *--
 
---* ------------------------------------ *--
---?   custom colorscheme vim overrides   ?--
---* ------------------------------------ *--
 -- desired generic overrides for gruvbox
 local gruvbox_overrides = {
   -- use a treesitter group/LSP semantic override to force the colour of comments to green (supported for all installed LSPs)
