@@ -2,13 +2,6 @@
 --?                         User Interface                          ?--
 --* --------------------------------------------------------------- *--
 
--- IMPORTANT: all fonts are required to be patched to be able to be rendered by the terminal, already patched fonts are available at https://github.com/gh0stsrc/.fonts
--- TODO: move UI components to other files to reduce the overall size of this file
-
--- NOTE: inform neovim to treat the `Netrw` plugin as if it was already loaded, preventing it from actually being loaded when launching neovim; required to load nvim-tree instead
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- get the desired log level set within the config.lua file, if not set the log lvl will default to `INFO`
 local log_lvl_nm = string.upper(vim.g.neoteusz_logging_level or "INFO")
 
@@ -42,20 +35,20 @@ return {
     keys = {
       {
         "<leader>x<enter>",
-        "<cmd>NvimTreeToggle<cr>",
+        function () vim.cmd("NvimTreeToggle") end,
         mode = "n",
         desc = "Toggle nvim-tree explorer",
       },
       {
         "<leader>xx",
-        "<cmd>NvimTreeFocus<cr>",
+        function () vim.cmd("NvimTreeFocus") end,
         mode = "n",
         desc = "Set focus on nvim-tree explorer"
       }
     }
   },
   {
-    "rcarriga/nvim-notify", -- WARN: nvim-notify is set as the default noftication mechanism for all plugins that use the vim.notify function (see core.lua for the override)
+    "rcarriga/nvim-notify",
     commit = "e4a2022f4fec2d5ebc79afa612f96d8b11c627b3",
     priority = 1000,
     lazy = false,
@@ -74,8 +67,7 @@ return {
             TRACE   = "󰛤 ",
         }
       })
-      -- NOTE: other plugins can use notification windows by setting the nvim-notify plugin as your default notify function
-      vim.notify = require("notify")
+      vim.notify = require("notify") -- NOTE: set nvim-notify as the default notification mechanism for all plugins that use the vim.notify function
     end,
     keys = {
       {

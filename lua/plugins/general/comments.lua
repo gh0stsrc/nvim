@@ -38,6 +38,12 @@ return {
     },
     keys = {
       {
+        "<leader>st",
+        function () vim.cmd("TodoTelescope") end,
+        mode = "n",
+        desc = "[S]earch [T]odo comment tags"
+      },
+      {
        "]t",
        function() require("todo-comments").jump_next({keywords = {"TODO"}}) end,
        mode = "n",
@@ -133,13 +139,6 @@ return {
        mode = "n",
        desc = "Jump to previous TEST comment"
       },
-      {
-        "tt",
-        "<cmd>TodoTelescope<cr>",
-        mode = "n",
-        desc = "Open Telescope preview with all comment tags"
-      },
-
     }
   },
 }

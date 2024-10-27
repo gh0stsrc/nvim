@@ -12,7 +12,7 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 
 
--- NOTE: inform neovim to treat the `Netrw` plugin as if it was already loaded, preventing it from actually being loaded when launching neovim; required to load nvim-tree instead
+-- inform Neovim to treat the `Netrw` plugin as if it was already loaded, preventing it from actually being loaded when launching Neovim; required to load nvim-tree instead
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -53,7 +53,7 @@ vim.o.timeoutlen = 300
 -- enables true color support in the terminal if supported by your terminal emulator. This allows for more colorful syntax highlighting
 vim.o.termguicolors = true
 
---NOTE: configure automatic toggling between relative and absolute number mode dynamically based on events
+-- configure automatic toggling between relative and absolute number mode dynamically based on events
 vim.cmd([[
  augroup numbertoggle
    autocmd!

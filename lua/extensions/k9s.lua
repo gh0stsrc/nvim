@@ -4,7 +4,7 @@
 
 local command_exists = require("utils.helpers").command_exists
 
--- NOTE: ONLY configure toggle terminal to open terminal window running k9s, if it is installed (i.e. can be found on $PATH)
+-- ONLY configure toggle terminal to open terminal window running k9s, if k9s is installed on the system (i.e. can be found on $PATH)
 if command_exists("k9s") then
 	-- load and save toggle terminal's terminal module Terminal object, for direct terminal window creation
 	Terminal = require("toggleterm.terminal").Terminal

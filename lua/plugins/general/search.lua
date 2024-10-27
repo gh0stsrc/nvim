@@ -5,7 +5,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "nvim-0.6",  -- IMPORTANT: telescope was previously hard tagged to `nvim-0.6`, testing with the latest verison; revert if you encounter issues
+    tag = "nvim-0.6",
     dependencies = {
       { "nvim-lua/plenary.nvim", commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" },
       { "BurntSushi/ripgrep", commit = "7099e174acbcbd940f57e4ab4913fee4040c826e" },
@@ -13,7 +13,7 @@ return {
       { "folke/which-key.nvim" },
     },
     config = function ()
-      require("telescope").setup()
+      require("telescope").setup({})
       -- add group name for the root of <leader> s (i.e. search)
       require("which-key").add({
         { "<leader>s", group = "search", icon = { icon = "", color = "blue" }},
@@ -71,7 +71,7 @@ return {
     opts = {
       modes = {
         search ={
-          enabled = true -- NOTE: enable flash on regular search (i.e. `/`, `?`)
+          enabled = true -- NOTE: this enables flash on regular search (i.e. `/`, `?`)
         }
       }
     },

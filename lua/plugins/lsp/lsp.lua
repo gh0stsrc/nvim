@@ -30,10 +30,10 @@ return {
           "tflint",
           "bashls",
           "dockerls",
-          -- "helm_ls", -- TODO: need to figure out why the Helm language server is not rendering properly
+          -- "helm_ls",
           "pyright",
           "marksman",
-        -- "yamls", -- IMPORTANT: disabled on purpose, see configurations for more details
+          -- "yamls",
         },
       })
     end
@@ -54,7 +54,7 @@ return {
       local lspconfig = require("lspconfig")
       local lspconfig_defaults = require('lspconfig').util.default_config
 
-      -- NOTE: globally configure the default capabilities for all Language Server Protocol (LSP) servers in neovim that are managed by nvim-lspconfig
+      -- NOTE: globally configure the default capabilities for all Language Server Protocol (LSP) servers in Neovim that are managed by nvim-lspconfig
       lspconfig_defaults.capabilities = vim.tbl_deep_extend(
         'force',
         lspconfig_defaults.capabilities, -- hold onto default configuration options (on_attach, capabilities, etc.) that are applied to all LSP servers unless explicitly overridden within specific lsp server configs.
@@ -112,7 +112,9 @@ return {
         { "<leader>lro",  mode   = "n", desc = "Search all sites called by the symbol (outgoing)" },
       })
 
-      -- NOTE: default capabilties have already been configured globally for all LSP servers by setting `lspconfig_defaults.capabilities` earlier, ONLY custom setting should be added to particular LSP server setup configs
+      -- NOTE:  default capabilties have already been configured globally for all LSP servers by setting `lspconfig_defaults.capabilities` earlier, ONLY custom setting should be added to particular LSP server setup configs
+      --        although default configurations of language servers should be automatically handled by `mason-lspconfig`, some language servers may also require an explicit `setup({})` call to properly initialize
+      --        if lsp functionality is not working for a newly added language server, add an explicit setup call for the particular language server within the `nvim-lspconfig` config function
 
       lspconfig.gopls.setup({})
       lspconfig.lua_ls.setup({
@@ -151,3 +153,4 @@ return {
     end,
   },
 }
+

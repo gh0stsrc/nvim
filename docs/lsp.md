@@ -17,3 +17,4 @@ To see the comprehensive list of available language servers please refer to [mas
 >```lua
 >lspconfig.<server>.setup({})
 >```
+

@@ -6,7 +6,7 @@
 local command_exists = require("utils.helpers").command_exists
 local async = require("plenary.async")
 local enableNvimDapGo = false
-vim.notify = require("notify") -- NOTE: related to the above bug, need to set default vim notifications to use nvim-notify
+vim.notify = require("notify")
 
 -- if the dlv debugger is not present on the system, inform the user via a notification
 if not command_exists("dlv") then
