@@ -4,17 +4,17 @@
 
 local command_exists = require("utils.helpers").command_exists
 
--- NOTE: ONLY configure toggle terminal to open terminal window running lazygit, if lazy it is installed (i.e. can be found on $PATH)
+-- ONLY configure toggle terminal to open terminal window running lazygit, if lazy it is installed on the system (i.e. can be found on $PATH)
 if command_exists("lazygit") then
 	-- load and save toggle terminal's terminal module Terminal object, for direct terminal window creation
-	Terminal = require('toggleterm.terminal').Terminal
+	Terminal = require("toggleterm.terminal").Terminal
 	-- Create a new Terminal instance for lazygit
 	LazyGit = Terminal:new({
 	  cmd = "lazygit",       -- command to execute in the terminal
 	  dir = "git_dir",       -- directory for terminal to be opened within
-	  direction = "float",   -- set terminal to float over the current neovim window 
+	  direction = "float",   -- set terminal to float over the current Neovim window
 	  float_opts = {
-		border = "double",     -- set a double boarder around the floating window 
+		border = "double",     -- set a double boarder around the floating window
 	  },
 
 	  -- function to run on opening of the terminal
@@ -31,12 +31,11 @@ if command_exists("lazygit") then
 	})
 
 	-- function to toggle the lazygit terminal
-	function _lazygit_toggle()
+	local function _lazygit_toggle()
 	  LazyGit:toggle()
 	end
 
-  -- TODO: find a better home for this key binding 
-  -- set a keymap in normal mode: that will toggle the lazygit terminal
-  vim.api.nvim_set_keymap("n", "<M-g>", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+  -- set a keymap in normal mode: that will toggle the lazygit terminal - automatically picked up by which-key
+  vim.keymap.set("n", "<leader>el", function() _lazygit_toggle() end, {noremap = true, silent = true, desc = "Toggle Lazygit"})
 end
 
