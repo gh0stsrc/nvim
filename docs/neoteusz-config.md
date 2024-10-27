@@ -14,7 +14,15 @@ Neoteusz was configured to use the [`rcarriga/nvim-notify`](https://github.com/r
 
 Neovim has no direct connection to the system clipboard. Instead it depends on a `provider` which transparently uses shell commands to communicate with the system clipboard or any other clipboard "backend.
 
-This means that if any of the clipboards listed as a result of the `:help g:clipboard` command (or via `telescope` help search) are installed and their dependent environment variables (e.g. $DISPLAY) are found (more so for linux distros with a UI), Neovim will implicitly create the necessary hooks and enable the required registers (`+`, `*`). Ultimately resulting in a turn-key clipboard solution for GUI supporting linux distributions (e.g. ubuntu).
+The following command will bring up clipboard help documentation that will outline available clipboards that can be integrated with Neovim:
+```vim
+:help g:clipboard
+```
+
+>[!TIP]
+> You can also leverage `telescope` to search clipboard help documentation.
+
+This means that if any of the clipboards listed as a result of the aforementioned command are installed and their dependent environment variables (e.g. $DISPLAY) are found (more so for linux distros with a UI), Neovim will implicitly create the necessary hooks and enable the required registers (`+`, `*`). Ultimately resulting in a turn-key clipboard solution for GUI supporting linux distributions (e.g. ubuntu).
 
 There is a caveat though, if you are running a headless linux distribution and want to leverage `tmux` as your clipboard provider there are additional configurations required to function with the `+` and `*` registers. Neoteusz can do this for you, simply update the `config.lua` file to have the `clipboard.tmux.bootstrap` field set to `true`. Additionally, if `tmux` is your only clipboard provideri and you open Neovim within a tmux session, Neoteusz will automatically bootstrap it for you against the `+` and `*` registers.
 
