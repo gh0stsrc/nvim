@@ -78,7 +78,7 @@ For a comprehensive overiew of all included plugins, please see Neoteusz [plugin
 [which-key](https://github.com/folke/which-key.nvim) is a brillant plugin that helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type. Please read the below subsections to better understand how to leverage `which-key` for keybindings within Neoteusz.
 
 >[!NOTE]
-> by default the leader key binding is set to the `<space>` key, feel free to change it ;)
+> by default the leader key binding is set to the `<space>` key, feel free to change it 🫡
 
 ### Leader Bound Key Bindings ###
 All keybindings tied to the leader key, are grouped into categories to help provide an intuitive navigation experience. I encourage you to explore the key bindings using `which-key` to get a better understanding of the custom key bindings that have been made available to you.
