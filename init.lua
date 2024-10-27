@@ -31,7 +31,6 @@
 ---               - Regular Comment           
 ---
 
-
 -- clone lazy.nvim to the standard data path (e.g. ~/.local/share/nvim) under lazy/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -51,10 +50,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- IMPORTANT: load core first and foremost
 require("core")
-
 -- load neoteusz specific configs prior to lazy.nvim loading any plugins
 require("utils.config-loader")
-
 -- lazy.nvim startup configuration, including plugin bootstrapping 
 require("lazy").setup({
   spec = {
@@ -63,12 +60,11 @@ require("lazy").setup({
         }
     },
     -- import plugin
-    { import = "plugins.ui" }, -- IMPORTANT: load ui components first 
+    { import = "plugins.ui" }, -- IMPORTANT: load ui components first
     { import = "plugins.lsp" },
     { import = "plugins.general" },
   },
 })
-
 -- post initialization
 require("post-init")
 -- load extensions like terminal ui apps (e.g. lazygit and k9s)
