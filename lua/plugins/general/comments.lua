@@ -2,6 +2,8 @@
 --?                           Commenting                            ?--
 --* --------------------------------------------------------------- *--
 
+-- NOTE: todo-comments uses patched fonts/icons, if want to icons to successfully render you must have a set of patched fonts installed, already patched fonts are available at https://www.nerdfonts.com/
+
 return {
   {
     "numToStr/Comment.nvim",

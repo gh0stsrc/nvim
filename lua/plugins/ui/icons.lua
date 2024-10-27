@@ -2,7 +2,7 @@
 --?                              Icons                              ?--
 --* --------------------------------------------------------------- *--
 
--- IMPORTANT: all fonts are required to be patched to be able to be rendered by the terminal, already patched fonts are available at https://www.nerdfonts.com/
+-- IMPORTANT: all fonts/icons are required to be patched to be able to be rendered by the terminal, already patched fonts are available at https://www.nerdfonts.com/
 
 return {
   {
@@ -91,7 +91,7 @@ return {
     end
   },
   {
-    "echasnovski/mini.icons", -- NOTE: mini.icons is an optional dependency of whichkey
+    "echasnovski/mini.icons", -- NOTE: mini.icons is an optional dependency of which-key
     priority = 1000,
     lazy = false,
     config = function ()

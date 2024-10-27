@@ -2,6 +2,8 @@
 --?                         User Interface                          ?--
 --* --------------------------------------------------------------- *--
 
+-- NOTE: nvim-notify uses patched fonts/icons, if want to icons to successfully render you must have a set of patched fonts installed, already patched fonts are available at https://www.nerdfonts.com/
+
 -- get the desired log level set within the config.lua file, if not set the log lvl will default to `INFO`
 local log_lvl_nm = string.upper(vim.g.neoteusz_logging_level or "INFO")
 

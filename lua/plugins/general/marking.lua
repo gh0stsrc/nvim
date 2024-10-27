@@ -1,5 +1,5 @@
 --* --------------------------------------------------------------- *--
---?                          Marking Setup                          ?--
+--?                             Marking                             ?--
 --* --------------------------------------------------------------- *--
 
 return {
@@ -9,7 +9,7 @@ return {
     commit = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a",
     dependencies = {
       { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },
-      { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" }
+      { "nvim-telescope/telescope.nvim" },
     },
     config = function()
       -- HACK: loading harpoon as a telescope extension - this will only work for harpoon v1
