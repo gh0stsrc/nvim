@@ -163,7 +163,7 @@ return {
         "<leader>bcc",
         function () vim.cmd("bdelete!") end,
         mode = "n",
-        desc = "[C]lose current buffer",
+        desc = "[C]lose [C]urrent buffer",
       },
       {
         "<leader>bco",
