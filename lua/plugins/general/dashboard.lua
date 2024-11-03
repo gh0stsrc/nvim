@@ -68,7 +68,7 @@ return {
          dashboard.button("q", "󰚌  Quit Neovim",         ":qa<CR>"),
       }
 
-      dashboard.section.footer.val = "[ Time to get s#@% done! ]"
+      dashboard.section.footer.val = "[ When you do things right, people won't be sure you've done anything at all ]"
       dashboard.section.footer.opts.hl = "Type"
       dashboard.section.header.opts.hl = "Include"
       dashboard.section.buttons.opts.hl = "Keyword"
