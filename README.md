@@ -35,15 +35,20 @@ In addition, it should be noted that this configuration and the instructions out
 - Neovim Clipboard
     - In the interest of attempting to maintain minimalism for the readme, please see Neoteusz [config documentation](docs/neoteusz-config.md) for information pertaining to clipboard configurations.
 
+- [tmux](https://github.com/tmux/tmux/wiki)
+    - You don't really need to use tmux as part of your dev workflow; however, it does pair very well with this Neovim config as navigation between tmux and Neovim is seamless because of christoomey's [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator).
+      - You can run as many tmux panes and Neovim splits within a window as you wish, while seamless navigating between both Neovim and tmux panes and maintaining a consistent set of key binding.
+    - If you decide to use `tmux`, make sure you install christoomey's [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) on within your tmux config to ensure seamless navigation, the Neovim side will be handled automatically.
+      - The install and setup is fairly simple, please refer to the plugins documentation (previously linked).
 
 ## 💯 Get Started
 1) Get a Neovim app image build with LuaJIT or build it yourself from source
-2) Ensure the Neovim image is executable 
+2) Ensure the Neovim image is executable
     ```shell
     chmod +x <image_name>
     ```
-3) Clone this repo to your Neovim configuration directory 
-    - To get the correct path for your system, run the following command 
+3) Clone this repo to your Neovim configuration directory
+    - To get the correct path for your system, run the following command
     ```vim
     :echo stdpath('config')`
     ```
@@ -91,14 +96,14 @@ Key bindings related to windows within Neovim can still be observed using `which
 ### Auto-Completion ###
 To allow for a seamless experience with auto-completion, related keys were not registered with `which-key`. For auto-completion key bindings, please see the below:
 
-- `<tab>`: The tab key is used for auto-completion of lsp suggestions, as well as the expansion of suggestions and jumping to snippet placeholders.
-- `<C-e>`: The ctrl + e key combination is used to the auto-completion
-- `<Up>`: The up key is used to scroll through upward through lsp suggestions
-- `<Down>`: The down key is used to scroll through downward through lsp suggestions
-- `<PageUp>`: The page up key is used to scroll upward through text within the preview window for the currently selected lsp suggestion
-- `<PageDown>`: The page down key is used to scroll downward through text within the preview window for the currently selected lsp suggestion
-- `<C-p>`: the ctrl + p key combination is used to move to the previous item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
-- `<C-n>`: the ctrl + n key combination is used to move to the next item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
+- `<tab>`: The *tab* key is used for auto-completion of lsp suggestions, as well as the expansion of suggestions and jumping to snippet placeholders.
+- `<C-e>`: The *ctrl + e* key combination is used to the auto-completion
+- `<Up>`: The *up* key is used to scroll through upward through lsp suggestions
+- `<Down>`: The *down* key is used to scroll through downward through lsp suggestions
+- `<PageUp>`: The *page up* key is used to scroll upward through text within the preview window for the currently selected lsp suggestion
+- `<PageDown>`: The *page down* key is used to scroll downward through text within the preview window for the currently selected lsp suggestion
+- `<C-p>`: the *ctrl + p* key combination is used to move to the previous item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
+- `<C-n>`: the *ctrl + n* key combination is used to move to the next item in the lsp suggestion window, if the window is currently visible, otherwise it will toggle open the suggestion window
 
 ### Treesitter Navgation ###
 Treesitter navigation is also available through `which-key`; however, it leverages distinct leader keys. For accessing previous and next nodes use the `[` (i.e. previous) `]` (i.e. next) leader keys respectively.
@@ -109,6 +114,14 @@ Values stored within registers are also available through `which-key`; however, 
 ### Flash Enhanced Search ###
 `folke/flash.nvim` is leveraged to enhance general Neovim search capabilities. Simply use the typically search leader keys of `/` or `?` and you will automatically gain the search benefits of `flash.nvim`.
 
+### Cross Neovim and tmux navigation ###
+To allow for a seamless experience with navigating between Neovim splits and tmux panes, related keys were not registered with `which-key`. The typical Vim motion keys were leveraged to allow for seamless navigation between Neovim and tmux:
+
+- `<C-h>`: The *ctrl + h* key combination is used to navigate to the next split / pane to the ***RIGHT***, regardless of if it's Neovim or tmux
+- `<C-j>`: The *ctrl + j* key combination is used to navigate to the next split / pane ***BELOW***, regardless of if it's Neovim or tmux
+- `<C-k>`: The *ctrl + k* key combination is used to navigate to the next split / pane ***ABOVE***, regardless of if it's Neovim or tmux
+- `<C-l>`: The *ctrl + h* key combination is used to navigate to the next split / pane to the ***LEFT***, regardless of if it's Neovim or tmux
+- `<C-\>`: The *ctrl + \* key combination is used to navigate to the ***PREVIOUS*** split / pane, regardless of if it's Neovim or tmux
 
 ## 🚀 Language Severs, LSPs, Linters & Formatters
 For an overiew of how language severs, LSPs, linters and formatters are integrated with Neoteusz, please see Neoteusz [lsp documentation](docs/lsp.md).

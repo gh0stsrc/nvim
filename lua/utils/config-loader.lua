@@ -33,8 +33,8 @@ create_global_vars("neoteusz_", config)
 --* ------------------------------------ *--
 --[[
   Assumption: the prefix will be `neoteusz_`
-  
-  [Data Structure] 
+
+  [Data Structure]
     {
       ai ={
         enabled = true
@@ -43,8 +43,8 @@ create_global_vars("neoteusz_", config)
         provider = "xclip"
       }
     }
-  
-  [Env Vars Created] 
+
+  [Env Vars Created]
     - neoteusz_ai_enabled = true
     - neoteusz_clipboard_provider = "xclip"
 ]]--

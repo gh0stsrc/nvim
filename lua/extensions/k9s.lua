@@ -14,7 +14,7 @@ if command_exists("k9s") then
 	  dir = "./",           -- directory for terminal to be opened within
 	  direction = "float",  -- set terminal to float over the current Neovim window
 	  float_opts = {
-		border = "double",    -- set a double boarder around the floating window
+      border = "shadow",  -- Options: 'single', 'double', 'shadow', or 'curved'
 	  },
 
 	  -- function to run on opening of the terminal
