@@ -19,6 +19,7 @@ wk.add({
   { "<leader>d", group = "debugger", }, -- using default icon
   { "<leader>e", group = "extensions", icon = { icon = "", color = "purple", }},
   { "<leader>x", group = "explorer", icon = { icon = "󰙅", color = "blue", }},
+  { "<leader>T", group = "testing", icon = { icon = "󰇉", color = "purple", }},
 })
 
 -- clipboard bootstrapping

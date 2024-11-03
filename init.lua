@@ -1,12 +1,13 @@
 ---
----  ███╗   ██╗███████╗ ██████╗ ████████╗███████╗██╗   ██╗███████╗███████╗
----  ████╗  ██║██╔════╝██╔═══██╗╚══██╔══╝██╔════╝██║   ██║██╔════╝╚══███╔╝
----  ██╔██╗ ██║█████╗  ██║   ██║   ██║   █████╗  ██║   ██║███████╗  ███╔╝ 
----  ██║╚██╗██║██╔══╝  ██║   ██║   ██║   ██╔══╝  ██║   ██║╚════██║ ███╔╝  
----  ██║ ╚████║███████╗╚██████╔╝   ██║   ███████╗╚██████╔╝███████║███████╗
----  ╚═╝  ╚═══╝╚══════╝ ╚═════╝    ╚═╝   ╚══════╝ ╚═════╝ ╚══════╝╚══════╝
+---        ████ ██████
+---       ███████████
+---       █████████ ███████████████████████████████████████  ████████████████████
+---      █████████  ███    █████      ███       ███    ███  ██████           ███
+---     █████████ ██████████ ██    ███      ███████████  ███████████  █████
+---   ███████████ ███    ███ ███  ███       ███    ███  ███     ██████
+---  ██████  ██████████████████████████████████████████████████████████████████
 ---
---- version : v2.0.0
+--- version : v2.1.0
 --- NOTE    : Comments have been extended by the use of `folke/todo-comments.nvim`. comments are enriched with color highlighting, distinct icons and are searchable via commands and key-bindings, throughout open buffers and
 ---           the entire project workspace.
 ---
@@ -14,9 +15,9 @@
 ---             - IMPORTANT:
 ---               - Important information which should be understood
 ---             - NOTE:
----               - Information that is considered to be noteworthy 
+---               - Information that is considered to be noteworthy
 ---             - TODO:
----               - More stuff to do 
+---               - More stuff to do
 ---             - HACK:
 ---               - Sus code (smooth brain stuff)
 ---             - BUG:
@@ -28,7 +29,7 @@
 ---             - PERF:
 ---               - Performance optimization
 ---             - --:
----               - Regular Comment           
+---               - Regular Comment
 ---
 
 -- clone lazy.nvim to the standard data path (e.g. ~/.local/share/nvim) under lazy/lazy.nvim
@@ -52,7 +53,7 @@ vim.opt.rtp:prepend(lazypath)
 require("core")
 -- load neoteusz specific configs prior to lazy.nvim loading any plugins
 require("utils.config-loader")
--- lazy.nvim startup configuration, including plugin bootstrapping 
+-- lazy.nvim startup configuration, including plugin bootstrapping
 require("lazy").setup({
   spec = {
     { "folke/lazy.nvim",

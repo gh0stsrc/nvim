@@ -11,8 +11,10 @@ return {
     },
     config = function ()
         require("toggleterm").setup({
-          direction = "horizontal",
-          size = 15,
+          direction = "float",
+          float_opts = {
+            border = "curved", -- Options: 'single', 'double', 'shadow', or 'curved'
+          }
         })
         -- add group name for the root of <leader> t (i.e. terminal)
         require("which-key").add({

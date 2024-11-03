@@ -7,7 +7,7 @@ local M  = {}
 
 -- helper func used to see if a particular command exists on the system (i.e. is reachable via $PATH)
 function M.command_exists(cmd)
-	-- create file handle with the output stream of the executed command 
+	-- create file handle with the output stream of the executed command
     local handle = io.popen("command -v " .. cmd) -- `command -v` returns information pertaining to a particular command if it exists
 	-- read the file handle in its entirety (should only be the path of the binary for the command if it exists)
     local result = handle:read("*a") -- format string to read all of the data

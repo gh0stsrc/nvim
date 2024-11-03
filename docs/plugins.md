@@ -121,7 +121,7 @@
   - `toggleterm` is a Neovim plugin written in Lua, designed to help manage terminal windows within Neovim. The plugin allows users to toggle Neovim's built-in terminal easily, meaning you can show or hide the terminal window with a single command or key mapping.
 
 - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
-  - `Comment.nvim` is a Neovim plugin written in Lua, which provides an easy and efficient way to comment out lines of code in multiple programming languages. Commenting is a common task in coding, and this plugin helps automate and streamline the process. 
+  - `Comment.nvim` is a Neovim plugin written in Lua, which provides an easy and efficient way to comment out lines of code in multiple programming languages. Commenting is a common task in coding, and this plugin helps automate and streamline the process.
 
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
   - `gitsigns` is a Neovim plugin designed to enhance the user's experience when working with Git repositories by providing signs in the 'signcolumn' (the area just left of the line numbers). These signs indicate changes relative to the Git index (staged changes). The plugin is written in Lua and is optimized for performance, making it a popular choice among Neovim users.
@@ -131,4 +131,10 @@
 
 - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
   - `nvim-tree` is a popular file explorer plugin for Neovim, written in Lua. It provides a visual tree-like structure to navigate your file system, making it easier to browse, open, and manage files and directories directly from Neovim. This plugin is designed to be highly customizable and extendable, fitting seamlessly into a modern Neovim setup that utilizes Lua for configuration and plugins.
+
+- [vim-test/vim-test](https://github.com/vim-test/vim-test)
+  - `vim-test` is a versatile Vim plugin for running tests within various testing frameworks across multiple languages directly from Vim
+
+- [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+  - `vim-tmux-navigator` is a Vim plugin that enables seamless navigation between Vim and tmux panes using a consistent set of keyboard shortcuts. It simplifies workflow by allowing users to move across both Vim splits and tmux panes without switching context or needing additional key bindings.
 
