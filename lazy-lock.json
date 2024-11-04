@@ -19,6 +19,7 @@
   "mason.nvim": { "branch": "main", "commit": "cd7835b15f5a4204fc37e0aa739347472121a54c" },
   "mini.icons": { "branch": "main", "commit": "a2742459f0ee32806c2438ca06b4d8b331f3f4d4" },
   "neodev.nvim": { "branch": "main", "commit": "b094a663ccb71733543d8254b988e6bebdbdaca4" },
+  "noice.nvim": { "branch": "main", "commit": "5a78b42bec5e775f2db03bf93f6d1e0f3636306c" },
   "nui.nvim": { "branch": "main", "commit": "c0c8e347ceac53030f5c1ece1c5a5b6a17a25b32" },
   "nvim-autopairs": { "branch": "master", "commit": "0f04d78619cce9a5af4f355968040f7d675854a1" },
   "nvim-cmp": { "branch": "main", "commit": "d3a3056204e1a9dbb7c7fe36c114dc43b681768c" },
@@ -39,6 +40,6 @@
   "toggleterm.nvim": { "branch": "main", "commit": "faee9d60428afc7857e0927fdc18daa6c409fa64" },
   "vim-go": { "branch": "master", "commit": "1401b576c6ac382529188d3d26cff866139f2f9a" },
   "vim-test": { "branch": "master", "commit": "b0661402277de193a374ae241f0742898cbcb319" },
-  "vim-tmux-navigator": { "branch": "master", "commit": "a9b52e7d36114d40350099f254b5f299a35df978" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "2d8bc8176af90935fb918526b0fde73d6ceba0df" },
   "which-key.nvim": { "branch": "main", "commit": "fb070344402cfc662299d9914f5546d840a22126" }
 }

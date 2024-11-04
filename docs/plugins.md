@@ -133,8 +133,14 @@
   - `nvim-tree` is a popular file explorer plugin for Neovim, written in Lua. It provides a visual tree-like structure to navigate your file system, making it easier to browse, open, and manage files and directories directly from Neovim. This plugin is designed to be highly customizable and extendable, fitting seamlessly into a modern Neovim setup that utilizes Lua for configuration and plugins.
 
 - [vim-test/vim-test](https://github.com/vim-test/vim-test)
-  - `vim-test` is a versatile Vim plugin for running tests within various testing frameworks across multiple languages directly from Vim
+  - `vim-test` is a versatile Vim plugin for running tests within various testing frameworks across multiple languages directly from vim.
 
 - [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
   - `vim-tmux-navigator` is a Vim plugin that enables seamless navigation between Vim and tmux panes using a consistent set of keyboard shortcuts. It simplifies workflow by allowing users to move across both Vim splits and tmux panes without switching context or needing additional key bindings.
+
+- [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
+  - `nvim-notify` is a A fancy, configurable, notification manager for Neovim.
+
+- [folke/noice.nvim](https://github.com/folke/noice.nvim)
+  - `nvim-noice` is a highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 

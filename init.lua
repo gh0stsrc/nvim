@@ -7,7 +7,7 @@
 ---   ███████████ ███    ███ ███  ███       ███    ███  ███     ██████
 ---  ██████  ██████████████████████████████████████████████████████████████████
 ---
---- version : v2.1.0
+--- version : v2.2.0
 --- NOTE    : Comments have been extended by the use of `folke/todo-comments.nvim`. comments are enriched with color highlighting, distinct icons and are searchable via commands and key-bindings, throughout open buffers and
 ---           the entire project workspace.
 ---
@@ -64,6 +64,7 @@ require("lazy").setup({
     { import = "plugins.ui" }, -- IMPORTANT: load ui components first
     { import = "plugins.lsp" },
     { import = "plugins.general" },
+    { import = "plugins.experimental" },
   },
 })
 -- post initialization
