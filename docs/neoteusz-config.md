@@ -34,3 +34,7 @@ There is a caveat though, if you are running a headless linux distribution and w
 
 If you would like to leverage an AI assistant, particularly [ChatGPT](https://openai.com/chatgpt/overview/), Neoteusz can bootstrap the `jackMort/ChatGPT.nvim` plugin for you. All you have to do is set the value under the `ai.enabled` field within the `config.lua` file to `true` and integrate your OpenAI API key, as outlined in neoteusz [AI assistant documentation](/docs/ai-assistant.md).
 
+## Experimental Plugins
+
+If you would like to include the installation and configuration of `experimental` plugins such as folke's [noice.nvim](https://github.com/folke/noice.nvim), update the `config.lua` file to have the `experimental.enabled` field set to `true`.
+

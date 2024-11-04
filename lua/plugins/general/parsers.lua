@@ -9,7 +9,7 @@ return {
     build = ":TSUpdate",
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     dependencies = {
-      { "nvim-treesitter/nvim-treesitter-textobjects", commit = "0d79d169fcd45a8da464727ac893044728f121d4" }
+      { "nvim-treesitter/nvim-treesitter-textobjects", commit = "0d79d169fcd45a8da464727ac893044728f121d4" },
     },
     opts_extend = { "ensure_installed" },
     config = function ()

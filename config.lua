@@ -15,6 +15,9 @@ return {
   },
   logging = {
     level = "INFO"
+  },
+  experimental = {
+    enabled = false
   }
 }
 

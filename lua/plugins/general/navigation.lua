@@ -5,6 +5,7 @@
 return {
   {
     "christoomey/vim-tmux-navigator",
+    commit = "2d8bc8176af90935fb918526b0fde73d6ceba0df",
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",

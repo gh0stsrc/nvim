@@ -5,6 +5,7 @@
 return {
   {
     "vim-test/vim-test",
+    commit = "b0661402277de193a374ae241f0742898cbcb319",
     config = function ()
       -- set vim-test to launch tests in toggleterm
       vim.cmd("let test#strategy = 'toggleterm'")
