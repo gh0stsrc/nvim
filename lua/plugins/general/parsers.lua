@@ -12,7 +12,7 @@ return {
       { "nvim-treesitter/nvim-treesitter-textobjects", commit = "0d79d169fcd45a8da464727ac893044728f121d4" },
     },
     opts_extend = { "ensure_installed" },
-    config = function ()
+    config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
           "c",
@@ -61,4 +61,3 @@ return {
     end,
   },
 }
-

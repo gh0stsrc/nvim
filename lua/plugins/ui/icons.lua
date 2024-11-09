@@ -14,16 +14,16 @@ return {
     opts = {
       override = {
         go = {
-            icon = "󰟓"
-          },
-          md = {
+          icon = "󰟓"
+        },
+        md = {
           icon = "󰽛"
         },
         python = {
-            icon = "󰌠"
+          icon = "󰌠"
         },
-          rs = {
-            icon = ""
+        rs = {
+          icon = ""
         },
         tf = {
           icon = "󱁢"
@@ -32,19 +32,19 @@ return {
           icon = "󱁢"
         },
         ts = {
-            icon = "󰛦"
+          icon = "󰛦"
         },
         lua = {
-            icon = "󰢱"
+          icon = "󰢱"
         },
         yaml = {
-            icon = ""
+          icon = ""
         },
         license = {
-            icon = "󰿃"
+          icon = "󰿃"
         },
         makefile = {
-            icon = "󰛕"
+          icon = "󰛕"
         },
       },
 
@@ -74,19 +74,19 @@ return {
           icon = ""
         },
         ["git"] = {
-            icon = "󰊢"
-          },
+          icon = "󰊢"
+        },
         ["Dockerfile"] = {
-            icon = ""
-          },
-      };
+          icon = ""
+        },
+      },
     }
   },
   {
     "mortepau/codicons.nvim", -- NOTE: codicons is a dependency of dapui, which leverages codicons as part of the UI"s debugger pane
     priority = 1000,
     lazy = false,
-    config = function ()
+    config = function()
       require("codicons").setup()
     end
   },
@@ -94,9 +94,8 @@ return {
     "echasnovski/mini.icons", -- NOTE: mini.icons is an optional dependency of which-key
     priority = 1000,
     lazy = false,
-    config = function ()
+    config = function()
       require("mini.icons").setup()
     end,
   },
 }
-

@@ -20,4 +20,3 @@ return {
     enabled = false
   }
 }
-

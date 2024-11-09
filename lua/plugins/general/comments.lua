@@ -9,8 +9,8 @@ return {
     "numToStr/Comment.nvim",
     commit = "0236521ea582747b58869cb72f70ccfa967d2e89",
     dependencies = {
-      { "MunifTanjim/nui.nvim", commit="c0c8e347ceac53030f5c1ece1c5a5b6a17a25b32" },
-      { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+      { "MunifTanjim/nui.nvim",          commit = "c0c8e347ceac53030f5c1ece1c5a5b6a17a25b32" },
+      { "nvim-lua/plenary.nvim",         commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" },
       { "nvim-telescope/telescope.nvim", tag = "nvim-0.6" }
     },
     opts = {
@@ -21,127 +21,189 @@ return {
     "folke/todo-comments.nvim",
     commit = "3094ead8edfa9040de2421deddec55d3762f64d1",
     lazy = false,
-    opts = {
-      --override icons and colours associated to comment keywords
-      keywords = {
-        TODO = { icon = "󰐱 ", color = "info" },
-        HACK = { icon = "󰠥 ", color = "warning" },
-        FIX = {
-              icon = "󰻕 ",
-              color = "error",
-              alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },
-        },
-        IMPORTANT = { icon = "󰚌 ", color = "error", alt = { "IMP", "!!!" } },
-        WARN = { icon = "󱡝 ", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = "󱓞 ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-        NOTE = { icon = "󰇥 ", color = "hint", alt = { "INFO" } },
-        TEST = { icon = "󱈼", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-      }
-    },
+    config = function()
+      require("todo-comments").setup({
+        --override icons and colours associated to comment keywords
+        keywords = {
+          TODO = { icon = "󰐱 ", color = "info", },
+          HACK = { icon = "󰠥 ", color = "warning", },
+          FIX = {
+            icon = "󰻕 ",
+            color = "error",
+            alt = { "BUG", "ISSUE" },
+          },
+          IMPORTANT = { icon = "󰚌 ", color = "error", },
+          WARN = { icon = "󱡝 ", color = "warning", alt = { "WARNING" }, },
+          PERF = { icon = "󱓞 ", },
+          NOTE = { icon = "󰇥 ", color = "hint", },
+          TEST = { icon = "󱈼", color = "test", alt = { "PASSED", "FAILED" }, },
+        }
+      })
+
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>ct", group = "Todo comments", icon = { icon = "󰐱", color = "blue", } },
+        { "<leader>ch", group = "Hack comments", icon = { icon = "󰠥", color = "yellow", } },
+        { "<leader>cb", group = "Bug/Fix comments", icon = { icon = "󰻕", color = "red", } },
+        { "<leader>ci", group = "Important comments", icon = { icon = "󰚌", color = "red", } },
+        { "<leader>cw", group = "Warn comments", icon = { icon = "󱡝", color = "yellow", } },
+        { "<leader>cp", group = "Perf comments", icon = { icon = "󱓞", color = "cyan", } },
+        { "<leader>cn", group = "Note comments", icon = { icon = "󰇥", color = "blue", } },
+        { "<leader>cT", group = "Test comments", icon = { icon = "󱈼", color = "blue", } },
+      })
+    end,
+    opts = {},
     keys = {
       {
-        "<leader>st",
-        function () vim.cmd("TodoTelescope") end,
+        "<leader>cs",
+        function() vim.cmd("TodoTelescope") end,
         mode = "n",
-        desc = "[S]earch [T]odo comment tags"
+        desc = "Search all comment tags"
       },
       {
-       "]t",
-       function() require("todo-comments").jump_next({keywords = {"TODO"}}) end,
-       mode = "n",
-       desc = "Jump to next TODO comment"
+        "<leader>ct]",
+        function() require("todo-comments").jump_next({ keywords = { "TODO" } }) end,
+        mode = "n",
+        desc = "Jump to next TODO comment"
       },
       {
-       "[t",
-       function() require("todo-comments").jump_prev({keywords = {"TODO"}}) end,
-       mode = "n",
-       desc = "Jump to previous TODO comment"
+        "<leader>ct[",
+        function() require("todo-comments").jump_prev({ keywords = { "TODO" } }) end,
+        mode = "n",
+        desc = "Jump to previous TODO comment"
       },
       {
-       "]h",
-       function() require("todo-comments").jump_next({keywords = {"HACK"}}) end,
-       mode = "n",
-       desc = "Jump to next HACK comment"
+        "<leader>cts",
+        function() vim.cmd("TodoTelescope keywords=TODO") end,
+        mode = "n",
+        desc = "Search TODO comment tags"
       },
       {
-       "[h",
-       function() require("todo-comments").jump_prev({keywords = {"HACK"}}) end,
-       mode = "n",
-       desc = "Jump to previous HACK comment"
+        "<leader>ch]",
+        function() require("todo-comments").jump_next({ keywords = { "HACK" } }) end,
+        mode = "n",
+        desc = "Jump to next HACK comment"
       },
       {
-       "]b",
-       function() require("todo-comments").jump_next({keywords = {"BUG", "FIX"}}) end,
-       mode = "n",
-       desc = "Jump to next BUG / FIX comment"
+        "<leader>ch[",
+        function() require("todo-comments").jump_prev({ keywords = { "HACK" } }) end,
+        mode = "n",
+        desc = "Jump to previous HACK comment"
       },
       {
-       "[b",
-       function() require("todo-comments").jump_prev({keywords = {"BUG", "FIX"}}) end,
-       mode = "n",
-       desc = "Jump to previous BUG / FIX comment"
+        "<leader>chs",
+        function() vim.cmd("TodoTelescope keywords=HACK") end,
+        mode = "n",
+        desc = "Search HACK comment tags"
       },
       {
-       "]i",
-       function() require("todo-comments").jump_next({keywords = {"IMPORTANT", "IMP"}}) end,
-       mode = "n",
-       desc = "Jump to next IMPORTANT comment"
+        "<leader>cb]",
+        function() require("todo-comments").jump_next({ keywords = { "BUG", "FIX" } }) end,
+        mode = "n",
+        desc = "Jump to next BUG/FIX comment"
       },
       {
-       "[i",
-       function() require("todo-comments").jump_prev({keywords = {"IMPORTANT", "IMP"}}) end,
-       mode = "n",
-       desc = "Jump to previous IMPORTANT comment"
+        "<leader>cb[",
+        function() require("todo-comments").jump_prev({ keywords = { "BUG", "FIX" } }) end,
+        mode = "n",
+        desc = "Jump to previous BUG/FIX comment"
       },
       {
-       "]w",
-       function() require("todo-comments").jump_next({keywords = {"WARNING", "WARN"}}) end,
-       mode = "n",
-       desc = "Jump to next WARN comment"
+        "<leader>cbs",
+        function() vim.cmd("TodoTelescope keywords=BUG,FIX") end,
+        mode = "n",
+        desc = "Search BUG/FIX comment tags"
       },
       {
-       "[w",
-       function() require("todo-comments").jump_prev({keywords = {"WARNING", "WARN"}}) end,
-       mode = "n",
-       desc = "Jump to previous WARN comment"
+        "<leader>ci]",
+        function() require("todo-comments").jump_next({ keywords = { "IMPORTANT", "IMP" } }) end,
+        mode = "n",
+        desc = "Jump to next IMPORTANT comment"
       },
       {
-       "]p",
-       function() require("todo-comments").jump_next({keywords = {"PERF"}}) end,
-       mode = "n",
-       desc = "Jump to next PERF comment"
+        "<leader>ci[",
+        function() require("todo-comments").jump_prev({ keywords = { "IMPORTANT", "IMP" } }) end,
+        mode = "n",
+        desc = "Jump to previous IMPORTANT comment"
       },
       {
-       "[p",
-       function() require("todo-comments").jump_prev({keywords = {"PERF"}}) end,
-       mode = "n",
-       desc = "Jump to previous PERF comment"
+        "<leader>cis",
+        function() vim.cmd("TodoTelescope keywords=IMPORTANT") end,
+        mode = "n",
+        desc = "Search IMPORTANT comment tags"
       },
       {
-       "]n",
-       function() require("todo-comments").jump_next({keywords = {"NOTE"}}) end,
-       mode = "n",
-       desc = "Jump to next NOTE comment"
+        "<leader>cw]",
+        function() require("todo-comments").jump_next({ keywords = { "WARNING", "WARN" } }) end,
+        mode = "n",
+        desc = "Jump to next WARN comment"
       },
       {
-       "[n",
-       function() require("todo-comments").jump_prev({keywords = {"NOTE"}}) end,
-       mode = "n",
-       desc = "Jump to previous NOTE comment"
+        "<leader>cw[",
+        function() require("todo-comments").jump_prev({ keywords = { "WARNING", "WARN" } }) end,
+        mode = "n",
+        desc = "Jump to previous WARN comment"
       },
       {
-       "]T",
-       function() require("todo-comments").jump_next({keywords = {"TEST"}}) end,
-       mode = "n",
-       desc = "Jump to next TEST comment"
+        "<leader>cws",
+        function() vim.cmd("TodoTelescope keywords=WARN,WARNING") end,
+        mode = "n",
+        desc = "Search WARN comment tags"
       },
       {
-       "[T",
-       function() require("todo-comments").jump_prev({keywords = {"TEST"}}) end,
-       mode = "n",
-       desc = "Jump to previous TEST comment"
+        "<leader>cp]",
+        function() require("todo-comments").jump_next({ keywords = { "PERF" } }) end,
+        mode = "n",
+        desc = "Jump to next PERF comment"
+      },
+      {
+        "<leader>cp[",
+        function() require("todo-comments").jump_prev({ keywords = { "PERF" } }) end,
+        mode = "n",
+        desc = "Jump to previous PERF comment"
+      },
+      {
+        "<leader>cps",
+        function() vim.cmd("TodoTelescope keywords=PERF") end,
+        mode = "n",
+        desc = "Search PERF comment tags"
+      },
+      {
+        "<leader>cn]",
+        function() require("todo-comments").jump_next({ keywords = { "NOTE" } }) end,
+        mode = "n",
+        desc = "Jump to next NOTE comment"
+      },
+      {
+        "<leader>cn[",
+        function() require("todo-comments").jump_prev({ keywords = { "NOTE" } }) end,
+        mode = "n",
+        desc = "Jump to previous NOTE comment"
+      },
+      {
+        "<leader>cns",
+        function() vim.cmd("TodoTelescope keywords=NOTE") end,
+        mode = "n",
+        desc = "Search NOTE comment tags"
+      },
+      {
+        "<leader>cT]",
+        function() require("todo-comments").jump_next({ keywords = { "TEST" } }) end,
+        mode = "n",
+        desc = "Jump to next TEST comment"
+      },
+      {
+        "<leader>cT[",
+        function() require("todo-comments").jump_prev({ keywords = { "TEST" } }) end,
+        mode = "n",
+        desc = "Jump to previous TEST comment"
+      },
+      {
+        "<leader>cTs",
+        function() vim.cmd("TodoTelescope keywords=TEST,PASSED,FAILED") end,
+        mode = "n",
+        desc = "Search TEST comment tags"
       },
     }
   },
 }
-

@@ -22,28 +22,45 @@ return {
     "nvim-tree/nvim-tree.lua",
     tag = "v1.7.1",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    cmd = {"NvimTreeToggle", "NvimTreeFindFile"},
-    config = function () -- IMPORTANT: nvim-tree requires explicit initialization, otherwise lazy loading will break
+    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+    config = function() -- IMPORTANT: nvim-tree requires explicit initialization, otherwise lazy loading will break
       require("nvim-tree").setup({
+        renderer = {
+          highlight_git = true,
+          highlight_opened_files = "all",
+          root_folder_label = ":t",
+          indent_markers = {
+            enable = true,
+          },
+        },
         view = {
           side = "left",
           width = 30,
         },
-        renderer = {
-          highlight_git = true,
+        diagnostics = {
+          enable = true,
         },
       })
+      -- explicitly override nvim-tree highlight groups to match gruvbox theme
+      vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "NONE", fg = "#ebdbb2" })
+      vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#fabd2f" })
+      vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "#b8bb26", bold = true })
+      vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = "#83a598" })
+      vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg = "#928374" })
+      vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = "#d79921" })
+      vim.api.nvim_set_hl(0, "NvimTreeGitNew", { fg = "#b8bb26" })
+      vim.api.nvim_set_hl(0, "NvimTreeGitDeleted", { fg = "#fb4934" })
     end,
     keys = {
       {
         "<leader>x<enter>",
-        function () vim.cmd("NvimTreeToggle") end,
+        function() vim.cmd("NvimTreeToggle") end,
         mode = "n",
         desc = "Toggle nvim-tree explorer",
       },
       {
         "<leader>xx",
-        function () vim.cmd("NvimTreeFocus") end,
+        function() vim.cmd("NvimTreeFocus") end,
         mode = "n",
         desc = "Set focus on nvim-tree explorer"
       }
@@ -54,19 +71,19 @@ return {
     commit = "e4a2022f4fec2d5ebc79afa612f96d8b11c627b3",
     priority = 1000,
     lazy = false,
-    config = function ()
+    config = function()
       -- load notify as a telescope extension
       require("telescope").load_extension("notify")
 
       -- configure the notify plugin
       require("notify").setup({
-          level = log_lvl_map[log_lvl_nm],
-          icons = {
-            ERROR   = "󰚌 ",
-            WARN    = "󱡝 ",
-            INFO    = "󰇥 ",
-            DEBUG   = "󰻕 ",
-            TRACE   = "󰛤 ",
+        level = log_lvl_map[log_lvl_nm],
+        icons = {
+          ERROR = "󰚌 ",
+          WARN  = "󱡝 ",
+          INFO  = "󰇥 ",
+          DEBUG = "󰻕 ",
+          TRACE = "󰛤 ",
         }
       })
       vim.notify = require("notify") -- NOTE: set nvim-notify as the default notification mechanism for all plugins that use the vim.notify function
@@ -74,9 +91,9 @@ return {
     keys = {
       {
         "<leader>sn",
-        function () vim.cmd("Telescope notify") end,
+        function() vim.cmd("Telescope notify") end,
         mode = "n",
-        desc = "[S]earch [N]otifications"
+        desc = "Search notifications"
       },
     }
   },
@@ -89,7 +106,7 @@ return {
     opts = {
       options = {
         icons_enabled = true,
-        theme = "onedark",
+        theme = "gruvbox",
         section_separators = { left = "", right = "" }, -- IMPORTANT: to be able to load these semi-circle fonts you will need a Patched `Nerd Fonts` installed and your temrinal configured to default to them
         component_separators = "|",
       },
@@ -125,7 +142,7 @@ return {
       { "nvim-tree/nvim-web-devicons" },
       { "folke/which-key.nvim" },
     },
-    config = function ()
+    config = function()
       require("bufferline").setup({
         options = {
           modified_icon = "󱙄 ",
@@ -134,14 +151,14 @@ return {
           --diagnostics_update_in_insert = true,
           diagnostics_indicator = function(count, level)
             local icon = level:match("error") and " " or " "
-             return " " .. icon .. count
+            return " " .. icon .. count
           end
         }
       })
       -- add group name for the root of <leader> b and <leader> bc
       require("which-key").add({
-        { "<leader>b", group = "bufferline", icon = { icon = "", color = "orange" }},
-        { "<leader>bc", group = "close", icon = { icon = "󰅚", color = "red"}},
+        { "<leader>b", group = "buffers", icon = { icon = "", color = "orange" } },
+        { "<leader>bc", group = "close", icon = { icon = "󰅚", color = "red" } },
       })
     end,
     opts = {
@@ -149,44 +166,45 @@ return {
     keys = {
       {
         "<leader>bcl",
-        function () vim.cmd("BufferLineCloseLeft") end,
+        function() vim.cmd("BufferLineCloseLeft") end,
         mode = "n",
-        desc = "[C]lose buffer to the [L]eft",
+        desc = "Close buffers to the left",
       },
       {
         "<leader>bcr",
-        function () vim.cmd("BufferLineCloseRight") end,
+        function() vim.cmd("BufferLineCloseRight") end,
         mode = "n",
-        desc = "[C]lose buffer to the [R]ight",
+        desc = "Close buffers to the right",
       },
       {
         "<leader>bcc",
-        function () vim.cmd("bdelete!") end,
+        function() vim.cmd("bdelete!") end,
         mode = "n",
-        desc = "[C]lose [C]urrent buffer",
+        desc = "Close current buffer",
       },
       {
         "<leader>bco",
-        function () vim.cmd("BufferLineCloseOthers") end,
+        function() vim.cmd("BufferLineCloseOthers") end,
         mode = "n",
-        desc = "[C]lose all buffers [O]ther than the current buffer",
+        desc = "Close all buffers other than the current buffer",
       },
       {
         "<leader>b]",
-        function () vim.cmd("BufferLineCycleNext") end,
+        function() vim.cmd("BufferLineCycleNext") end,
         mode = "n",
         desc = "Move to the next open buffer",
       },
       {
         "<leader>b[",
-        function () vim.cmd("BufferLineCyclePrev") end,
+        function() vim.cmd("BufferLineCyclePrev") end,
         mode = "n",
         desc = "Move to the previous open buffer",
       },
       {
         "<leader>m",
-        function ()
-          local bufferNum = vim.v.count ~= 0 and vim.v.count or 1 -- if the keybindind is not prefaced with a number, default to 1
+        function()
+          local bufferNum = vim.v.count ~= 0 and vim.v.count or
+              1 -- if the keybindind is not prefaced with a number, default to 1
           require("bufferline").go_to(bufferNum, false)
         end,
         mode = "n",
@@ -194,8 +212,9 @@ return {
       },
       {
         "<leader>M",
-        function ()
-          local bufferNum = vim.v.count ~= 0 and vim.v.count or 1 -- if the keybindind is not prefaced with a number, default to 1
+        function()
+          local bufferNum = vim.v.count ~= 0 and vim.v.count or
+              1 -- if the keybindind is not prefaced with a number, default to 1
           require("bufferline").go_to(bufferNum, true)
         end,
         mode = "n",
@@ -209,7 +228,7 @@ return {
     dependencies = {
       { "nvim-treesitter/nvim-treesitter" }
     },
-    config = function ()
+    config = function()
       require("ibl").setup({
         scope = {
           show_exact_scope = true, -- requires treesitter
@@ -222,4 +241,3 @@ return {
     end
   },
 }
-

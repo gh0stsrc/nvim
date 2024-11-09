@@ -9,35 +9,35 @@ return {
     dependencies = {
       { "folke/which-key.nvim" },
     },
-    config = function ()
-        require("toggleterm").setup({
-          direction = "float",
-          float_opts = {
-            border = "curved", -- Options: 'single', 'double', 'shadow', or 'curved'
-          }
-        })
-        -- add group name for the root of <leader> t (i.e. terminal)
-        require("which-key").add({
-          { "<leader>t", group = "terminal", icon = { icon = "", color = "grey" }},
-        })
+    config = function()
+      require("toggleterm").setup({
+        direction = "float",
+        float_opts = {
+          border = "curved", -- Options: 'single', 'double', 'shadow', or 'curved'
+        }
+      })
+      -- add group name for the root of <leader> t (i.e. terminal)
+      require("which-key").add({
+        { "<leader>t", group = "terminal", icon = { icon = "", color = "grey" } },
+      })
     end,
     keys = {
       {
         "<leader>tj",
-        function () vim.cmd("ToggleTerm direction=horizontal") end,
+        function() vim.cmd("ToggleTerm direction=horizontal") end,
         mode = "n",
         desc = "Open horizontal toggle terminal window"
       },
       {
         "<leader>tk",
-        function () vim.cmd("ToggleTerm direction=float") end,
+        function() vim.cmd("ToggleTerm direction=float") end,
         mode = "n",
         desc = "Open floating toggle terminal window"
       },
       --* key mapping to exit terminal mode while a toggleterm window is open
       {
         "jj", -- NOTE: `lazygit` is mapped differently, it maintains its own bindings, refer to its respective README for bindings
-        function ()
+        function()
           -- get all instances of toggle terminals that currently exist
           local terminals = require("toggleterm.terminal").get_all()
           -- enumerate over the toggle terminal instances
@@ -56,4 +56,3 @@ return {
     }
   },
 }
-

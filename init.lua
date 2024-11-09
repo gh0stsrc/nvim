@@ -7,7 +7,7 @@
 ---   ███████████ ███    ███ ███  ███       ███    ███  ███     ██████
 ---  ██████  ██████████████████████████████████████████████████████████████████
 ---
---- version : v2.2.0
+--- version : v2.2.1
 --- NOTE    : Comments have been extended by the use of `folke/todo-comments.nvim`. comments are enriched with color highlighting, distinct icons and are searchable via commands and key-bindings, throughout open buffers and
 ---           the entire project workspace.
 ---
@@ -40,7 +40,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -56,9 +56,10 @@ require("utils.config-loader")
 -- lazy.nvim startup configuration, including plugin bootstrapping
 require("lazy").setup({
   spec = {
-    { "folke/lazy.nvim",
-        opts = {rocks = {enabled = false, hererocks = false }
-        }
+    {
+      "folke/lazy.nvim",
+      opts = { rocks = { enabled = false, hererocks = false }
+      }
     },
     -- import plugin
     { import = "plugins.ui" }, -- IMPORTANT: load ui components first
@@ -71,4 +72,3 @@ require("lazy").setup({
 require("post-init")
 -- load extensions like terminal ui apps (e.g. lazygit and k9s)
 require("extensions")
-

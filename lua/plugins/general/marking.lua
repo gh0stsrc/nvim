@@ -8,7 +8,7 @@ return {
     branch = "master",
     commit = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a",
     dependencies = {
-      { "nvim-lua/plenary.nvim", commit= "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+      { "nvim-lua/plenary.nvim",        commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" },
       { "nvim-telescope/telescope.nvim" },
     },
     config = function()
@@ -23,7 +23,7 @@ return {
     end,
     keys = {
       {
-        "<leader>hx",
+        "<leader>mx",
         function()
           require("harpoon.mark").add_file()
         end,
@@ -31,7 +31,7 @@ return {
         desc = "Harpoon file (mark)",
       },
       {
-        "<leader>hr",
+        "<leader>mr",
         function()
           require("harpoon.mark").rm_file()
         end,
@@ -39,7 +39,7 @@ return {
         desc = "Remove harpoon from file",
       },
       {
-        "<leader>hn",
+        "<leader>m]",
         function()
           require("harpoon.ui").nav_next()
         end,
@@ -47,7 +47,7 @@ return {
         desc = "Navigate to the next harpooned file",
       },
       {
-        "<leader>hp",
+        "<leader>m[",
         function()
           require("harpoon.ui").nav_prev()
         end,
@@ -55,12 +55,11 @@ return {
         desc = "Navigate to the previous harpooned file",
       },
       {
-        "<leader>sm",
-        function () vim.cmd("Telescope harpoon marks") end,
+        "<leader>ms",
+        function() vim.cmd("Telescope harpoon marks") end,
         mode = "n",
-        desc = "[S]earch harpoons [M]arks",
+        desc = "Search harpoons marks",
       }
     },
   },
 }
-
