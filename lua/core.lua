@@ -54,4 +54,3 @@ vim.cmd([[
    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif " NOTE: DISABLE relative number (set abolsute), when leaving a buffer, losing focus, entering insert mode and leaving a window
  augroup END
 ]])
-

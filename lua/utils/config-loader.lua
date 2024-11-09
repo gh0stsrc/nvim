@@ -47,5 +47,4 @@ create_global_vars("neoteusz_", config)
   [Env Vars Created]
     - neoteusz_ai_enabled = true
     - neoteusz_clipboard_provider = "xclip"
-]]--
-
+]] --

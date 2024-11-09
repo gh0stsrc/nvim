@@ -16,9 +16,9 @@ return {
     "ellisonleao/gruvbox.nvim",
     tag = "2.0.0",
     lazy = false,
-    priority = 999,
+    priority = 1000,
     setup = true,
-    config = function ()
+    config = function()
       require("gruvbox").setup({
         -- set gruvbox to present a harderd contrast, preferred option when using Dark Mode
         contrast = "hard",
@@ -36,4 +36,3 @@ return {
     end
   },
 }
-

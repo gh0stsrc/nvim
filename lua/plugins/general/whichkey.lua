@@ -9,8 +9,8 @@ return {
     "folke/which-key.nvim",
     tag = "v3.13.3",
     dependencies = {
-      {"nvim-tree/nvim-web-devicons" },
-      {"echasnovski/mini.icons" },
+      { "nvim-tree/nvim-web-devicons" },
+      { "echasnovski/mini.icons" },
     },
     event = "VeryLazy",
     opts = {
@@ -30,4 +30,3 @@ return {
     },
   }
 }
-
