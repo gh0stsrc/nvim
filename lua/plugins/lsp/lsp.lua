@@ -22,6 +22,7 @@ return {
         -- list of language servers, debugger adapters, linters and formatters to be installed by mason and leveraged by nvim-lspconfig
         ensure_installed = {
           "lua_ls",
+          "clangd",
           -- "tsserver",
           "gopls",
           -- "eslint",
@@ -115,6 +116,7 @@ return {
       --        although default configurations of language servers should be automatically handled by `mason-lspconfig`, some language servers may also require an explicit `setup({})` call to properly initialize
       --        if lsp functionality is not working for a newly added language server, add an explicit setup call for the particular language server within the `nvim-lspconfig` config function
 
+      lspconfig.clangd.setup({})
       lspconfig.gopls.setup({})
       lspconfig.lua_ls.setup({
         settings = {
