@@ -35,7 +35,7 @@ return {
     dependencies = {
       {
         { "mfussenegger/nvim-dap",           commit = "92dc531eea2c9a3ef504a5c8ac0decd1fa59a6a3" },
-        { "nvim-treesitter/nvim-treesitter", commit = "6f2ef910c2c320f27cf988cf4e688746f16f4f75" },
+        { "nvim-treesitter/nvim-treesitter" },
       },
     },
     opts = {

@@ -5,7 +5,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    commit = "6f2ef910c2c320f27cf988cf4e688746f16f4f75",
+    tag = "v0.9.3",
     build = ":TSUpdate",
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     dependencies = {
@@ -31,7 +31,7 @@ return {
           "terraform",
           -- "rego",
           "markdown",
-          "markdown_inline"
+          "markdown_inline",
         },
         auto_install = true,
         sync_install = false,
