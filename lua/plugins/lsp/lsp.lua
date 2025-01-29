@@ -116,7 +116,11 @@ return {
       --        although default configurations of language servers should be automatically handled by `mason-lspconfig`, some language servers may also require an explicit `setup({})` call to properly initialize
       --        if lsp functionality is not working for a newly added language server, add an explicit setup call for the particular language server within the `nvim-lspconfig` config function
 
-      lspconfig.clangd.setup({})
+      -- clangd config used to allow the lsp to work with an structured c project where modules are contained in respective folders
+      lspconfig.clangd.setup({
+        cmd = { "clangd", "--compile-commands-dir=." },
+        root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
+      })
       lspconfig.gopls.setup({})
       lspconfig.lua_ls.setup({
         settings = {
