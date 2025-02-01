@@ -27,6 +27,7 @@ In addition, it should be noted that this configuration and the instructions out
 ### Optional ###
 - Terminal UIs (TUIs):
     - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
+    - [jesseduffield/lazydocker](https://github.com/jesseduffield/lazydocker)
     - [derailed/k9s](https://github.com/derailed/k9s)
 
 - AI Assistant:
@@ -135,6 +136,9 @@ Neoteusz comes baked with `toggleterm` ready implmentations for a couple of TUI 
 
 - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
   - `lazygit` is a **_NOT_** a Neovim plugin, but rather a simple terminal UI for Git commands, built with Go. It offers a more visual and interactive way to manage and visualize Git repositories directly from the terminal, without needing to remember or type out individual Git commands.
+
+- [jesseduffield/lazydocker](https://github.com/jesseduffield/lazydocker)
+  - `lazygit` is a **_NOT_** a Neovim plugin, but rather a simple terminal UI for Docker commands, built with Go. It offers a more visual and interactive way to manage and visualize your Docker environment directly from the terminal, without needing to remember or type out individual Docker commands.
 
 - [derailed/k9s](https://github.com/derailed/k9s)
   - `k9s` is a popular open-source terminal-based console (TUI) for managing and interacting with Kubernetes clusters. It provides a powerful and convenient way to view, navigate, and manipulate Kubernetes resources and clusters directly from your terminal. K9s is designed to simplify Kubernetes administration tasks and provide real-time insights into your cluster.
